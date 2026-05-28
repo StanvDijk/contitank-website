@@ -3,436 +3,522 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nachtwerk Websites — Professionele website voor €99,99</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Nachtwerk — Websites voor €99,99</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg:      #F9F7F4;
-  --bg-2:    #F2EFE9;
-  --bg-3:    #EAE6DF;
-  --accent:  #2B5CE6;
-  --text:    #1A1A1A;
-  --muted:   #6B6B6B;
-  --line:    #E0DDD8;
-  --white:   #FFFFFF;
+:root{
+  --ink:    #111111;
+  --ink-2:  #1D1D1D;
+  --muted:  #888;
+  --line:   #E8E6E1;
+  --bg:     #F8F6F1;
+  --bg-2:   #EFEDE7;
+  --white:  #FFFFFF;
+  --blue:   #1A44D4;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:100;background:var(--bg);border-bottom:1px solid var(--line);padding:0 5rem;display:flex;align-items:center;justify-content:space-between;height:64px}
-.logo{font-size:1.1rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:-.01em}
-.logo span{color:var(--accent)}
-.nav-cta{padding:.55rem 1.4rem;background:var(--accent);color:#fff;font-size:.78rem;font-weight:600;text-decoration:none;border-radius:6px;transition:opacity .2s}
-.nav-cta:hover{opacity:.85}
+/* ── NAV ─────────────────────────────── */
+nav{position:sticky;top:0;z-index:200;height:60px;background:rgba(248,246,241,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4rem}
+.logo{font-size:1rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+.logo em{font-style:normal;color:var(--blue)}
+.nav-r{display:flex;align-items:center;gap:2.5rem}
+.nav-link{font-size:.82rem;font-weight:500;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-link:hover{color:var(--ink)}
+.nav-cta{padding:.52rem 1.3rem;background:var(--ink);color:#fff;font-size:.78rem;font-weight:600;text-decoration:none;border-radius:3px;transition:opacity .2s}
+.nav-cta:hover{opacity:.75}
 
-/* HERO */
-#hero{position:relative;overflow:hidden;min-height:92vh;display:flex;align-items:center}
-.hero-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1800&q=85') center/cover no-repeat;filter:brightness(.35)}
-.hero-inner{position:relative;z-index:1;padding:5rem;max-width:1200px;width:100%;margin:0 auto;display:grid;grid-template-columns:1.1fr .9fr;gap:5rem;align-items:center}
-.hero-label{font-size:.72rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.2rem}
-h1{font-size:clamp(2.6rem,5vw,4.2rem);font-weight:700;line-height:1.08;letter-spacing:-.02em;color:#fff}
-h1 .hl{color:#93B4FF}
-.hero-p{font-size:1.05rem;font-weight:300;line-height:1.8;color:rgba(255,255,255,.65);margin-top:1.4rem;max-width:460px}
-.hero-price-row{display:flex;align-items:baseline;gap:.6rem;margin-top:2rem}
-.price-big{font-size:2.8rem;font-weight:700;color:#fff;letter-spacing:-.02em}
-.price-extra{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.5)}
-.hero-btns{display:flex;gap:.8rem;margin-top:1.8rem;flex-wrap:wrap}
-.btn-primary{padding:.9rem 1.8rem;background:var(--accent);color:#fff;font-size:.85rem;font-weight:600;text-decoration:none;border-radius:6px;transition:opacity .2s}
-.btn-primary:hover{opacity:.85}
-.btn-secondary{padding:.9rem 1.8rem;background:rgba(255,255,255,.1);color:#fff;font-size:.85rem;font-weight:500;text-decoration:none;border-radius:6px;border:1px solid rgba(255,255,255,.2);transition:background .2s}
-.btn-secondary:hover{background:rgba(255,255,255,.18)}
-.hero-checks{display:flex;flex-direction:column;gap:.6rem;margin-top:2rem}
-.hc{display:flex;align-items:center;gap:.6rem;font-size:.83rem;color:rgba(255,255,255,.6)}
-.hc::before{content:'✓';color:#93B4FF;font-weight:700}
+/* ── HERO ────────────────────────────── */
+#hero{position:relative;overflow:hidden;min-height:94vh;display:flex;align-items:flex-end;padding-bottom:5rem}
+.h-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1800&q=85') center 30%/cover no-repeat}
+.h-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom, rgba(10,10,10,.3) 0%, rgba(10,10,10,.88) 100%)}
+.h-inner{position:relative;z-index:1;padding:0 4rem;max-width:1300px;width:100%;display:grid;grid-template-columns:1fr max-content;align-items:flex-end;gap:4rem}
+.h-text{}
+.h-kicker{font-size:.7rem;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:1.8rem}
+h1{font-size:clamp(3.2rem,6.5vw,6rem);font-weight:700;line-height:1.02;letter-spacing:-.03em;color:#fff;max-width:720px}
+h1 .price-inline{color:#fff;opacity:.55;font-weight:300}
+.h-sub{font-size:1.05rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.55);max-width:480px;margin-top:1.6rem}
+.h-actions{display:flex;align-items:center;gap:1rem;margin-top:2.4rem;flex-wrap:wrap}
+.btn-fill{padding:.85rem 2rem;background:#fff;color:var(--ink);font-size:.85rem;font-weight:700;text-decoration:none;border-radius:2px;transition:opacity .2s;letter-spacing:-.01em}
+.btn-fill:hover{opacity:.85}
+.btn-line{padding:.85rem 2rem;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);font-size:.85rem;font-weight:500;text-decoration:none;border-radius:2px;transition:all .2s}
+.btn-line:hover{border-color:rgba(255,255,255,.6);color:#fff}
 
-.hero-card{background:rgba(255,255,255,.07);backdrop-filter:blur(16px);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:2rem;display:flex;flex-direction:column;gap:1rem}
-.hcard-feat{background:var(--accent);border-color:var(--accent);padding:2rem;border-radius:8px}
-.hcard-feat .pc-label{color:rgba(255,255,255,.65)}
-.hcard-feat .pc-amount{color:#fff}
-.hcard-feat .pc-period{color:rgba(255,255,255,.55)}
-.hcard-feat .pc-items li{color:rgba(255,255,255,.8)}
-.hcard-feat .pc-items li::before{color:#fff}
-.hcard-plain{background:rgba(255,255,255,.06);padding:2rem;border-radius:8px;border:1px solid rgba(255,255,255,.1)}
-.hcard-plain .pc-label{color:rgba(255,255,255,.5)}
-.hcard-plain .pc-amount{color:rgba(255,255,255,.85)}
-.hcard-plain .pc-period{color:rgba(255,255,255,.4)}
-.hcard-plain .pc-items li{color:rgba(255,255,255,.6)}
-.hcard-plain .pc-items li::before{color:#93B4FF}
-.pc-label{font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-bottom:.6rem}
-.pc-amount{font-size:2rem;font-weight:700;letter-spacing:-.02em;line-height:1}
-.pc-period{font-size:.78rem;margin-top:.2rem}
-.pc-items{list-style:none;margin-top:1rem;display:flex;flex-direction:column;gap:.45rem}
-.pc-items li{font-size:.8rem;display:flex;align-items:center;gap:.5rem}
-.pc-items li::before{content:'✓';font-weight:700;font-size:.8rem;flex-shrink:0}
+.h-price{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:4px;padding:2rem 2.5rem;backdrop-filter:blur(16px);min-width:220px}
+.hp-top{font-size:.68rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:.8rem}
+.hp-amount{font-size:3rem;font-weight:700;color:#fff;line-height:1;letter-spacing:-.03em}
+.hp-period{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:.3rem}
+.hp-sep{height:1px;background:rgba(255,255,255,.1);margin:1.2rem 0}
+.hp-extra{font-size:.82rem;color:rgba(255,255,255,.45)}
+.hp-extra strong{color:rgba(255,255,255,.7);font-weight:500}
 
-/* STRIP */
-.strip{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:1rem 0;overflow:hidden}
-.strip-inner{display:inline-flex;gap:4rem;animation:marquee 26s linear infinite;white-space:nowrap}
-.strip-inner span{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:1.2rem}
-.strip-inner span::after{content:'·';opacity:.4}
-@keyframes marquee{to{transform:translateX(-50%)}}
+/* ── MARQUEE ─────────────────────────── */
+.marquee{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.9rem 0;background:var(--white)}
+.marquee-track{display:inline-flex;gap:0;animation:slide 30s linear infinite;white-space:nowrap}
+.marquee-track span{font-size:.72rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);padding:0 2.5rem;border-right:1px solid var(--line)}
+@keyframes slide{to{transform:translateX(-50%)}}
 
-/* SECTION BASE */
-.sec-label{font-size:.72rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.sec-h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;line-height:1.15;letter-spacing:-.02em;color:var(--text)}
-.sec-p{font-size:.95rem;font-weight:300;line-height:1.8;color:var(--muted);margin-top:.6rem}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+/* ── SHARED ──────────────────────────── */
+.wrap{max-width:1200px;margin:0 auto;padding:0 4rem}
+.section-eyebrow{font-size:.7rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-bottom:1.2rem}
+.section-h{font-size:clamp(2rem,3.5vw,3.2rem);font-weight:700;letter-spacing:-.025em;line-height:1.1;color:var(--ink)}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
 .reveal.v{opacity:1;transform:none}
 
-/* PROBLEEM */
-#probleem{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:5rem}
-.prob-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:6rem;align-items:start}
-.pain-list{display:flex;flex-direction:column;gap:1px;background:var(--line)}
-.pain-item{background:var(--bg-2);padding:1.6rem 1.8rem}
-.pain-item h4{font-size:.92rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
-.pain-item p{font-size:.83rem;font-weight:300;line-height:1.65;color:var(--muted)}
+/* ── INTRO / NUMMER BLOK ─────────────── */
+#intro{padding:7rem 0;border-bottom:1px solid var(--line)}
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:center}
+.intro-left{}
+.intro-left p{font-size:1.1rem;font-weight:300;line-height:1.85;color:var(--muted);margin-top:1.4rem;max-width:440px}
+.intro-right{display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.intro-stat{display:flex;align-items:baseline;justify-content:space-between;padding:1.4rem 0;border-bottom:1px solid var(--line);gap:2rem}
+.is-num{font-size:2.8rem;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1;flex-shrink:0}
+.is-text{font-size:.85rem;font-weight:300;line-height:1.6;color:var(--muted);text-align:right;max-width:200px}
 
-/* FEATURES */
-#features{padding:5rem;max-width:1100px;margin:0 auto}
-.feat-header{margin-bottom:3rem}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}
-.feat-item{padding:1.8rem;background:var(--white);border:1px solid var(--line);border-radius:8px;transition:box-shadow .2s}
-.feat-item:hover{box-shadow:0 4px 16px rgba(0,0,0,.07)}
-.feat-check{width:32px;height:32px;background:var(--bg-2);border-radius:6px;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;font-size:.95rem}
-.feat-title{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.3rem}
-.feat-text{font-size:.81rem;font-weight:300;line-height:1.7;color:var(--muted)}
+/* ── FEATURES ────────────────────────── */
+#features{padding:7rem 0;border-bottom:1px solid var(--line)}
+.feat-top{display:grid;grid-template-columns:1fr 2fr;gap:8rem;align-items:start;margin-bottom:4rem}
+.feat-top-right p{font-size:1rem;font-weight:300;line-height:1.8;color:var(--muted);margin-top:1rem;max-width:480px}
+.feat-list{border-top:1px solid var(--line)}
+.feat-row{display:grid;grid-template-columns:2fr 3fr max-content;align-items:center;gap:3rem;padding:1.8rem 0;border-bottom:1px solid var(--line);transition:background .2s}
+.feat-row:hover .feat-row-title{color:var(--blue)}
+.feat-row-title{font-size:1.05rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;transition:color .2s}
+.feat-row-desc{font-size:.88rem;font-weight:300;line-height:1.65;color:var(--muted)}
+.feat-row-tag{font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);white-space:nowrap;border:1px solid var(--line);padding:.3rem .7rem;border-radius:2px}
 
-/* HOE */
-#hoe{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:5rem}
-.hoe-inner{max-width:1100px;margin:0 auto}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;margin-top:3rem}
-.step{padding:1.6rem;background:var(--white);border:1px solid var(--line);border-radius:8px}
-.step-n{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem}
-.step h4{font-size:.9rem;font-weight:600;color:var(--text);margin-bottom:.4rem}
-.step p{font-size:.8rem;font-weight:300;line-height:1.65;color:var(--muted)}
+/* ── PRIJS ───────────────────────────── */
+#prijs{padding:7rem 0;border-bottom:1px solid var(--line)}
+.prijs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-top:3.5rem}
+.pc{padding:3rem;border:1px solid var(--line);background:var(--white);position:relative}
+.pc.featured{background:var(--ink);border-color:var(--ink)}
+.pc-eyebrow{font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:1.4rem}
+.pc.featured .pc-eyebrow{color:rgba(255,255,255,.4)}
+.pc-price{font-size:3.5rem;font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1}
+.pc.featured .pc-price{color:#fff}
+.pc-period{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+.pc.featured .pc-period{color:rgba(255,255,255,.4)}
+.pc-divider{height:1px;background:var(--line);margin:2rem 0}
+.pc.featured .pc-divider{background:rgba(255,255,255,.12)}
+.pc-list{list-style:none;display:flex;flex-direction:column;gap:.7rem}
+.pc-list li{font-size:.88rem;font-weight:300;color:var(--muted);display:flex;align-items:center;gap:.7rem}
+.pc.featured .pc-list li{color:rgba(255,255,255,.6)}
+.pc-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--muted);flex-shrink:0}
+.pc.featured .pc-list li::before{background:rgba(255,255,255,.4)}
+.pc-note{font-size:.8rem;font-weight:300;color:var(--muted);margin-top:2.5rem;line-height:1.6}
 
-/* FOTO SECTIE */
-#sfeer{position:relative;height:480px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.sfeer-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1800&q=80') center/cover;filter:brightness(.4)}
-.sfeer-inner{position:relative;z-index:1;text-align:center;padding:2rem}
-.sfeer-inner h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#fff;letter-spacing:-.02em;margin-bottom:.8rem}
-.sfeer-inner p{font-size:1.05rem;font-weight:300;color:rgba(255,255,255,.65);max-width:520px;margin:0 auto 2rem}
+/* ── HOE ─────────────────────────────── */
+#hoe{padding:7rem 0;border-bottom:1px solid var(--line)}
+.steps-list{margin-top:3.5rem;border-top:1px solid var(--line)}
+.step-row{display:grid;grid-template-columns:80px 1fr 2fr;gap:3rem;align-items:start;padding:2.5rem 0;border-bottom:1px solid var(--line)}
+.step-n{font-size:2.5rem;font-weight:700;letter-spacing:-.03em;color:var(--line);line-height:1}
+.step-title{font-size:1.1rem;font-weight:600;letter-spacing:-.01em;color:var(--ink)}
+.step-desc{font-size:.9rem;font-weight:300;line-height:1.75;color:var(--muted)}
 
-/* VOORBEELDEN */
-#voorbeelden{padding:5rem;max-width:1200px;margin:0 auto}
-.ex-header{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
-.ex-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.ex-card{background:var(--white);border:1px solid var(--line);border-radius:10px;overflow:hidden;transition:box-shadow .25s,transform .25s}
-.ex-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.1);transform:translateY(-4px)}
-.ex-preview{height:220px;display:flex;align-items:flex-end;justify-content:flex-start;padding:1.2rem;position:relative;background-size:cover;background-position:center}
-.ex-preview-overlay{position:absolute;inset:0;background:linear-gradient(to top, rgba(0,0,0,.75) 0%, rgba(0,0,0,.1) 60%)}
-.ex-preview-content{position:relative;z-index:1}
-.ex-branche{display:inline-block;font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.22rem .65rem;border-radius:100px;margin-bottom:.5rem}
-.ex-preview-name{font-size:1.05rem;font-weight:700;color:#fff;line-height:1.1}
-.ex-info{padding:1.4rem}
-.ex-desc{font-size:.82rem;font-weight:300;color:var(--muted);margin-bottom:.8rem}
-.ex-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.8rem;font-weight:600;color:var(--accent);text-decoration:none;padding:.5rem 1rem;background:var(--bg-2);border-radius:5px;transition:background .2s}
-.ex-link:hover{background:var(--bg-3)}
+/* ── FOTO BREAK ──────────────────────── */
+#break{position:relative;height:60vh;min-height:400px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.break-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1800&q=80') center/cover;filter:brightness(.3)}
+.break-inner{position:relative;z-index:1;text-align:center;padding:2rem 4rem;max-width:760px}
+.break-inner h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.1}
+.break-inner p{font-size:1rem;font-weight:300;color:rgba(255,255,255,.55);margin-top:1rem;max-width:480px;margin-left:auto;margin-right:auto}
 
-.ex-next{grid-column:1/-1;background:var(--accent);border-radius:10px;padding:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.ex-next h3{font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.01em}
-.ex-next p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.7);margin-top:.3rem}
-.btn-white{padding:.9rem 1.8rem;background:#fff;color:var(--accent);font-size:.85rem;font-weight:600;text-decoration:none;border-radius:6px;white-space:nowrap;transition:opacity .2s}
-.btn-white:hover{opacity:.9}
+/* ── PORTFOLIO ───────────────────────── */
+#portfolio{padding:7rem 0;border-bottom:1px solid var(--line)}
+.port-top{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3.5rem;gap:2rem;flex-wrap:wrap}
+.port-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line)}
+.port-card{background:var(--bg);overflow:hidden;position:relative;transition:background .25s}
+.port-card:hover{background:var(--white)}
+.port-photo{height:260px;background-size:cover;background-position:center;filter:saturate(.9);transition:filter .4s,transform .4s;overflow:hidden}
+.port-card:hover .port-photo{filter:saturate(1.05);transform:scale(1.02)}
+.port-body{padding:1.6rem 1.8rem;border-top:1px solid var(--line)}
+.port-name{font-size:1rem;font-weight:600;color:var(--ink);letter-spacing:-.01em;margin-bottom:.3rem}
+.port-meta{font-size:.78rem;font-weight:300;color:var(--muted);line-height:1.5}
+.port-link{display:inline-flex;align-items:center;gap:.4rem;font-size:.78rem;font-weight:500;color:var(--blue);text-decoration:none;margin-top:.9rem;opacity:0;transform:translateX(-4px);transition:opacity .2s,transform .2s}
+.port-card:hover .port-link{opacity:1;transform:none}
 
-/* CTA */
-#cta{background:var(--bg-2);border-top:1px solid var(--line);padding:5rem}
-.cta-inner{max-width:680px;margin:0 auto}
-.cta-h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:700;letter-spacing:-.02em;color:var(--text);margin-bottom:.5rem}
-.cta-sub{font-size:.95rem;font-weight:300;line-height:1.8;color:var(--muted);margin-bottom:2.5rem}
-.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
-.cf-g{margin-bottom:.8rem}
-.cf-g input,.cf-g textarea,.cf-g select{width:100%;background:var(--white);border:1px solid var(--line);border-radius:6px;padding:.8rem 1rem;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--text);outline:none;transition:border-color .2s}
-.cf-g input::placeholder,.cf-g textarea::placeholder{color:#b0ada8}
-.cf-g input:focus,.cf-g textarea:focus,.cf-g select:focus{border-color:var(--accent)}
-.cf-g textarea{height:110px;resize:vertical}
-.cf-submit{width:100%;padding:.95rem;background:var(--accent);color:#fff;border:none;border-radius:6px;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:600;cursor:pointer;transition:opacity .2s;margin-top:.3rem}
-.cf-submit:hover{opacity:.85}
+.port-next{grid-column:1/-1;background:var(--ink);padding:3rem 4rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.port-next-text h3{font-size:1.5rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+.port-next-text p{font-size:.88rem;font-weight:300;color:rgba(255,255,255,.45);margin-top:.3rem}
+.btn-white{padding:.85rem 2rem;background:#fff;color:var(--ink);font-size:.82rem;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap;transition:opacity .2s}
+.btn-white:hover{opacity:.85}
 
-footer{border-top:1px solid var(--line);padding:2rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;background:var(--bg)}
-.fl{font-size:.95rem;font-weight:700;color:var(--text)}.fl span{color:var(--accent)}
+/* ── CONTACT ─────────────────────────── */
+#contact{padding:7rem 0}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start}
+.contact-left h2{max-width:360px}
+.contact-left p{font-size:.95rem;font-weight:300;line-height:1.85;color:var(--muted);margin-top:1.2rem;max-width:380px}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.fg input,.fg select,.fg textarea{width:100%;background:var(--white);border:1px solid var(--line);border-radius:0;padding:.85rem 1rem;font-family:'Inter',sans-serif;font-size:.9rem;color:var(--ink);outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--ink)}
+.fg input::placeholder,.fg textarea::placeholder{color:#bbb}
+.fg textarea{height:120px;resize:vertical}
+.form-submit{width:100%;padding:1rem;background:var(--ink);color:#fff;border:none;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:opacity .2s;margin-top:.3rem;border-radius:0}
+.form-submit:hover{opacity:.75}
+
+/* ── FOOTER ──────────────────────────── */
+footer{border-top:1px solid var(--line);padding:2rem 4rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.foot-logo{font-size:.95rem;font-weight:700;color:var(--ink)}
+.foot-logo em{font-style:normal;color:var(--blue)}
 footer p{font-size:.75rem;color:var(--muted)}
 
-@media(max-width:960px){nav{padding:0 2rem}.hero-inner{padding:4rem 2rem;grid-template-columns:1fr;gap:3rem}.hero-card{display:none}#probleem,.hoe-inner,#features,#voorbeelden,#cta{padding-left:2rem;padding-right:2rem}.prob-inner{grid-template-columns:1fr;gap:3rem}.feat-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.ex-grid{grid-template-columns:1fr 1fr}footer{padding:1.5rem 2rem}}
-@media(max-width:600px){.feat-grid,.steps,.ex-grid{grid-template-columns:1fr}.cf-row{grid-template-columns:1fr}}
+/* ── RESPONSIVE ──────────────────────── */
+@media(max-width:1024px){
+  nav,.wrap,#break .break-inner{padding-left:2rem;padding-right:2rem}
+  .h-inner{padding:0 2rem;grid-template-columns:1fr;gap:3rem}
+  .h-price{display:none}
+  .intro-grid,.prijs-grid,.contact-grid{grid-template-columns:1fr;gap:4rem}
+  .feat-top{grid-template-columns:1fr;gap:2rem}
+  .feat-row{grid-template-columns:1fr 1fr;gap:2rem}
+  .feat-row-tag{display:none}
+  .port-grid{grid-template-columns:1fr 1fr}
+  .step-row{grid-template-columns:50px 1fr 1fr;gap:2rem}
+  footer{padding:1.5rem 2rem}
+}
+@media(max-width:640px){
+  nav{padding:0 1.5rem}
+  .h-inner{padding:0 1.5rem}
+  .port-grid{grid-template-columns:1fr}
+  .feat-row{grid-template-columns:1fr}
+  .step-row{grid-template-columns:1fr;gap:.8rem}
+  .step-n{font-size:1.5rem}
+  .form-row{grid-template-columns:1fr}
+  .port-next{padding:2rem 1.5rem}
+  .port-link{opacity:1;transform:none}
+}
 </style>
 </head>
 <body>
 
 <nav>
-  <a href="#" class="logo">Nachtwerk <span>Websites</span></a>
-  <a href="#cta" class="nav-cta">Gratis offerte</a>
+  <a href="#" class="logo">Nachtwerk <em>Websites</em></a>
+  <div class="nav-r">
+    <a href="#portfolio" class="nav-link">Portfolio</a>
+    <a href="#prijs" class="nav-link">Prijs</a>
+    <a href="#contact" class="nav-cta">Offerte aanvragen</a>
+  </div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-photo"></div>
-  <div class="hero-inner">
-    <div>
-      <div class="hero-label">Website specialist voor MKB</div>
-      <h1>Een professionele website voor <span class="hl">€99,99</span></h1>
-      <p class="hero-p">Wij bouwen een snelle, moderne website voor uw bedrijf. Geen gedoe, geen verborgen kosten. Binnen 7 dagen online.</p>
-      <div class="hero-price-row">
-        <span class="price-big">€99,99</span>
-        <span class="price-extra">eenmalig &nbsp;·&nbsp; +€10/mnd beheer</span>
-      </div>
-      <div class="hero-btns">
-        <a href="#cta" class="btn-primary">Aanvragen — vrijblijvend</a>
-        <a href="#voorbeelden" class="btn-secondary">Voorbeelden bekijken</a>
-      </div>
-      <div class="hero-checks">
-        <div class="hc">Binnen 7 dagen live</div>
-        <div class="hc">Betalen na goedkeuring</div>
-        <div class="hc">Mobiel-vriendelijk</div>
-        <div class="hc">Geen abonnement verplicht</div>
+  <div class="h-photo"></div>
+  <div class="h-inner">
+    <div class="h-text">
+      <div class="h-kicker">Webdesign voor het Nederlandse MKB</div>
+      <h1>Een website die<br>werkt. <span class="price-inline">Vanaf €99,99.</span></h1>
+      <p class="h-sub">Wij bouwen snelle, professionele websites voor ondernemers die online serieus genomen willen worden. Geen bureau, geen gedoe.</p>
+      <div class="h-actions">
+        <a href="#contact" class="btn-fill">Vraag een offerte aan</a>
+        <a href="#portfolio" class="btn-line">Bekijk het werk</a>
       </div>
     </div>
-    <div class="hero-card">
-      <div class="hcard-feat">
-        <div class="pc-label">Website bouwen</div>
-        <div class="pc-amount">€99,99</div>
-        <div class="pc-period">Eenmalig — betalen na goedkeuring</div>
-        <ul class="pc-items">
-          <li>Op maat design</li>
-          <li>Tot 5 pagina's</li>
-          <li>Mobiel-vriendelijk</li>
-          <li>Contactformulier</li>
-          <li>SEO-basis</li>
-          <li>Binnen 7 dagen live</li>
-        </ul>
-      </div>
-      <div class="hcard-plain">
-        <div class="pc-label">Onderhoud & beheer</div>
-        <div class="pc-amount">€10<span style="font-size:1rem;font-weight:400">/mnd</span></div>
-        <div class="pc-period">Volledig optioneel — opzegbaar per maand</div>
-        <ul class="pc-items">
-          <li>Hosting & SSL</li>
-          <li>Dagelijkse backups</li>
-          <li>Updates & aanpassingen</li>
-        </ul>
-      </div>
+    <div class="h-price">
+      <div class="hp-top">Website bouwen</div>
+      <div class="hp-amount">€99<span style="font-size:1.6rem">,99</span></div>
+      <div class="hp-period">Eenmalig — betalen na goedkeuring</div>
+      <div class="hp-sep"></div>
+      <div class="hp-extra"><strong>+ €10 / maand</strong> optioneel onderhoud</div>
     </div>
   </div>
 </section>
 
-<!-- STRIP -->
-<div class="strip">
-  <div class="strip-inner">
-    <span>Op maat design</span><span>Mobiel-vriendelijk</span><span>SEO-klaar</span><span>Contactformulier</span><span>Binnen 7 dagen</span><span>SSL beveiliging</span><span>Betalen achteraf</span><span>Persoonlijk contact</span>
-    <span>Op maat design</span><span>Mobiel-vriendelijk</span><span>SEO-klaar</span><span>Contactformulier</span><span>Binnen 7 dagen</span><span>SSL beveiliging</span><span>Betalen achteraf</span><span>Persoonlijk contact</span>
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>Op maat design</span><span>Mobiel-vriendelijk</span><span>SEO-klaar</span><span>Binnen 7 dagen live</span><span>Betalen achteraf</span><span>SSL inbegrepen</span><span>Contactformulier</span><span>Persoonlijk contact</span>
+    <span>Op maat design</span><span>Mobiel-vriendelijk</span><span>SEO-klaar</span><span>Binnen 7 dagen live</span><span>Betalen achteraf</span><span>SSL inbegrepen</span><span>Contactformulier</span><span>Persoonlijk contact</span>
   </div>
 </div>
 
-<!-- PROBLEEM -->
-<section id="probleem">
-  <div class="prob-inner">
-    <div class="reveal">
-      <div class="sec-label">Herkenbaar?</div>
-      <h2 class="sec-h2">Geen website kost u klanten</h2>
-      <p class="sec-p">9 van de 10 mensen zoeken online voordat ze contact opnemen. Zonder website bestaat u niet.</p>
-    </div>
-    <div class="pain-list reveal" style="transition-delay:.1s">
-      <div class="pain-item"><h4>Geen of verouderde website</h4><p>Klanten kiezen een concurrent die er professioneel uitziet. Een slechte site wekt wantrouwen.</p></div>
-      <div class="pain-item"><h4>Bureaus vragen €2.000 tot €10.000</h4><p>Groot webdesignbureau inschakelen is voor de meeste MKB'ers gewoon niet betaalbaar.</p></div>
-      <div class="pain-item"><h4>Zelf bouwen kost weken</h4><p>WordPress of Wix klinkt makkelijk, maar kost kostbare tijd die u beter in uw bedrijf steekt.</p></div>
+<!-- INTRO STATS -->
+<section id="intro">
+  <div class="wrap">
+    <div class="intro-grid reveal">
+      <div class="intro-left">
+        <div class="section-eyebrow">Waarom Nachtwerk</div>
+        <h2 class="section-h">Professioneel online voor een eerlijke prijs</h2>
+        <p>Grote webdesignbureaus rekenen €2.000 tot €10.000 voor een simpele site. Wij doen hetzelfde werk voor €99,99 — zonder concessies op kwaliteit.</p>
+      </div>
+      <div class="intro-right">
+        <div class="intro-stat">
+          <div class="is-num">7</div>
+          <div class="is-text">Dagen van aanvraag tot uw website live staat</div>
+        </div>
+        <div class="intro-stat">
+          <div class="is-num">€99</div>
+          <div class="is-text">Eenmalig — betaalt u pas nadat u de site goedkeurt</div>
+        </div>
+        <div class="intro-stat">
+          <div class="is-num">+10</div>
+          <div class="is-text">Euro per maand voor hosting, beheer en updates. Optioneel.</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FEATURES -->
 <section id="features">
-  <div class="feat-header reveal">
-    <div class="sec-label">Wat u krijgt</div>
-    <h2 class="sec-h2">Alles inbegrepen voor €99,99</h2>
-  </div>
-  <div class="feat-grid reveal" style="transition-delay:.1s">
-    <div class="feat-item"><div class="feat-check">✦</div><div class="feat-title">Op maat design</div><p class="feat-text">Passend bij uw branche en huisstijl. Geen standaard templates.</p></div>
-    <div class="feat-item"><div class="feat-check">📱</div><div class="feat-title">Mobiel-vriendelijk</div><p class="feat-text">60% van uw bezoekers komt via mobiel. Werkt op elk scherm.</p></div>
-    <div class="feat-item"><div class="feat-check">🔍</div><div class="feat-title">SEO-klaar</div><p class="feat-text">Gevonden worden in Google voor lokale zoekopdrachten.</p></div>
-    <div class="feat-item"><div class="feat-check">⚡</div><div class="feat-title">Razendsnel</div><p class="feat-text">Snelle laadtijden, geen onnodige plugins of overhead.</p></div>
-    <div class="feat-item"><div class="feat-check">✉</div><div class="feat-title">Contactformulier</div><p class="feat-text">Leads komen direct in uw mailbox.</p></div>
-    <div class="feat-item"><div class="feat-check">🔒</div><div class="feat-title">SSL & Beveiliging</div><p class="feat-text">Https-certificaat en veilige hosting standaard inbegrepen.</p></div>
-  </div>
-</section>
-
-<!-- HOE -->
-<section id="hoe">
-  <div class="hoe-inner">
-    <div class="reveal">
-      <div class="sec-label">Hoe het werkt</div>
-      <h2 class="sec-h2">Van aanvraag tot live in 7 dagen</h2>
-    </div>
-    <div class="steps reveal" style="transition-delay:.1s">
-      <div class="step"><div class="step-n">Stap 01</div><h4>Aanvragen</h4><p>Vul het formulier in. Wij nemen binnen 24 uur contact op.</p></div>
-      <div class="step"><div class="step-n">Stap 02</div><h4>Ontwerp</h4><p>Wij bouwen uw website. U krijgt een preview en geeft feedback.</p></div>
-      <div class="step"><div class="step-n">Stap 03</div><h4>Goedkeuring</h4><p>Tevreden? Dan betaalt u pas — achteraf.</p></div>
-      <div class="step"><div class="step-n">Stap 04</div><h4>Live!</h4><p>Uw website staat online en klanten vinden u.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- SFEER FOTO -->
-<section id="sfeer">
-  <div class="sfeer-photo"></div>
-  <div class="sfeer-inner">
-    <h2>Uw bedrijf verdient<br>een professionele uitstraling</h2>
-    <p>Wij zorgen dat uw website er net zo goed uitziet als uw werk. Elke site bouwen wij op maat — passend bij uw branche en doelgroep.</p>
-    <a href="#cta" class="btn-primary">Start vandaag — vrijblijvend</a>
-  </div>
-</section>
-
-<!-- VOORBEELDEN -->
-<section id="voorbeelden">
-  <div class="ex-header reveal">
-    <div>
-      <div class="sec-label">Portfolio</div>
-      <h2 class="sec-h2">Zo ziet uw website eruit</h2>
-    </div>
-    <a href="#cta" class="btn-primary">Ik wil ook een website →</a>
-  </div>
-
-  <div class="ex-grid reveal" style="transition-delay:.1s">
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(196,139,90,.25);color:#F0C898;border:1px solid rgba(196,139,90,.4)">Kapsalon</div>
-          <div class="ex-preview-name">Kroon Kapper</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Kapsalon Rotterdam-Zuid — 25 jaar ervaring, prijslijst, galerij en online afspraken</div>
-        <a href="voorbeeld-kroon-kapper.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(212,92,26,.25);color:#F0A070;border:1px solid rgba(212,92,26,.4)">Bouw</div>
-          <div class="ex-preview-name">Van Bergen Bouw</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Bouwbedrijf Utrecht — diensten, projectgalerij, werkwijze en offerte aanvragen</div>
-        <a href="voorbeeld-van-bergen-bouw.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(201,144,90,.25);color:#F0C090;border:1px solid rgba(201,144,90,.4)">Bakkerij</div>
-          <div class="ex-preview-name">Bakkerij De Wit</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Ambachtelijke bakkerij Haarlem — producten, verhaal, openingstijden en locatie</div>
-        <a href="voorbeeld-bakkerij-dewit.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(11,138,110,.25);color:#6EDFC7;border:1px solid rgba(11,138,110,.4)">Zorg</div>
-          <div class="ex-preview-name">Fysio Noord</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Fysiotherapiepraktijk Groningen — behandelingen, team, verzekeringen en afspraken</div>
-        <a href="voorbeeld-fysio-noord.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(184,149,90,.25);color:#E8C880;border:1px solid rgba(184,149,90,.4)">Horeca</div>
-          <div class="ex-preview-name">Restaurant Zilt</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Seafood restaurant Scheveningen — menu, galerij, chef en reserveringen</div>
-        <a href="voorbeeld-restaurant-zilt.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-card">
-      <div class="ex-preview" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80')">
-        <div class="ex-preview-overlay"></div>
-        <div class="ex-preview-content">
-          <div class="ex-branche" style="background:rgba(37,99,235,.25);color:#93B4FF;border:1px solid rgba(37,99,235,.4)">Installatie</div>
-          <div class="ex-preview-name">Rooijakkers VVP</div>
-        </div>
-      </div>
-      <div class="ex-info">
-        <div class="ex-desc">Installatiebedrijf Tilburg — diensten, werkgebied, 24/7 spoed en contact</div>
-        <a href="voorbeeld-rooijakkers-vvp.html" target="_blank" class="ex-link">Bekijk voorbeeld →</a>
-      </div>
-    </div>
-
-    <div class="ex-next">
+  <div class="wrap">
+    <div class="feat-top reveal">
       <div>
-        <h3>Is uw bedrijf de volgende?</h3>
-        <p>Stuur een aanvraag en uw website staat binnen 7 dagen online.</p>
+        <div class="section-eyebrow">Inbegrepen</div>
+        <h2 class="section-h">Alles wat uw bedrijf nodig heeft</h2>
       </div>
-      <a href="#cta" class="btn-white">Ja, ik wil een website →</a>
+      <div class="feat-top-right">
+        <p>Geen add-ons, geen verborgen kosten. Elke website die wij bouwen bevat standaard alles wat u online nodig heeft.</p>
+      </div>
+    </div>
+    <div class="feat-list reveal" style="transition-delay:.1s">
+      <div class="feat-row">
+        <div class="feat-row-title">Op maat design</div>
+        <div class="feat-row-desc">Passend bij uw branche, uw klanten en uw uitstraling. Geen standaard templates.</div>
+        <div class="feat-row-tag">Design</div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-row-title">Mobiel-vriendelijk</div>
+        <div class="feat-row-desc">Meer dan 60% van uw bezoekers komt via telefoon. Uw site werkt perfect op elk scherm.</div>
+        <div class="feat-row-tag">Techniek</div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-row-title">Gevonden in Google</div>
+        <div class="feat-row-desc">SEO-basisoptimalisatie zodat lokale klanten u kunnen vinden bij relevante zoekopdrachten.</div>
+        <div class="feat-row-tag">SEO</div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-row-title">Contactformulier</div>
+        <div class="feat-row-desc">Leads en vragen komen direct in uw mailbox. Nooit meer een klant mislopen.</div>
+        <div class="feat-row-tag">Leads</div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-row-title">SSL & veilige hosting</div>
+        <div class="feat-row-desc">Https-certificaat, dagelijkse backups en betrouwbare hosting — standaard inbegrepen.</div>
+        <div class="feat-row-tag">Beveiliging</div>
+      </div>
+      <div class="feat-row">
+        <div class="feat-row-title">Razendsnel</div>
+        <div class="feat-row-desc">Geen onnodige plugins. Snelle laadtijden voor betere Google-ranking en minder afhakers.</div>
+        <div class="feat-row-tag">Performance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIJS -->
+<section id="prijs">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Prijzen</div>
+      <h2 class="section-h">Transparant, geen verrassingen</h2>
+    </div>
+    <div class="prijs-grid reveal" style="transition-delay:.1s">
+      <div class="pc featured">
+        <div class="pc-eyebrow">Website bouwen</div>
+        <div class="pc-price">€99,99</div>
+        <div class="pc-period">Eenmalig — betalen na goedkeuring</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-list">
+          <li>Op maat design, passend bij uw bedrijf</li>
+          <li>Tot 5 pagina's, volledig ingericht</li>
+          <li>Mobiel-vriendelijk op elk apparaat</li>
+          <li>Contactformulier — leads naar uw mail</li>
+          <li>SEO-basisoptimalisatie</li>
+          <li>Binnen 7 dagen live</li>
+        </ul>
+      </div>
+      <div class="pc">
+        <div class="pc-eyebrow">Maandelijks beheer</div>
+        <div class="pc-price">€10</div>
+        <div class="pc-period">Per maand — volledig optioneel</div>
+        <div class="pc-divider"></div>
+        <ul class="pc-list">
+          <li>Veilige hosting & SSL-certificaat</li>
+          <li>Dagelijkse automatische backups</li>
+          <li>Updates en beveiligingspatches</li>
+          <li>Kleine aanpassingen in tekst of foto's</li>
+          <li>E-mail support voor vragen</li>
+          <li>Opzegbaar per maand, geen contract</li>
+        </ul>
+        <div class="pc-note">U kunt ook zelf uw hosting regelen — wij helpen u daarmee, zonder bijkomende kosten.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOE HET WERKT -->
+<section id="hoe">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="section-eyebrow">Werkwijze</div>
+      <h2 class="section-h">Van aanvraag tot live in 7 dagen</h2>
+    </div>
+    <div class="steps-list reveal" style="transition-delay:.1s">
+      <div class="step-row">
+        <div class="step-n">1</div>
+        <div class="step-title">U vraagt aan</div>
+        <div class="step-desc">Vul het formulier onderaan in. We nemen binnen 24 uur contact op voor een kort gesprekje over uw bedrijf en wensen.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">2</div>
+        <div class="step-title">Wij bouwen</div>
+        <div class="step-desc">Wij ontwerpen en bouwen uw website. U krijgt een volledige preview en kunt feedback geven.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">3</div>
+        <div class="step-title">U keurt goed</div>
+        <div class="step-desc">Tevreden met het resultaat? Dan facturen wij — achteraf, nooit vooraf.</div>
+      </div>
+      <div class="step-row">
+        <div class="step-n">4</div>
+        <div class="step-title">Live</div>
+        <div class="step-desc">Uw website staat online. Klanten kunnen u vinden, contact opnemen en u een opdracht geven.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTO BREAK -->
+<section id="break">
+  <div class="break-photo"></div>
+  <div class="break-inner">
+    <h2>Uw bedrijf verdient een website die klanten overtuigt</h2>
+    <p>Elke site bouwen wij volledig op maat. Geen templates, geen compromissen.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+  <div class="wrap">
+    <div class="port-top reveal">
+      <div>
+        <div class="section-eyebrow">Portfolio</div>
+        <h2 class="section-h">Recent werk</h2>
+      </div>
+      <a href="#contact" class="btn-fill" style="background:var(--ink);color:#fff">Ik wil ook een website →</a>
+    </div>
+  </div>
+  <div class="port-grid reveal" style="transition-delay:.1s">
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Kroon Kapper</div>
+        <div class="port-meta">Kapsalon · Rotterdam-Zuid<br>Prijslijst, galerij & online afspraken</div>
+        <a href="voorbeeld-kroon-kapper.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Van Bergen Bouw</div>
+        <div class="port-meta">Bouwbedrijf · Utrecht<br>Diensten, projectgalerij & offerte</div>
+        <a href="voorbeeld-van-bergen-bouw.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Bakkerij De Wit</div>
+        <div class="port-meta">Ambachtelijke bakkerij · Haarlem<br>Producten, verhaal & openingstijden</div>
+        <a href="voorbeeld-bakkerij-dewit.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Fysio Noord</div>
+        <div class="port-meta">Fysiotherapie · Groningen<br>Behandelingen, team & afspraken</div>
+        <a href="voorbeeld-fysio-noord.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Restaurant Zilt</div>
+        <div class="port-meta">Seafood restaurant · Scheveningen<br>Menu, galerij, chef & reserveringen</div>
+        <a href="voorbeeld-restaurant-zilt.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-card">
+      <div class="port-photo" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=700&q=80')"></div>
+      <div class="port-body">
+        <div class="port-name">Rooijakkers VVP</div>
+        <div class="port-meta">Installatiebedrijf · Tilburg<br>Diensten, werkgebied & 24/7 spoed</div>
+        <a href="voorbeeld-rooijakkers-vvp.html" target="_blank" class="port-link">Bekijk site →</a>
+      </div>
+    </div>
+
+    <div class="port-next">
+      <div class="port-next-text">
+        <h3>Is uw bedrijf de volgende?</h3>
+        <p>Stuur een aanvraag — binnen 7 dagen staat uw site online.</p>
+      </div>
+      <a href="#contact" class="btn-white">Aanvragen →</a>
     </div>
 
   </div>
 </section>
 
-<!-- CTA FORM -->
-<section id="cta">
-  <div class="cta-inner reveal">
-    <div class="sec-label">Gratis offerte</div>
-    <h2 class="cta-h2">Klaar om online te gaan?</h2>
-    <p class="cta-sub">Laat uw gegevens achter. Wij nemen binnen 24 uur contact op — volledig vrijblijvend.</p>
-    <form id="cf">
-      <div class="cf-row">
-        <div class="cf-g"><input type="text" placeholder="Uw naam" required></div>
-        <div class="cf-g"><input type="text" placeholder="Bedrijfsnaam" required></div>
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="contact-grid reveal">
+      <div class="contact-left">
+        <div class="section-eyebrow">Contact</div>
+        <h2 class="section-h">Klaar om online te gaan?</h2>
+        <p>Laat uw gegevens achter en wij nemen binnen 24 uur contact op. Volledig vrijblijvend — u betaalt pas als u tevreden bent.</p>
       </div>
-      <div class="cf-row">
-        <div class="cf-g"><input type="email" placeholder="E-mailadres" required></div>
-        <div class="cf-g"><input type="tel" placeholder="Telefoonnummer"></div>
-      </div>
-      <div class="cf-g">
-        <select>
-          <option value="">Wat voor bedrijf heeft u?</option>
-          <option>Horeca / Restaurant</option><option>Bouw / Installatie</option>
-          <option>Zorg / Welzijn</option><option>Retail / Winkel</option>
-          <option>Dienstverlening</option><option>Transport / Logistiek</option><option>Anders</option>
-        </select>
-      </div>
-      <div class="cf-g"><textarea placeholder="Iets dat we moeten weten? (optioneel)"></textarea></div>
-      <button type="submit" class="cf-submit">Verstuur aanvraag — gratis & vrijblijvend</button>
-    </form>
+      <form id="cf">
+        <div class="form-row">
+          <div class="fg"><label>Naam</label><input type="text" placeholder="Uw naam" required></div>
+          <div class="fg"><label>Bedrijf</label><input type="text" placeholder="Bedrijfsnaam" required></div>
+        </div>
+        <div class="form-row">
+          <div class="fg"><label>E-mail</label><input type="email" placeholder="uw@email.nl" required></div>
+          <div class="fg"><label>Telefoon</label><input type="tel" placeholder="06 — — — —"></div>
+        </div>
+        <div class="fg">
+          <label>Branche</label>
+          <select>
+            <option value="">Kies uw branche</option>
+            <option>Horeca / Restaurant</option>
+            <option>Bouw / Installatie</option>
+            <option>Zorg / Welzijn</option>
+            <option>Retail / Winkel</option>
+            <option>Dienstverlening</option>
+            <option>Transport / Logistiek</option>
+            <option>Anders</option>
+          </select>
+        </div>
+        <div class="fg"><label>Bericht <span style="font-weight:300;text-transform:none;letter-spacing:0">(optioneel)</span></label><textarea placeholder="Heeft u al een website? Iets dat we moeten weten?"></textarea></div>
+        <button type="submit" class="form-submit">Verstuur aanvraag — gratis & vrijblijvend</button>
+      </form>
+    </div>
   </div>
 </section>
 
 <footer>
-  <div class="fl">Nachtwerk <span>Websites</span></div>
+  <div class="foot-logo">Nachtwerk <em>Websites</em></div>
   <p>© 2025 Nachtwerk Websites — Professionele websites voor MKB</p>
 </footer>
 
 <script>
-const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.1});
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.getElementById('cf').addEventListener('submit',function(e){
   e.preventDefault();
-  const b=this.querySelector('.cf-submit');
-  b.textContent='Verstuurd! We nemen snel contact op ✓';
-  b.style.background='#16A34A';
-  setTimeout(()=>{b.textContent='Verstuur aanvraag — gratis & vrijblijvend';b.style.background='';this.reset();},4000);
+  const b=this.querySelector('.form-submit');
+  b.textContent='Verstuurd — we nemen snel contact op';
+  b.style.opacity='.6';
+  setTimeout(()=>{b.textContent='Verstuur aanvraag — gratis & vrijblijvend';b.style.opacity='';this.reset();},4000);
 });
 </script>
 </body>
