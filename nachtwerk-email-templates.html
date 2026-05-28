@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nachtwerk — Email Templates</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F9F7F4;
+  --bg-2: #F2EFE9;
+  --accent: #2B5CE6;
+  --text: #1A1A1A;
+  --muted: #6B6B6B;
+  --line: #E0DDD8;
+  --white: #fff;
+  --green: #16A34A;
+  --orange: #D97706;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);padding:3rem 2rem;max-width:900px;margin:0 auto;line-height:1.6}
+
+h1{font-size:1.8rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.02em}
+.subtitle{color:var(--muted);font-size:.95rem;margin-bottom:3rem}
+
+/* TABS */
+.tabs{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:2rem}
+.tab{padding:.5rem 1.1rem;background:var(--white);border:1px solid var(--line);border-radius:100px;font-size:.8rem;font-weight:500;cursor:pointer;transition:all .2s;color:var(--muted)}
+.tab.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.tab:hover:not(.active){border-color:#aaa;color:var(--text)}
+
+/* BRANCHE PANEL */
+.panel{display:none}.panel.active{display:block}
+
+/* SEQUENCE */
+.sequence-label{font-size:.7rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+
+.email-card{background:var(--white);border:1px solid var(--line);border-radius:10px;margin-bottom:1.5rem;overflow:hidden}
+.email-header{padding:1rem 1.4rem;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.email-meta{display:flex;align-items:center;gap:1rem}
+.email-num{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:700;flex-shrink:0}
+.num-1{background:#EFF6FF;color:var(--accent)}
+.num-2{background:#FEF3C7;color:var(--orange)}
+.num-3{background:#F0FDF4;color:var(--green)}
+.email-title{font-size:.9rem;font-weight:600}
+.email-timing{font-size:.75rem;color:var(--muted)}
+.copy-btn{padding:.4rem .9rem;background:var(--bg-2);border:1px solid var(--line);border-radius:5px;font-size:.75rem;font-weight:500;cursor:pointer;transition:all .2s;font-family:'Inter',sans-serif;color:var(--text)}
+.copy-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+.copy-btn.copied{background:var(--green);color:#fff;border-color:var(--green)}
+
+.email-body{padding:1.4rem}
+.subject-row{display:flex;align-items:center;gap:.6rem;margin-bottom:1.2rem;padding-bottom:1rem;border-bottom:1px dashed var(--line)}
+.subject-label{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);flex-shrink:0}
+.subject-text{font-size:.9rem;font-weight:600;color:var(--text)}
+
+.email-text{font-size:.88rem;line-height:1.8;color:var(--text);white-space:pre-wrap}
+.placeholder{background:#EFF6FF;color:var(--accent);border-radius:3px;padding:.1rem .3rem;font-size:.82rem;font-weight:600}
+
+/* TIPS */
+.tips-box{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:1.4rem;margin-top:2rem}
+.tips-title{font-size:.8rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.8rem}
+.tip{font-size:.83rem;color:var(--muted);padding:.3rem 0;display:flex;gap:.6rem}
+.tip::before{content:'→';color:var(--accent);flex-shrink:0}
+
+/* DIVIDER */
+.divider{height:1px;background:var(--line);margin:3rem 0}
+</style>
+</head>
+<body>
+
+<h1>Email Templates — Nachtwerk Websites</h1>
+<p class="subtitle">3-delige sequence per branche. Kopieer, personaliseer met de <span style="background:#EFF6FF;color:#2B5CE6;padding:.1rem .4rem;border-radius:3px;font-size:.82rem;font-weight:600">[variabelen]</span> en verstuur.</p>
+
+<div class="tabs">
+  <div class="tab active" onclick="switchTab('algemeen')">Algemeen</div>
+  <div class="tab" onclick="switchTab('horeca')">Horeca</div>
+  <div class="tab" onclick="switchTab('bouw')">Bouw</div>
+  <div class="tab" onclick="switchTab('zorg')">Zorg</div>
+  <div class="tab" onclick="switchTab('kapper')">Kapper / Beauty</div>
+  <div class="tab" onclick="switchTab('installatie')">Installatie / VVP</div>
+  <div class="tab" onclick="switchTab('retail')">Winkel / Retail</div>
+</div>
+
+<!-- ALGEMEEN -->
+<div class="panel active" id="panel-algemeen">
+  <p class="sequence-label">Sequence — 3 mails over 6 dagen</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div>
+          <div class="email-title">Mail 1 — Eerste contact</div>
+          <div class="email-timing">Dag 1</div>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-algemeen')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Website van [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m1-algemeen">Hallo [Naam],
+
+Ik zag dat [Bedrijfsnaam] nog geen moderne website heeft — of dat de huidige site wat achterloopt.
+
+Ik bouw professionele websites voor MKB-bedrijven voor €99,99 eenmalig. Geen groot bureau, geen gedoe. Gewoon een snelle, mooie site die binnen 7 dagen live staat.
+
+Hier een paar voorbeelden van wat ik maak:
+👉 nachtwerk-websites.nl
+
+Zou dit iets voor [Bedrijfsnaam] zijn?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div>
+          <div class="email-title">Mail 2 — Follow-up</div>
+          <div class="email-timing">Dag 4 (3 dagen later)</div>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-algemeen')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website van [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m2-algemeen">Hallo [Naam],
+
+Stuurde u afgelopen week een berichtje — wilde even opvolgen.
+
+Ik bouw websites voor €99,99 inclusief alles: design op maat, mobiel-vriendelijk, contactformulier en SEO-basis. Betalen pas na goedkeuring.
+
+Als dit niet interessant is, gewoon even laten weten — dan stuur ik u niet meer lastig.
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div>
+          <div class="email-title">Mail 3 — Afsluiter</div>
+          <div class="email-timing">Dag 7 (3 dagen later)</div>
+        </div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-algemeen')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje — [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m3-algemeen">Hallo [Naam],
+
+Dit is mijn laatste berichtje — wil u niet blijven mailen als het niet relevant is.
+
+Mocht u ooit een nieuwe website nodig hebben voor een scherpe prijs (€99,99 eenmalig), dan weet u me te vinden.
+
+Succes met [Bedrijfsnaam]!
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- HORECA -->
+<div class="panel" id="panel-horeca">
+  <p class="sequence-label">Sequence — Horeca (restaurant, café, eetcafé)</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-horeca')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Meer reserveringen voor [Restaurantnaam]?</span>
+      </div>
+      <div class="email-text" id="m1-horeca">Hallo [Naam],
+
+Ik zag [Restaurantnaam] op Google Maps en merkte dat de website niet helemaal up-to-date is.
+
+Veel restaurants lopen gasten mis omdat mensen online even snel kijken en afhaken bij een verouderde site. Een goede website met uw menu, sfeerfotos en een reserveringsknop kan dat verschil maken.
+
+Ik bouw dit voor €99,99 eenmalig — binnen 7 dagen live, betalen na goedkeuring.
+
+Hier ziet u hoe zoiets eruit kan zien (restaurant voorbeeld onderaan):
+👉 nachtwerk-websites.nl
+
+Zou dit iets voor [Restaurantnaam] zijn?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-horeca')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Restaurantnaam]</span>
+      </div>
+      <div class="email-text" id="m2-horeca">Hallo [Naam],
+
+Nog even een korte follow-up op mijn vorige mail.
+
+Ik maak websites speciaal voor horecabedrijven — met menu, openingstijden, sfeerfotos en een directe reserveringsknop. Alles voor €99,99 eenmalig.
+
+Als dit geen goed moment is, gewoon laten weten.
+
+Met vriendelijke groet,
+Stan
+Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-horeca')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje</span>
+      </div>
+      <div class="email-text" id="m3-horeca">Hallo [Naam],
+
+Laatste berichtje van mij — beloofd.
+
+Mocht u ooit een nieuwe website willen voor [Restaurantnaam], u weet me te vinden. €99,99 eenmalig, binnen 7 dagen live.
+
+Succes en goede zaken!
+
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- BOUW -->
+<div class="panel" id="panel-bouw">
+  <p class="sequence-label">Sequence — Bouw (aannemers, schilders, stukadoors, dakdekkers)</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-bouw')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Website voor [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m1-bouw">Hallo [Naam],
+
+Ik zag [Bedrijfsnaam] en wilde even een korte vraag stellen.
+
+Veel bouwbedrijven en aannemers in uw regio hebben geen goede website — terwijl mensen tegenwoordig altijd even online checken voordat ze iemand bellen. Een slechte of ontbrekende site kost u opdrachten.
+
+Ik bouw een professionele website inclusief diensten, projectfotos en een contactformulier voor €99,99 eenmalig. Binnen 7 dagen live.
+
+Voorbeeld (bouw):
+👉 nachtwerk-websites.nl
+
+Interesse?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-bouw')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m2-bouw">Hallo [Naam],
+
+Korte follow-up op mijn vorige mail.
+
+Ik maak websites voor bouw- en installatiebedrijven — met diensten, projectfoto's en offerte-aanvraagformulier. €99,99 eenmalig, betalen na goedkeuring.
+
+Mocht het nu niet uitkomen, geen probleem.
+
+Stan
+Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-bouw')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje</span>
+      </div>
+      <div class="email-text" id="m3-bouw">Hallo [Naam],
+
+Dit is mijn laatste mail — wil u niet blijven storen.
+
+Mocht u ooit een nieuwe website nodig hebben, u weet me te vinden. €99,99 eenmalig, binnen een week live.
+
+Succes met [Bedrijfsnaam]!
+
+Stan van Dijk — Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- ZORG -->
+<div class="panel" id="panel-zorg">
+  <p class="sequence-label">Sequence — Zorg (fysiotherapie, tandarts, huisarts, coaching)</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-zorg')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Online zichtbaarheid voor [Praktijknaam]</span>
+      </div>
+      <div class="email-text" id="m1-zorg">Hallo [Naam],
+
+Ik kom [Praktijknaam] tegen via Google en zag dat de website wat verouderd is.
+
+Nieuwe patiënten en cliënten zoeken tegenwoordig altijd online. Een heldere, moderne site met uw behandelingen, team en een afspraakformulier maakt het makkelijker om u te vinden en te kiezen.
+
+Ik bouw dit voor €99,99 eenmalig — inclusief alles, binnen 7 dagen live.
+
+Voorbeeld (zorgpraktijk):
+👉 nachtwerk-websites.nl
+
+Zou dit iets voor [Praktijknaam] zijn?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-zorg')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Praktijknaam]</span>
+      </div>
+      <div class="email-text" id="m2-zorg">Hallo [Naam],
+
+Korte follow-up. Ik maak websites voor zorgpraktijken met behandelingen, team, verzekeringsinformatie en online afspraken maken. Alles voor €99,99 eenmalig.
+
+Als dit niet relevant is, gewoon laten weten.
+
+Stan
+Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-zorg')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje</span>
+      </div>
+      <div class="email-text" id="m3-zorg">Hallo [Naam],
+
+Laatste bericht van mijn kant.
+
+Mocht u ooit een nieuwe website willen voor [Praktijknaam], dan bent u van harte welkom. €99,99 eenmalig, binnen 7 dagen live.
+
+Succes!
+
+Stan van Dijk — Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- KAPPER -->
+<div class="panel" id="panel-kapper">
+  <p class="sequence-label">Sequence — Kapper / Beauty salon / Nagelstudio</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-kapper')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Website voor [Salonnaam]</span>
+      </div>
+      <div class="email-text" id="m1-kapper">Hallo [Naam],
+
+Ik zag [Salonnaam] online en viel op dat de website niet helemaal up-to-date is.
+
+Veel klanten zoeken een kapper of beautysalon op hun telefoon — en als de site er niet goed uitziet, gaan ze naar de concurrent. Een moderne site met uw prijslijst, fotos en een boekingsknop maakt echt verschil.
+
+Ik bouw dit voor €99,99 eenmalig, binnen 7 dagen live.
+
+Voorbeeld:
+👉 nachtwerk-websites.nl
+
+Interesse?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-kapper')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Salonnaam]</span>
+      </div>
+      <div class="email-text" id="m2-kapper">Hallo [Naam],
+
+Korte follow-up. Website met prijslijst, diensten, fotos en afspraakmogelijkheid — alles voor €99,99 eenmalig. Betalen na goedkeuring.
+
+Mocht dit niet relevant zijn, dan hoor ik het graag.
+
+Stan — Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-kapper')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje</span>
+      </div>
+      <div class="email-text" id="m3-kapper">Hallo [Naam],
+
+Dit is mijn laatste berichtje — wil u niet blijven mailen.
+
+Mocht u ooit een nieuwe website willen, u weet me te vinden. €99,99 eenmalig.
+
+Succes met [Salonnaam]!
+
+Stan — Nachtwerk Websites · 06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- INSTALLATIE -->
+<div class="panel" id="panel-installatie">
+  <p class="sequence-label">Sequence — Installatie / Loodgieter / Elektricien / VVP</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-installatie')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Meer klanten voor [Bedrijfsnaam]?</span>
+      </div>
+      <div class="email-text" id="m1-installatie">Hallo [Naam],
+
+Ik zag [Bedrijfsnaam] op Google en viel op dat de website wat verouderd is.
+
+Als iemand een loodgieter, elektricien of installateur zoekt, googlen ze dat tegenwoordig. Een site die er niet professioneel uitziet, verliest direct opdrachten aan de concurrent.
+
+Ik bouw een professionele website met uw diensten, werkgebied en een directe contactknop voor €99,99 eenmalig. Binnen 7 dagen live.
+
+👉 nachtwerk-websites.nl
+
+Heeft u even 2 minuten?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-installatie')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Bedrijfsnaam]</span>
+      </div>
+      <div class="email-text" id="m2-installatie">Hallo [Naam],
+
+Korte follow-up op mijn vorige mail.
+
+Ik maak websites voor installatie- en technische bedrijven — diensten, werkgebied, spoedcontact en reviews. €99,99 eenmalig.
+
+Als dit niet past, gewoon laten weten.
+
+Stan — Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-installatie')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste bericht</span>
+      </div>
+      <div class="email-text" id="m3-installatie">Hallo [Naam],
+
+Laatste berichtje van mij.
+
+Mocht u ooit een nieuwe website willen voor [Bedrijfsnaam], dan weet u me te vinden. €99,99, binnen een week live.
+
+Succes!
+
+Stan van Dijk — Nachtwerk Websites · 06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<!-- RETAIL -->
+<div class="panel" id="panel-retail">
+  <p class="sequence-label">Sequence — Winkel / Retail / Lokale dienstverlener</p>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-1">1</div>
+        <div><div class="email-title">Mail 1 — Eerste contact</div><div class="email-timing">Dag 1</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m1-retail')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Website voor [Winkelnaam]</span>
+      </div>
+      <div class="email-text" id="m1-retail">Hallo [Naam],
+
+Ik zag [Winkelnaam] online en merkte dat de website niet helemaal up-to-date is.
+
+Een goede website met uw assortiment, openingstijden en locatie zorgt dat mensen u makkelijker vinden — en vaker langskomen.
+
+Ik bouw dit voor €99,99 eenmalig, binnen 7 dagen live. Betalen na goedkeuring.
+
+👉 nachtwerk-websites.nl
+
+Iets voor u?
+
+Met vriendelijke groet,
+Stan van Dijk
+Nachtwerk Websites
+06 – XX XX XX XX</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-2">2</div>
+        <div><div class="email-title">Mail 2 — Follow-up</div><div class="email-timing">Dag 4</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m2-retail')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Re: Website [Winkelnaam]</span>
+      </div>
+      <div class="email-text" id="m2-retail">Hallo [Naam],
+
+Kort follow-upje. Website met uw producten, openingstijden en locatie — €99,99 eenmalig.
+
+Als dit geen goed moment is, geen probleem.
+
+Stan — Nachtwerk Websites</div>
+    </div>
+  </div>
+
+  <div class="email-card">
+    <div class="email-header">
+      <div class="email-meta">
+        <div class="email-num num-3">3</div>
+        <div><div class="email-title">Mail 3 — Afsluiter</div><div class="email-timing">Dag 7</div></div>
+      </div>
+      <button class="copy-btn" onclick="copyEmail('m3-retail')">Kopieer tekst</button>
+    </div>
+    <div class="email-body">
+      <div class="subject-row">
+        <span class="subject-label">Onderwerp</span>
+        <span class="subject-text">Laatste berichtje</span>
+      </div>
+      <div class="email-text" id="m3-retail">Hallo [Naam],
+
+Laatste mail van mij — beloofd.
+
+Mocht u ooit een nieuwe website nodig hebben, u weet me te vinden. €99,99 eenmalig.
+
+Succes met [Winkelnaam]!
+
+Stan — Nachtwerk Websites · 06 – XX XX XX XX</div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<div class="tips-box">
+  <div class="tips-title">Tips voor verzenden</div>
+  <div class="tip">Stuur vanuit je persoonlijke Gmail — geen marketing tools. Voelt persoonlijker en komt minder snel in spam.</div>
+  <div class="tip">Personaliseer altijd de [Naam] en [Bedrijfsnaam] — copy-paste zonder invullen is direct te zien.</div>
+  <div class="tip">Vermeld de prijs in de eerste mail. Dat filtert mensen die sowieso niet willen en bespaart je tijd.</div>
+  <div class="tip">Stuur max 20-30 mails per dag vanuit één Gmail-adres om spam-filters te vermijden.</div>
+  <div class="tip">Bijlage? Nee. Alleen de link naar je portfolio. Bijlagen gaan vaker naar spam.</div>
+  <div class="tip">Beste verzendtijden: di-do, 08:30-09:30 of 13:00-14:00.</div>
+  <div class="tip">Sla reacties op in je tracker — ook "niet geïnteresseerd" is waardevolle data.</div>
+</div>
+
+<script>
+function switchTab(name) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+
+function copyEmail(id) {
+  const el = document.getElementById(id);
+  const text = el.innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = el.closest('.email-card').querySelector('.copy-btn');
+    btn.textContent = 'Gekopieerd ✓';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Kopieer tekst'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+</script>
+</body>
+</html>
