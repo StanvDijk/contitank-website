@@ -4,129 +4,1820 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fysio Noord — Fysiotherapiepraktijk Groningen</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#F8FAFA;color:#1A2A2A;overflow-x:hidden}
+  :root {
+    --teal: #0B8A6E;
+    --teal-dark: #096e58;
+    --teal-light: #0fa880;
+    --teal-pale: #e6f4f1;
+    --bg-soft: #F0F7F5;
+    --bg-lighter: #F8FAFA;
+    --white: #FFFFFF;
+    --text-dark: #1a2422;
+    --text-mid: #3d5450;
+    --text-light: #6b8a84;
+    --border: #d9ece8;
+    --shadow-sm: 0 1px 3px rgba(11,138,110,.06), 0 1px 2px rgba(0,0,0,.04);
+    --shadow-md: 0 4px 16px rgba(11,138,110,.10), 0 2px 6px rgba(0,0,0,.04);
+    --shadow-lg: 0 12px 40px rgba(11,138,110,.14), 0 4px 12px rgba(0,0,0,.05);
+    --radius: 14px;
+    --radius-lg: 22px;
+    --transition: .25s cubic-bezier(.4,0,.2,1);
+  }
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;background:rgba(248,250,250,.97);border-bottom:1px solid rgba(26,42,42,.07);backdrop-filter:blur(8px)}
-.logo{font-family:'DM Serif Display',serif;font-size:1.4rem;color:#1A2A2A;text-decoration:none}
-.logo span{color:#0B8A6E}
-.nav-cta{padding:.55rem 1.4rem;background:#0B8A6E;color:#fff;font-size:.75rem;font-weight:500;letter-spacing:.08em;text-decoration:none;border-radius:100px;transition:background .2s}
-.nav-cta:hover{background:#097A60}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-#hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:6rem 3rem 3rem;gap:4rem;background:#fff}
-.tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#0B8A6E;font-weight:600;margin-bottom:1.2rem}
-h1{font-family:'DM Serif Display',serif;font-size:clamp(2.5rem,5vw,4.5rem);line-height:1.05;color:#1A2A2A}
-h1 em{color:#0B8A6E;font-style:italic}
-.hero-p{margin-top:1.4rem;font-size:1rem;font-weight:300;line-height:1.85;color:#4A5E5E;max-width:420px}
-.hero-btns{display:flex;gap:1rem;margin-top:2.2rem;flex-wrap:wrap}
-.btn-p{padding:.9rem 2rem;background:#0B8A6E;color:#fff;font-size:.78rem;font-weight:500;letter-spacing:.08em;text-decoration:none;border-radius:100px;transition:all .2s}
-.btn-p:hover{background:#097A60;transform:translateY(-2px)}
-.btn-s{padding:.9rem 2rem;border:1px solid rgba(26,42,42,.15);color:#3A5252;font-size:.78rem;font-weight:500;text-decoration:none;border-radius:100px;transition:all .2s}
-.btn-s:hover{border-color:#0B8A6E;color:#0B8A6E}
-.trust-row{display:flex;gap:2rem;margin-top:2rem;flex-wrap:wrap}
-.trust{display:flex;align-items:center;gap:.5rem;font-size:.8rem;color:#6A8080}
-.trust svg{width:16px;height:16px;stroke:#0B8A6E;fill:none;stroke-width:2.5}
-.hero-img{height:580px;background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80') center/cover;border-radius:12px}
+  html { scroll-behavior: smooth; font-size: 16px; }
 
-#behandelingen{padding:6rem 3rem;background:#F0F7F5}
-.sec-tag{font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:#0B8A6E;font-weight:600;margin-bottom:.8rem}
-.sec-h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,3.5vw,3rem);color:#1A2A2A;margin-bottom:3rem;line-height:1.1}
-.b-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.b-card{padding:2.2rem;background:#fff;border-radius:10px;box-shadow:0 2px 16px rgba(0,0,0,.05);transition:box-shadow .3s,transform .3s}
-.b-card:hover{box-shadow:0 8px 32px rgba(0,0,0,.09);transform:translateY(-3px)}
-.b-icon{width:48px;height:48px;background:#E6F5F1;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
-.b-icon svg{width:22px;height:22px;stroke:#0B8A6E;fill:none;stroke-width:1.8}
-.b-title{font-size:.95rem;font-weight:600;color:#1A2A2A;margin-bottom:.4rem}
-.b-text{font-size:.82rem;font-weight:300;line-height:1.7;color:#6A8080}
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
 
-#team{padding:6rem 3rem;background:#fff;text-align:center}
-.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;max-width:800px;margin:3rem auto 0}
-.t-card{}
-.t-img{width:120px;height:120px;border-radius:50%;margin:0 auto 1rem;background-size:cover;background-position:center top}
-.t-name{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#1A2A2A;margin-bottom:.2rem}
-.t-role{font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;color:#0B8A6E;font-weight:600}
-.t-text{font-size:.82rem;font-weight:300;line-height:1.6;color:#6A8080;margin-top:.5rem}
+  h1, h2, h3, h4 {
+    font-family: 'DM Serif Display', serif;
+    line-height: 1.15;
+    color: var(--text-dark);
+  }
 
-#afspraak{padding:6rem 3rem;background:#0B8A6E;text-align:center}
-#afspraak h2{font-family:'DM Serif Display',serif;font-size:clamp(2rem,4vw,3rem);color:#fff;margin-bottom:.8rem}
-#afspraak p{color:rgba(255,255,255,.7);font-weight:300;font-size:.95rem;margin-bottom:2.5rem}
-.contact-row{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap}
-.c-item{text-align:center}
-.c-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);font-weight:600;margin-bottom:.3rem}
-.c-val{font-size:.95rem;color:#fff;font-weight:500}
-.afspraak-btn{display:inline-block;padding:1rem 2.5rem;background:#fff;color:#0B8A6E;font-size:.85rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:100px;margin-top:2.5rem;transition:all .2s}
-.afspraak-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.15)}
+  /* ─── ANIMATIONS ─────────────────────────────────────────── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes slideRight {
+    from { opacity: 0; transform: translateX(-20px); }
+    to   { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes scaleIn {
+    from { opacity: 0; transform: scale(.94); }
+    to   { opacity: 1; transform: scale(1); }
+  }
+  @keyframes pulse-ring {
+    0%   { box-shadow: 0 0 0 0 rgba(11,138,110,.3); }
+    70%  { box-shadow: 0 0 0 10px rgba(11,138,110,0); }
+    100% { box-shadow: 0 0 0 0 rgba(11,138,110,0); }
+  }
 
-footer{padding:1.5rem 3rem;background:#07604D;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.fl{font-family:'DM Serif Display',serif;font-size:1.1rem;color:#fff}
-.fl span{font-style:italic;color:rgba(255,255,255,.7)}
-footer p{font-size:.72rem;color:rgba(255,255,255,.4)}
-@media(max-width:768px){#hero{grid-template-columns:1fr}.hero-img{height:300px}.b-grid{grid-template-columns:1fr}.t-grid{grid-template-columns:1fr}nav,#hero,#behandelingen,#team,#afspraak{padding-left:1.5rem;padding-right:1.5rem}}
+  .anim-fadeup  { animation: fadeUp .65s ease both; }
+  .anim-fadein  { animation: fadeIn .7s ease both; }
+  .anim-scalein { animation: scaleIn .55s ease both; }
+
+  .delay-1 { animation-delay: .1s; }
+  .delay-2 { animation-delay: .22s; }
+  .delay-3 { animation-delay: .36s; }
+  .delay-4 { animation-delay: .5s; }
+  .delay-5 { animation-delay: .65s; }
+  .delay-6 { animation-delay: .8s; }
+
+  /* ─── UTILITIES ──────────────────────────────────────────── */
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-pale);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 18px;
+  }
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--teal);
+  }
+  .section-title {
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    margin-bottom: 14px;
+  }
+  .section-subtitle {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    max-width: 540px;
+    line-height: 1.7;
+  }
+  .section-head {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+  .section-head .section-subtitle { margin: 0 auto; }
+
+  /* ─── BUTTONS ────────────────────────────────────────────── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: .93rem;
+    font-weight: 600;
+    padding: 13px 26px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all var(--transition);
+    white-space: nowrap;
+  }
+  .btn-primary {
+    background: var(--teal);
+    color: #fff;
+    box-shadow: 0 3px 12px rgba(11,138,110,.32);
+  }
+  .btn-primary:hover {
+    background: var(--teal-dark);
+    box-shadow: 0 5px 18px rgba(11,138,110,.42);
+    transform: translateY(-1px);
+  }
+  .btn-outline {
+    background: transparent;
+    color: var(--teal);
+    border: 1.5px solid var(--teal);
+  }
+  .btn-outline:hover {
+    background: var(--teal-pale);
+    transform: translateY(-1px);
+  }
+  .btn-white {
+    background: #fff;
+    color: var(--teal);
+    box-shadow: 0 3px 12px rgba(0,0,0,.12);
+  }
+  .btn-white:hover {
+    background: var(--bg-soft);
+    box-shadow: 0 5px 18px rgba(0,0,0,.16);
+    transform: translateY(-1px);
+  }
+
+  /* ─── NAVIGATION ─────────────────────────────────────────── */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255,255,255,.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: box-shadow var(--transition);
+  }
+  .nav.scrolled {
+    box-shadow: 0 2px 20px rgba(0,0,0,.07);
+  }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .nav-logo-mark {
+    width: 36px;
+    height: 36px;
+    background: var(--teal);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav-logo-mark svg { width: 20px; height: 20px; fill: white; }
+  .nav-logo-text {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: var(--text-dark);
+    letter-spacing: -.01em;
+  }
+  .nav-logo-text span { color: var(--teal); }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: .9rem;
+    font-weight: 500;
+    color: var(--text-mid);
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: all var(--transition);
+  }
+  .nav-links a:hover {
+    color: var(--teal);
+    background: var(--teal-pale);
+  }
+  .nav-cta { margin-left: 8px; }
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+  }
+  .nav-hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: all var(--transition);
+  }
+
+  /* ─── HERO ───────────────────────────────────────────────── */
+  .hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    min-height: calc(100vh - 68px);
+    max-height: 820px;
+    overflow: hidden;
+  }
+  .hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 72px 64px 72px 0;
+    padding-left: max(28px, calc((100vw - 1160px) / 2 + 28px));
+    background: var(--white);
+  }
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-pale);
+    padding: 7px 15px;
+    border-radius: 100px;
+    width: fit-content;
+    margin-bottom: 28px;
+    animation: slideRight .6s ease both;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--teal);
+    animation: pulse-ring 2s infinite;
+  }
+  .hero-title {
+    font-size: clamp(2.6rem, 4.5vw, 3.8rem);
+    line-height: 1.08;
+    letter-spacing: -.02em;
+    margin-bottom: 20px;
+    animation: fadeUp .7s ease .1s both;
+  }
+  .hero-title em {
+    font-style: italic;
+    color: var(--teal);
+  }
+  .hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-mid);
+    line-height: 1.72;
+    max-width: 440px;
+    margin-bottom: 36px;
+    animation: fadeUp .7s ease .22s both;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 44px;
+    flex-wrap: wrap;
+    animation: fadeUp .7s ease .34s both;
+  }
+  .hero-trust {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: fadeUp .7s ease .46s both;
+  }
+  .trust-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .875rem;
+    font-weight: 500;
+    color: var(--text-mid);
+  }
+  .trust-badge-icon {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--teal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .trust-badge-icon svg {
+    width: 12px;
+    height: 12px;
+    fill: white;
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn .8s ease .1s both;
+  }
+  .hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+  .hero-img-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, rgba(11,138,110,.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-stat-badge {
+    position: absolute;
+    bottom: 36px;
+    left: -20px;
+    background: white;
+    border-radius: 14px;
+    padding: 16px 22px;
+    box-shadow: var(--shadow-lg);
+    animation: scaleIn .6s ease .6s both;
+  }
+  .hero-stat-badge strong {
+    display: block;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.7rem;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .hero-stat-badge span {
+    font-size: .8rem;
+    color: var(--text-light);
+    margin-top: 2px;
+    display: block;
+  }
+
+  /* ─── BEHANDELINGEN ──────────────────────────────────────── */
+  .behandelingen {
+    padding: 96px 0;
+    background: var(--bg-soft);
+  }
+  .behandelingen-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  .behandeling-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 36px 30px;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+  }
+  .behandeling-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform var(--transition);
+  }
+  .behandeling-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+  .behandeling-card:hover::before {
+    transform: scaleX(1);
+  }
+  .behandeling-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--bg-soft);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    transition: background var(--transition);
+  }
+  .behandeling-card:hover .behandeling-icon {
+    background: var(--teal-pale);
+  }
+  .behandeling-icon svg {
+    width: 26px;
+    height: 26px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .behandeling-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .behandeling-card p {
+    font-size: .9rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+  .behandeling-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .85rem;
+    font-weight: 600;
+    color: var(--teal);
+    text-decoration: none;
+    margin-top: 16px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition: all var(--transition);
+  }
+  .behandeling-card:hover .behandeling-link {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* ─── WERKWIJZE ──────────────────────────────────────────── */
+  .werkwijze {
+    padding: 96px 0;
+    background: var(--white);
+  }
+  .werkwijze-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    position: relative;
+    margin-top: 20px;
+  }
+  .werkwijze-steps::before {
+    content: '';
+    position: absolute;
+    top: 36px;
+    left: calc(100% / 6);
+    right: calc(100% / 6);
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--teal) 0%, var(--border) 100%);
+    z-index: 0;
+  }
+  .werkwijze-step {
+    text-align: center;
+    padding: 0 28px;
+    position: relative;
+    z-index: 1;
+  }
+  .step-number-wrap {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 28px;
+  }
+  .step-number {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 2px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.6rem;
+    color: var(--text-light);
+    transition: all var(--transition);
+    position: relative;
+  }
+  .werkwijze-step:first-child .step-number {
+    background: var(--teal);
+    border-color: var(--teal);
+    color: white;
+    box-shadow: 0 6px 24px rgba(11,138,110,.3);
+  }
+  .step-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--bg-soft);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+  }
+  .step-icon svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .werkwijze-step h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  .werkwijze-step p {
+    font-size: .9rem;
+    color: var(--text-light);
+    line-height: 1.65;
+  }
+
+  /* ─── TEAM ───────────────────────────────────────────────── */
+  .team {
+    padding: 96px 0;
+    background: var(--bg-soft);
+  }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .team-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+  }
+  .team-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: transparent;
+  }
+  .team-photo-wrap {
+    position: relative;
+    overflow: hidden;
+    height: 280px;
+  }
+  .team-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform .4s ease;
+  }
+  .team-card:hover .team-photo {
+    transform: scale(1.04);
+  }
+  .team-photo-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(11,138,110,.25) 0%, transparent 60%);
+    opacity: 0;
+    transition: opacity var(--transition);
+  }
+  .team-card:hover .team-photo-overlay {
+    opacity: 1;
+  }
+  .team-info {
+    padding: 24px 28px;
+  }
+  .team-tag {
+    font-size: .75rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-pale);
+    padding: 4px 10px;
+    border-radius: 6px;
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+  .team-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 6px;
+  }
+  .team-info p {
+    font-size: .88rem;
+    color: var(--text-light);
+    line-height: 1.6;
+  }
+  .team-bignum {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+    font-size: .8rem;
+    color: var(--text-light);
+    font-weight: 500;
+  }
+  .team-bignum svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* ─── VERZEKERINGEN ──────────────────────────────────────── */
+  .verzekeringen {
+    padding: 96px 0;
+    background: var(--white);
+  }
+  .verzekeringen-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+  .verzekeringen-text .section-label { margin-bottom: 18px; }
+  .verzekeringen-text .section-title { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 18px; }
+  .verzekeringen-text p {
+    font-size: 1rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 14px;
+  }
+  .verzekeringen-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 24px;
+  }
+  .verzekeringen-checklist li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: .93rem;
+    color: var(--text-mid);
+    font-weight: 500;
+  }
+  .verzekeringen-checklist li::before {
+    content: '';
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--teal);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' fill='none'%3E%3Cpath d='M2 6l3 3 5-5' stroke='white' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    flex-shrink: 0;
+  }
+  .verzekeringen-logos {
+    background: var(--bg-soft);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    border: 1px solid var(--border);
+  }
+  .verzekeringen-logos-title {
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 28px;
+    text-align: center;
+  }
+  .insurer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+  .insurer-tile {
+    background: var(--white);
+    border-radius: 10px;
+    padding: 14px 10px;
+    text-align: center;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    cursor: default;
+  }
+  .insurer-tile:hover {
+    border-color: var(--teal);
+    box-shadow: 0 3px 10px rgba(11,138,110,.12);
+  }
+  .insurer-tile-icon {
+    font-size: 1.5rem;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .insurer-tile span {
+    font-size: .75rem;
+    font-weight: 600;
+    color: var(--text-mid);
+  }
+  .verzekeringen-note {
+    margin-top: 20px;
+    background: var(--teal-pale);
+    border-radius: 10px;
+    padding: 14px 18px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .verzekeringen-note svg {
+    width: 18px;
+    height: 18px;
+    stroke: var(--teal);
+    fill: none;
+    stroke-width: 2;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .verzekeringen-note p {
+    font-size: .85rem;
+    color: var(--teal-dark);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ─── TESTIMONIALS ───────────────────────────────────────── */
+  .testimonials {
+    padding: 96px 0;
+    background: var(--bg-lighter);
+  }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .testimonial-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 32px 30px;
+    border: 1px solid var(--border);
+    transition: all var(--transition);
+    position: relative;
+  }
+  .testimonial-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: transparent;
+  }
+  .testimonial-quote {
+    position: absolute;
+    top: 24px;
+    right: 28px;
+    font-family: 'DM Serif Display', serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: var(--teal-pale);
+    user-select: none;
+    pointer-events: none;
+  }
+  .stars {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 16px;
+  }
+  .stars svg {
+    width: 16px;
+    height: 16px;
+    fill: #F5A623;
+  }
+  .testimonial-text {
+    font-size: .97rem;
+    color: var(--text-mid);
+    line-height: 1.75;
+    margin-bottom: 22px;
+    font-style: italic;
+  }
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--teal-pale);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.1rem;
+    color: var(--teal);
+    flex-shrink: 0;
+    font-weight: 700;
+  }
+  .author-name {
+    font-weight: 600;
+    font-size: .9rem;
+    color: var(--text-dark);
+  }
+  .author-detail {
+    font-size: .8rem;
+    color: var(--text-light);
+    margin-top: 2px;
+  }
+  .testimonial-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .72rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--teal);
+    background: var(--teal-pale);
+    padding: 3px 9px;
+    border-radius: 5px;
+    margin-left: auto;
+  }
+
+  /* ─── AFSPRAAK MAKEN ─────────────────────────────────────── */
+  .afspraak {
+    padding: 96px 0;
+    background: var(--teal);
+    position: relative;
+    overflow: hidden;
+  }
+  .afspraak::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.05);
+    pointer-events: none;
+  }
+  .afspraak::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: -60px;
+    width: 500px; height: 500px;
+    border-radius: 50%;
+    background: rgba(255,255,255,.04);
+    pointer-events: none;
+  }
+  .afspraak-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: start;
+    position: relative;
+    z-index: 1;
+  }
+  .afspraak-left { color: white; }
+  .afspraak-left .section-label {
+    color: rgba(255,255,255,.9);
+    background: rgba(255,255,255,.15);
+  }
+  .afspraak-left .section-label::before {
+    background: rgba(255,255,255,.9);
+  }
+  .afspraak-left h2 {
+    color: white;
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: 20px;
+  }
+  .afspraak-left p {
+    font-size: 1.05rem;
+    color: rgba(255,255,255,.8);
+    line-height: 1.72;
+    margin-bottom: 36px;
+  }
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+  .contact-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .contact-item-icon svg {
+    width: 18px;
+    height: 18px;
+    stroke: white;
+    fill: none;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+  .contact-item-text strong {
+    display: block;
+    font-size: .8rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.6);
+    margin-bottom: 3px;
+  }
+  .contact-item-text a,
+  .contact-item-text span {
+    font-size: .97rem;
+    color: white;
+    font-weight: 500;
+    text-decoration: none;
+    line-height: 1.5;
+  }
+  .contact-item-text a:hover { text-decoration: underline; }
+
+  /* Form */
+  .afspraak-form {
+    background: white;
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0,0,0,.2);
+  }
+  .form-title {
+    font-size: 1.4rem;
+    margin-bottom: 6px;
+  }
+  .form-subtitle {
+    font-size: .88rem;
+    color: var(--text-light);
+    margin-bottom: 28px;
+  }
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+  }
+  .form-group label {
+    font-size: .82rem;
+    font-weight: 600;
+    color: var(--text-mid);
+    letter-spacing: .02em;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    font-family: 'Inter', sans-serif;
+    font-size: .9rem;
+    color: var(--text-dark);
+    background: var(--bg-soft);
+    border: 1.5px solid var(--border);
+    border-radius: 9px;
+    padding: 11px 14px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    outline: none;
+    resize: vertical;
+    -webkit-appearance: none;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--teal);
+    box-shadow: 0 0 0 3px rgba(11,138,110,.12);
+    background: white;
+  }
+  .form-group textarea { min-height: 88px; }
+  .form-submit {
+    width: 100%;
+    justify-content: center;
+    font-size: 1rem;
+    padding: 14px;
+    margin-top: 6px;
+  }
+  .form-privacy {
+    text-align: center;
+    font-size: .77rem;
+    color: var(--text-light);
+    margin-top: 12px;
+  }
+
+  /* ─── FOOTER ─────────────────────────────────────────────── */
+  footer {
+    background: #0f1e1b;
+    color: rgba(255,255,255,.65);
+    padding: 64px 0 32px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 56px;
+  }
+  .footer-brand .nav-logo { margin-bottom: 16px; display: inline-flex; }
+  .footer-brand .nav-logo-text { color: white; }
+  .footer-brand p {
+    font-size: .88rem;
+    line-height: 1.72;
+    max-width: 240px;
+  }
+  .footer-col h4 {
+    font-family: 'Inter', sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.4);
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 9px; }
+  .footer-col a {
+    font-size: .88rem;
+    color: rgba(255,255,255,.6);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+  .footer-col a:hover { color: white; }
+  .footer-bottom {
+    padding-top: 28px;
+    border-top: 1px solid rgba(255,255,255,.08);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-bottom p { font-size: .82rem; }
+  .footer-bottom-links {
+    display: flex;
+    gap: 20px;
+  }
+  .footer-bottom-links a {
+    font-size: .82rem;
+    color: rgba(255,255,255,.4);
+    text-decoration: none;
+  }
+  .footer-bottom-links a:hover { color: rgba(255,255,255,.75); }
+
+  .big-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    background: rgba(11,138,110,.2);
+    color: rgba(255,255,255,.75);
+    border: 1px solid rgba(11,138,110,.4);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: .8rem;
+    font-weight: 600;
+  }
+  .big-badge svg {
+    width: 14px;
+    height: 14px;
+    stroke: var(--teal-light);
+    fill: none;
+    stroke-width: 2;
+  }
+
+  /* ─── SCROLL ANIMATIONS ──────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity .65s ease, transform .65s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .reveal-scale {
+    opacity: 0;
+    transform: scale(.96);
+    transition: opacity .55s ease, transform .55s ease;
+  }
+  .reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  /* ─── RESPONSIVE ─────────────────────────────────────────── */
+  @media (max-width: 1024px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; max-height: none; }
+    .hero-left { padding: 64px 28px; }
+    .hero-right { height: 420px; }
+    .behandelingen-grid { grid-template-columns: repeat(2, 1fr); }
+    .werkwijze-steps { grid-template-columns: 1fr; gap: 40px; }
+    .werkwijze-steps::before { display: none; }
+    .verzekeringen-inner { grid-template-columns: 1fr; gap: 48px; }
+    .afspraak-inner { grid-template-columns: 1fr; gap: 48px; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 768px) {
+    .nav-links, .nav-cta { display: none; }
+    .nav-hamburger { display: flex; }
+    .behandelingen-grid { grid-template-columns: 1fr; }
+    .team-grid { grid-template-columns: 1fr; max-width: 420px; margin: 0 auto; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+    .insurer-grid { grid-template-columns: repeat(2, 1fr); }
+  }
 </style>
 </head>
 <body>
-<nav>
-  <a href="#" class="logo">Fysio <span>Noord</span></a>
-  <a href="#afspraak" class="nav-cta">Afspraak maken</a>
+
+<!-- ─── NAVIGATION ──────────────────────────────────────── -->
+<nav class="nav" id="mainNav">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <div class="nav-logo-mark">
+          <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path d="M10 2C7 2 5 4.5 5 7c0 1.5.6 2.8 1.5 3.8L10 18l3.5-7.2C14.4 9.8 15 8.5 15 7c0-2.5-2-5-5-5z"/>
+            <circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.5)"/>
+          </svg>
+        </div>
+        <span class="nav-logo-text">Fysio <span>Noord</span></span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#behandelingen">Behandelingen</a></li>
+        <li><a href="#team">Team</a></li>
+        <li><a href="#verzekeringen">Verzekeringen</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn btn-primary nav-cta">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Afspraak maken
+      </a>
+      <div class="nav-hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
 </nav>
 
-<section id="hero">
-  <div>
-    <div class="tag">Groningen-Noord · BIG-geregistreerd</div>
-    <h1>Beweeg<br>zonder <em>pijn</em></h1>
-    <p class="hero-p">Fysio Noord biedt persoonlijke fysiotherapie voor klachten aan rug, nek, schouder en sport. Wij behandelen de oorzaak — niet alleen het symptoom.</p>
-    <div class="hero-btns">
-      <a href="#afspraak" class="btn-p">Afspraak maken</a>
-      <a href="#behandelingen" class="btn-s">Onze behandelingen</a>
+<!-- ─── HERO ────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Fysiotherapiepraktijk Groningen</div>
+    <h1 class="hero-title">Beweeg<br><em>zonder pijn</em></h1>
+    <p class="hero-subtitle">Professionele fysiotherapie voor iedereen in Groningen. Ons team van gecertificeerde therapeuten staat voor u klaar — snel, persoonlijk en doelgericht.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn btn-primary">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Afspraak maken
+      </a>
+      <a href="#behandelingen" class="btn btn-outline">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 12 12 14 14"/></svg>
+        Bekijk behandelingen
+      </a>
     </div>
-    <div class="trust-row">
-      <div class="trust"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>BIG-geregistreerd</div>
-      <div class="trust"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Alle verzekeringen</div>
-      <div class="trust"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Snel terecht</div>
+    <div class="hero-trust">
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        BIG-geregistreerd
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Alle verzekeringen
+      </div>
+      <div class="trust-badge">
+        <div class="trust-badge-icon">
+          <svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg"><path d="M2 6l3 3 5-5" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        Snel terecht
+      </div>
     </div>
   </div>
-  <div class="hero-img"></div>
-</section>
-
-<section id="behandelingen">
-  <div class="sec-tag">Behandelingen</div>
-  <h2 class="sec-h2">Wat wij behandelen</h2>
-  <div class="b-grid">
-    <div class="b-card">
-      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20z"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
-      <div class="b-title">Rugklachten</div>
-      <p class="b-text">Lage rugpijn, hernia of spit — wij helpen u snel weer op de been met gerichte behandeling.</p>
-    </div>
-    <div class="b-card">
-      <div class="b-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 12h8M12 8v8"/></svg></div>
-      <div class="b-title">Sportblessures</div>
-      <p class="b-text">Van verstuikte enkel tot spierscheuring. Gericht herstel zodat u snel weer kunt sporten.</p>
-    </div>
-    <div class="b-card">
-      <div class="b-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <div class="b-title">Nek & Schouder</div>
-      <p class="b-text">Chronische nekpijn of bevroren schouder? Wij behandelen de bron van de klacht.</p>
+  <div class="hero-right">
+    <img
+      class="hero-img"
+      src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=700&q=80"
+      alt="Fysiotherapie behandeling"
+      loading="eager"
+    />
+    <div class="hero-img-overlay"></div>
+    <div class="hero-stat-badge">
+      <strong>15+</strong>
+      <span>Jaar ervaring</span>
     </div>
   </div>
 </section>
 
-<section id="afspraak">
-  <h2>Een afspraak maken?</h2>
-  <p>Bel ons of mail ons — we zorgen dat u snel geholpen wordt.</p>
-  <div class="contact-row">
-    <div class="c-item"><div class="c-label">Telefoon</div><div class="c-val">050 – 318 42 60</div></div>
-    <div class="c-item"><div class="c-label">E-mail</div><div class="c-val">info@fsionoord.nl</div></div>
-    <div class="c-item"><div class="c-label">Adres</div><div class="c-val">Paterswoldseweg 12, Groningen</div></div>
+<!-- ─── BEHANDELINGEN ───────────────────────────────────── -->
+<section class="behandelingen" id="behandelingen">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Behandelingen</div>
+      <h2 class="section-title">Wat wij voor u kunnen betekenen</h2>
+      <p class="section-subtitle">Van acute blessures tot chronische klachten — wij bieden een breed scala aan behandelingen, toegespitst op uw persoonlijke herstelplan.</p>
+    </div>
+    <div class="behandelingen-grid">
+
+      <!-- Rugklachten -->
+      <div class="behandeling-card reveal delay-1">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2C6 2 4 6 4 10c0 5 4 8 8 12 4-4 8-7 8-12 0-4-2-8-8-8z"/><path d="M12 10v4M10 12h4"/></svg>
+        </div>
+        <h3>Rugklachten</h3>
+        <p>Behandeling van lage rugpijn, hernia, spierspanning en wervelkolomproblemen. Gericht op herstel van mobiliteit en pijnreductie.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+      <!-- Nekpijn -->
+      <div class="behandeling-card reveal delay-2">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="5" r="3"/><path d="M12 8v6M9 11c1-.5 2-1.5 3-3 1 1.5 2 2.5 3 3"/><path d="M10 14c0 3 4 3 4 0"/></svg>
+        </div>
+        <h3>Nekpijn</h3>
+        <p>Behandeling van whiplash, cervicale artrose, spanningshoofdpijn en postuurproblemen door manuele therapie en oefentherapie.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+      <!-- Sportblessures -->
+      <div class="behandeling-card reveal delay-3">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8c-2 0-4 2-4 4s2 4 4 4 4-2 4-4"/><path d="M8.5 8.5l2 2M13.5 8.5l-2 2M8.5 15.5l2-2M13.5 15.5l-2-2"/></svg>
+        </div>
+        <h3>Sportblessures</h3>
+        <p>Snelle en effectieve behandeling van blessures aan knieën, enkels, hamstrings en schouders. Inclusief sportspecifieke revalidatie.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+      <!-- Schouderklachten -->
+      <div class="behandeling-card reveal delay-1">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><path d="M6 12c0-3 3-6 6-6s6 3 6 6"/><path d="M4 14c0 4 4 6 8 6s8-2 8-6"/><path d="M12 6v3M9 8l1.5 2M15 8l-1.5 2"/></svg>
+        </div>
+        <h3>Schouderklachten</h3>
+        <p>Behandeling van frozen shoulder, rotator cuff problemen, subacromiaal syndroom en postoperatieve revalidatie van de schouder.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+      <!-- Bekkenbodem -->
+      <div class="behandeling-card reveal delay-2">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 21c-5 0-8-3-8-7 0-2 1-4 3-5.5"/><path d="M12 21c5 0 8-3 8-7 0-2-1-4-3-5.5"/><path d="M8 8.5C9 6 10.5 4 12 4s3 2 4 4.5"/><path d="M12 4v6"/></svg>
+        </div>
+        <h3>Bekkenbodem</h3>
+        <p>Gespecialiseerde behandeling van bekkenbodemklachten, incontinentie en bekkenpijn — zowel voor vrouwen als mannen, discreet en professioneel.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+      <!-- Revalidatie -->
+      <div class="behandeling-card reveal delay-3">
+        <div class="behandeling-icon">
+          <svg viewBox="0 0 24 24"><path d="M5 18l3-3 3 3 3-5 3 5"/><path d="M3 8h18"/><path d="M7 8V5M17 8V5"/><rect x="3" y="3" width="18" height="5" rx="1"/></svg>
+        </div>
+        <h3>Revalidatie</h3>
+        <p>Begeleiding na operaties, breuken of ernstige blessures. Persoonlijk herstelplan gericht op optimale functionele terugkeer.</p>
+        <a href="#contact" class="behandeling-link">Meer informatie →</a>
+      </div>
+
+    </div>
   </div>
-  <a href="tel:0503184260" class="afspraak-btn">Bel direct: 050 – 318 42 60</a>
 </section>
 
+<!-- ─── WERKWIJZE ────────────────────────────────────────── -->
+<section class="werkwijze" id="werkwijze">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Werkwijze</div>
+      <h2 class="section-title">Van aanmelding tot herstel</h2>
+      <p class="section-subtitle">In drie heldere stappen begeleiden wij u naar een pijnvrij en actief leven.</p>
+    </div>
+    <div class="werkwijze-steps">
+      <div class="werkwijze-step reveal delay-1">
+        <div class="step-number-wrap">
+          <div class="step-number">01</div>
+        </div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h3>Aanmelden</h3>
+        <p>Neem telefonisch of online contact op. Wij plannen snel een eerste afspraak in, vaak al binnen 48 uur. Geen verwijsbrief nodig.</p>
+      </div>
+      <div class="werkwijze-step reveal delay-3">
+        <div class="step-number-wrap">
+          <div class="step-number">02</div>
+        </div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Intake & behandelplan</h3>
+        <p>Tijdens de intake bespreken we uw klachten uitvoerig. We stellen een persoonlijk behandelplan op dat aansluit bij uw doelen en leefstijl.</p>
+      </div>
+      <div class="werkwijze-step reveal delay-5">
+        <div class="step-number-wrap">
+          <div class="step-number">03</div>
+        </div>
+        <div class="step-icon">
+          <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <h3>Behandeling & herstel</h3>
+        <p>We voeren het behandelplan uit en evalueren continu uw voortgang. U wordt actief betrokken bij uw eigen herstel voor duurzame resultaten.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TEAM ─────────────────────────────────────────────── -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Ons team</div>
+      <h2 class="section-title">Deskundige therapeuten, persoonlijke aanpak</h2>
+      <p class="section-subtitle">Drie gecertificeerde fysiotherapeuten met ruime ervaring en een hart voor hun vak. Allen BIG-geregistreerd.</p>
+    </div>
+    <div class="team-grid">
+
+      <div class="team-card reveal delay-1">
+        <div class="team-photo-wrap">
+          <img class="team-photo"
+            src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=300&q=80"
+            alt="Anne de Vries" loading="lazy">
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-info">
+          <span class="team-tag">Hoofdtherapeur</span>
+          <h3>Anne de Vries</h3>
+          <p>Specialisatie in sportfysiotherapie en revalidatie. 12 jaar werkervaring, waarvan 8 jaar bij Fysio Noord.</p>
+          <div class="team-bignum">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            BIG-registratie: 79012345678
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card reveal delay-3">
+        <div class="team-photo-wrap">
+          <img class="team-photo"
+            src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=300&q=80"
+            alt="Lars Hoekstra" loading="lazy">
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-info">
+          <span class="team-tag">Fysiotherapeut</span>
+          <h3>Lars Hoekstra</h3>
+          <p>Gespecialiseerd in manuele therapie en rugklachten. Tevens opleiding bekkenbodemfysiotherapie afgerond.</p>
+          <div class="team-bignum">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            BIG-registratie: 79023456789
+          </div>
+        </div>
+      </div>
+
+      <div class="team-card reveal delay-5">
+        <div class="team-photo-wrap">
+          <img class="team-photo"
+            src="https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=300&q=80"
+            alt="Mira Jansen" loading="lazy">
+          <div class="team-photo-overlay"></div>
+        </div>
+        <div class="team-info">
+          <span class="team-tag">Fysiotherapeut</span>
+          <h3>Mira Jansen</h3>
+          <p>Expert in bekkenbodemfysiotherapie en postnatale zorg. Geregistreerd bekkenfysiotherapeut (KNGF).</p>
+          <div class="team-bignum">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            BIG-registratie: 79034567890
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── VERZEKERINGEN ────────────────────────────────────── -->
+<section class="verzekeringen" id="verzekeringen">
+  <div class="container">
+    <div class="verzekeringen-inner">
+      <div class="verzekeringen-text reveal">
+        <div class="section-label">Verzekeringen</div>
+        <h2 class="section-title">Vergoed door alle grote verzekeraars</h2>
+        <p>Fysio Noord heeft contracten met alle grote zorgverzekeraars in Nederland. U hoeft zich geen zorgen te maken over de administratie — wij regelen de declaratie rechtstreeks met uw verzekeraar.</p>
+        <p>De eerste negen behandelingen per jaar worden vergoed vanuit de aanvullende verzekering. Neem contact op voor een volledig overzicht van uw vergoeding.</p>
+        <ul class="verzekeringen-checklist">
+          <li>Directe declaratie bij uw verzekeraar</li>
+          <li>Alle aanvullende verzekeringen geaccepteerd</li>
+          <li>Geen verwijsbrief van huisarts nodig</li>
+          <li>Transparante tarieven bij geen vergoeding</li>
+          <li>Begeleiding bij vergoedingsvragen</li>
+        </ul>
+      </div>
+      <div class="verzekeringen-logos reveal delay-3">
+        <div class="verzekeringen-logos-title">Gecontracteerd met</div>
+        <div class="insurer-grid">
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🏥</span>
+            <span>Zilveren Kruis</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">💙</span>
+            <span>VGZ</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🟠</span>
+            <span>Menzis</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🟣</span>
+            <span>CZ</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🟢</span>
+            <span>DSW</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🔵</span>
+            <span>ONVZ</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🏛️</span>
+            <span>Interpolis</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">🌿</span>
+            <span>FBTO</span>
+          </div>
+          <div class="insurer-tile">
+            <span class="insurer-tile-icon">⭐</span>
+            <span>+ meer</span>
+          </div>
+        </div>
+        <div class="verzekeringen-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Twijfelt u of uw verzekering wordt vergoed? Bel ons en we controleren het samen voor u.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TESTIMONIALS ─────────────────────────────────────── -->
+<section class="testimonials" id="reviews">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="section-label">Ervaringen</div>
+      <h2 class="section-title">Wat onze patiënten zeggen</h2>
+      <p class="section-subtitle">Meer dan 500 tevreden patiënten gingen u voor. Lees hun ervaringen.</p>
+    </div>
+    <div class="testimonials-grid">
+
+      <div class="testimonial-card reveal delay-1">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">Na maanden met rugklachten te hebben rondgelopen, ben ik bij Fysio Noord terechtgekomen. Wat een verschil! Anne heeft precies de oorzaak van mijn pijn gevonden en me in zes weken klachtenvrij gemaakt. Zeer professioneel en betrokken team.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">MK</div>
+          <div>
+            <div class="author-name">Marieke K.</div>
+            <div class="author-detail">Behandeling: Rugklachten</div>
+          </div>
+          <span class="testimonial-tag">Geverifieerd</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-2">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">Als sporter heb ik regelmatig blessures. Lars is echt een specialist op dit gebied. Hij begrijpt wat ik nodig heb om snel terug in het veld te staan. De behandelingen zijn effectief en het advies rondom preventie is goud waard.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">TP</div>
+          <div>
+            <div class="author-name">Thomas P.</div>
+            <div class="author-detail">Behandeling: Sportblessure</div>
+          </div>
+          <span class="testimonial-tag">Geverifieerd</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-3">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">Mira heeft me enorm geholpen met mijn bekkenbodemproblemen na de bevalling. Ze was discreet, professioneel en heel begripvol. Ik voelde me op mijn gemak en heb fantastische resultaten geboekt. Ik raad haar van harte aan!</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">SB</div>
+          <div>
+            <div class="author-name">Sophie B.</div>
+            <div class="author-detail">Behandeling: Bekkenbodem</div>
+          </div>
+          <span class="testimonial-tag">Geverifieerd</span>
+        </div>
+      </div>
+
+      <div class="testimonial-card reveal delay-4">
+        <div class="testimonial-quote">"</div>
+        <div class="stars">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <p class="testimonial-text">Na mijn knieoperate ben ik begeleid door het team van Fysio Noord. Het revalidatieprogramma was uitstekend op mij afgestemd. Binnen drie maanden liep ik weer normaal. De betrokkenheid en expertise zijn echt bovengemiddeld.</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">RV</div>
+          <div>
+            <div class="author-name">Robert V.</div>
+            <div class="author-detail">Behandeling: Revalidatie</div>
+          </div>
+          <span class="testimonial-tag">Geverifieerd</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ─── AFSPRAAK MAKEN ────────────────────────────────────── -->
+<section class="afspraak" id="contact">
+  <div class="container">
+    <div class="afspraak-inner">
+      <div class="afspraak-left reveal">
+        <div class="section-label">Contact</div>
+        <h2>Maak vandaag nog een afspraak</h2>
+        <p>Wacht niet langer met uw herstel. Neem contact op en wij zorgen ervoor dat u snel geholpen wordt — persoonlijk, professioneel en met oog voor uw herstel.</p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.13.96.33 1.91.6 2.84a2 2 0 0 1-.45 2.11L7.91 9.24a16 16 0 0 0 6.29 6.29l1.3-1.3a2 2 0 0 1 2.11-.45c.93.27 1.88.47 2.84.6A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Telefoon</strong>
+              <a href="tel:+31501234567">050 - 123 45 67</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>E-mail</strong>
+              <a href="mailto:info@fysio-noord.nl">info@fysio-noord.nl</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Adres</strong>
+              <span>Herestraat 42, 9711 LP Groningen</span>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="contact-item-text">
+              <strong>Openingstijden</strong>
+              <span>Ma–Vr: 08:00–18:00<br>Za: 09:00–13:00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="afspraak-form reveal delay-3">
+        <h3 class="form-title">Online afspraak maken</h3>
+        <p class="form-subtitle">Vul het formulier in en wij nemen binnen één werkdag contact op.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="voornaam">Voornaam</label>
+              <input type="text" id="voornaam" name="voornaam" placeholder="Jan" required>
+            </div>
+            <div class="form-group">
+              <label for="achternaam">Achternaam</label>
+              <input type="text" id="achternaam" name="achternaam" placeholder="de Boer" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">E-mailadres</label>
+              <input type="email" id="email" name="email" placeholder="jan@voorbeeld.nl" required>
+            </div>
+            <div class="form-group">
+              <label for="telefoon">Telefoonnummer</label>
+              <input type="tel" id="telefoon" name="telefoon" placeholder="06-12345678">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="behandeling">Soort klacht</label>
+            <select id="behandeling" name="behandeling">
+              <option value="">Selecteer uw klacht</option>
+              <option>Rugklachten</option>
+              <option>Nekpijn</option>
+              <option>Sportblessure</option>
+              <option>Schouderklachten</option>
+              <option>Bekkenbodem</option>
+              <option>Revalidatie</option>
+              <option>Anders</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bericht">Korte omschrijving (optioneel)</label>
+            <textarea id="bericht" name="bericht" placeholder="Beschrijf kort uw klachten of vragen..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary form-submit">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+            Afspraak aanvragen
+          </button>
+          <p class="form-privacy">
+            <svg style="display:inline;vertical-align:middle;margin-right:4px" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Uw gegevens worden vertrouwelijk behandeld conform onze privacyverklaring.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ───────────────────────────────────────────── -->
 <footer>
-  <div class="fl">Fysio <span>Noord</span></div>
-  <p>© 2025 Fysio Noord · Groningen · BIG-geregistreerd</p>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="#" class="nav-logo">
+          <div class="nav-logo-mark">
+            <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 2C7 2 5 4.5 5 7c0 1.5.6 2.8 1.5 3.8L10 18l3.5-7.2C14.4 9.8 15 8.5 15 7c0-2.5-2-5-5-5z"/>
+              <circle cx="10" cy="7" r="2" fill="rgba(255,255,255,.5)"/>
+            </svg>
+          </div>
+          <span class="nav-logo-text">Fysio <span>Noord</span></span>
+        </a>
+        <p>Professionele fysiotherapiepraktijk in het hart van Groningen. BIG-geregistreerd, persoonlijk en voor iedereen toegankelijk.</p>
+        <div class="big-badge">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          BIG-geregistreerd KNGF-lid
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Behandelingen</h4>
+        <ul>
+          <li><a href="#behandelingen">Rugklachten</a></li>
+          <li><a href="#behandelingen">Nekpijn</a></li>
+          <li><a href="#behandelingen">Sportblessures</a></li>
+          <li><a href="#behandelingen">Schouderklachten</a></li>
+          <li><a href="#behandelingen">Bekkenbodem</a></li>
+          <li><a href="#behandelingen">Revalidatie</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Praktijk</h4>
+        <ul>
+          <li><a href="#team">Ons team</a></li>
+          <li><a href="#werkwijze">Werkwijze</a></li>
+          <li><a href="#verzekeringen">Verzekeringen</a></li>
+          <li><a href="#reviews">Ervaringen</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+31501234567">050 - 123 45 67</a></li>
+          <li><a href="mailto:info@fysio-noord.nl">info@fysio-noord.nl</a></li>
+          <li><a href="#">Herestraat 42</a></li>
+          <li><a href="#">9711 LP Groningen</a></li>
+          <li style="color:rgba(255,255,255,.35);font-size:.85rem;padding-top:4px">Ma–Vr 08:00–18:00</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Fysio Noord. Alle rechten voorbehouden.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacyverklaring</a>
+        <a href="#">Klachtenregeling</a>
+        <a href="#">Algemene voorwaarden</a>
+      </div>
+    </div>
+  </div>
 </footer>
+
+<!-- ─── SCRIPTS ──────────────────────────────────────────── -->
+<script>
+  // Nav scroll shadow
+  const nav = document.getElementById('mainNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 10);
+  });
+
+  // Intersection Observer for scroll reveals
+  const revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Staggered children in grid containers
+  document.querySelectorAll('.behandelingen-grid, .team-grid, .testimonials-grid').forEach(grid => {
+    const children = grid.querySelectorAll('.reveal');
+    children.forEach((child, i) => {
+      child.style.transitionDelay = `${i * 0.08}s`;
+    });
+  });
+
+  // Form submission
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    const original = btn.innerHTML;
+    btn.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg> Aanvraag verzonden!';
+    btn.style.background = '#096e58';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 3500);
+  }
+
+  // Mobile menu toggle (simple show/hide)
+  document.getElementById('hamburger').addEventListener('click', function() {
+    const links = document.querySelector('.nav-links');
+    const cta = document.querySelector('.nav-cta');
+    const isOpen = links.style.display === 'flex';
+    if (isOpen) {
+      links.style.display = '';
+      cta.style.display = '';
+    } else {
+      links.style.display = 'flex';
+      links.style.flexDirection = 'column';
+      links.style.position = 'absolute';
+      links.style.top = '68px';
+      links.style.left = '0';
+      links.style.right = '0';
+      links.style.background = 'white';
+      links.style.padding = '16px 28px 24px';
+      links.style.borderBottom = '1px solid #d9ece8';
+      links.style.boxShadow = '0 8px 20px rgba(0,0,0,.07)';
+      links.style.zIndex = '99';
+      cta.style.display = 'none';
+    }
+  });
+
+  // Close mobile menu on link click
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => {
+      const links = document.querySelector('.nav-links');
+      links.style.display = '';
+    });
+  });
+</script>
+
 </body>
 </html>

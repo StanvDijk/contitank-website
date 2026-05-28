@@ -3,132 +3,1897 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kroon Kapper — Rotterdam</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Kroon Kapper — Kapsalon Rotterdam-Zuid</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:#0E0B0C;color:#F5F0EA;overflow-x:hidden}
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.4rem 3rem;display:flex;align-items:center;justify-content:space-between;transition:background .3s}
-nav.s{background:rgba(14,11,12,.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
-.logo{font-family:'Playfair Display',serif;font-size:1.5rem;letter-spacing:.04em;color:#F5F0EA;text-decoration:none}
-.logo span{color:#C48B5A}
-.nav-book{padding:.55rem 1.4rem;border:1px solid #C48B5A;color:#C48B5A;font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .2s}
-.nav-book:hover{background:#C48B5A;color:#0E0B0C}
+  :root {
+    --charcoal: #0E0B0C;
+    --copper: #C48B5A;
+    --copper-light: #D9A97A;
+    --copper-dark: #A0714A;
+    --cream: #F5F0EA;
+    --cream-dark: #E8E0D4;
+    --text-muted: #8A7E74;
+    --white: #FFFFFF;
+  }
 
-#hero{min-height:100vh;display:flex;align-items:center;padding:0 3rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(100deg,rgba(14,11,12,.98) 0%,rgba(14,11,12,.7) 55%,rgba(14,11,12,.95) 100%),url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1400&q=80') center/cover no-repeat}
-.hero-content{position:relative;z-index:1;max-width:620px}
-.tag{font-size:.68rem;letter-spacing:.22em;text-transform:uppercase;color:#C48B5A;margin-bottom:1.4rem;display:flex;align-items:center;gap:.7rem}
-.tag::before{content:'';width:28px;height:1px;background:#C48B5A}
-h1{font-family:'Playfair Display',serif;font-size:clamp(3rem,6vw,5.5rem);line-height:1.02;color:#F5F0EA}
-h1 em{font-style:italic;color:#C48B5A}
-.hero-p{margin-top:1.5rem;font-size:1rem;font-weight:300;line-height:1.8;color:rgba(245,240,234,.6);max-width:440px}
-.hero-btns{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
-.btn-p{padding:.9rem 2rem;background:#C48B5A;color:#0E0B0C;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .2s}
-.btn-p:hover{background:#D4A070;transform:translateY(-2px)}
-.btn-s{padding:.9rem 2rem;border:1px solid rgba(245,240,234,.2);color:rgba(245,240,234,.7);font-size:.78rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;transition:all .2s}
-.btn-s:hover{border-color:rgba(245,240,234,.5);color:#F5F0EA}
+  html { scroll-behavior: smooth; }
 
-#diensten{padding:7rem 3rem;background:#130F10}
-.d-header{text-align:center;margin-bottom:4rem}
-.d-header h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);color:#F5F0EA;margin-top:.8rem}
-.d-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:900px;margin:0 auto}
-.d-card{padding:2.5rem 2rem;border:1px solid rgba(255,255,255,.07);border-radius:4px;text-align:center;transition:border-color .3s}
-.d-card:hover{border-color:rgba(196,139,90,.3)}
-.d-price{font-family:'Playfair Display',serif;font-size:2rem;color:#C48B5A;margin-bottom:.3rem}
-.d-name{font-size:.95rem;font-weight:600;color:#F5F0EA;margin-bottom:.5rem}
-.d-desc{font-size:.82rem;font-weight:300;line-height:1.65;color:rgba(245,240,234,.5)}
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--charcoal);
+    color: var(--cream);
+    overflow-x: hidden;
+  }
 
-#over{padding:7rem 3rem;background:#0E0B0C;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;max-width:1000px;margin:0 auto}
-.over-img{aspect-ratio:3/4;background:url('https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=600&q=80') center/cover;border-radius:4px;position:relative}
-.over-img::after{content:'25 jaar ervaring';position:absolute;bottom:2rem;right:-2rem;background:#C48B5A;color:#0E0B0C;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.8rem 1.2rem;border-radius:2px}
-.over-text h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,3rem);color:#F5F0EA;line-height:1.1;margin-top:.8rem}
-.over-text p{font-size:.95rem;font-weight:300;line-height:1.85;color:rgba(245,240,234,.6);margin-top:1.2rem}
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--charcoal); }
+  ::-webkit-scrollbar-thumb { background: var(--copper); border-radius: 3px; }
 
-#contact{padding:7rem 3rem;background:#130F10;text-align:center}
-#contact h2{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3.5rem);color:#F5F0EA;margin-bottom:.8rem}
-#contact p{color:rgba(245,240,234,.55);font-weight:300;margin-bottom:2.5rem}
-.contact-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;font-size:.9rem}
-.ci{display:flex;flex-direction:column;gap:.3rem}
-.ci span:first-child{font-size:.65rem;letter-spacing:.18em;text-transform:uppercase;color:#C48B5A;font-weight:600}
+  /* ─── ANIMATIONS ─── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-footer{padding:1.5rem 3rem;background:#080607;display:flex;justify-content:space-between;align-items:center;border-top:1px solid rgba(255,255,255,.05);flex-wrap:wrap;gap:1rem}
-footer .fl{font-family:'Playfair Display',serif;font-size:1.1rem;color:#F5F0EA}.fl span{color:#C48B5A}
-footer p{font-size:.72rem;color:rgba(245,240,234,.25)}
+  .delay-1 { transition-delay: 0.1s; }
+  .delay-2 { transition-delay: 0.2s; }
+  .delay-3 { transition-delay: 0.3s; }
+  .delay-4 { transition-delay: 0.4s; }
+  .delay-5 { transition-delay: 0.5s; }
 
-@media(max-width:768px){#over{grid-template-columns:1fr}.d-grid{grid-template-columns:1fr}.over-img::after{right:1rem}nav{padding:1.2rem 1.5rem}#hero,#diensten,#over,#contact{padding-left:1.5rem;padding-right:1.5rem}}
+  /* ─── NAVIGATION ─── */
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 0 5%;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background 0.4s ease, backdrop-filter 0.4s ease, box-shadow 0.4s ease;
+  }
+
+  nav.scrolled {
+    background: rgba(14, 11, 12, 0.95);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 1px 0 rgba(196, 139, 90, 0.2);
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+  }
+
+  .nav-logo-icon {
+    width: 42px;
+    height: 42px;
+    border: 2px solid var(--copper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-icon::before {
+    content: '✦';
+    color: var(--copper);
+    font-size: 16px;
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .nav-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--cream);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo-sub {
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-top: 3px;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 234, 0.7);
+    transition: color 0.3s;
+    position: relative;
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--copper);
+    transition: width 0.3s ease;
+  }
+
+  .nav-links a:hover { color: var(--cream); }
+  .nav-links a:hover::after { width: 100%; }
+
+  .nav-cta {
+    padding: 12px 28px;
+    background: var(--copper);
+    color: var(--charcoal) !important;
+    border-radius: 2px;
+    font-weight: 600 !important;
+    letter-spacing: 0.1em !important;
+    transition: background 0.3s, transform 0.2s !important;
+    font-size: 12px !important;
+  }
+
+  .nav-cta::after { display: none !important; }
+  .nav-cta:hover { background: var(--copper-light) !important; transform: translateY(-1px); }
+
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 5px;
+  }
+
+  .nav-hamburger span {
+    width: 26px;
+    height: 2px;
+    background: var(--cream);
+    transition: 0.3s;
+  }
+
+  /* ─── HERO ─── */
+  #hero {
+    position: relative;
+    height: 100vh;
+    min-height: 700px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1800&q=80') center/cover no-repeat;
+    transform: scale(1.05);
+    animation: heroZoom 12s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroZoom {
+    from { transform: scale(1.05); }
+    to { transform: scale(1.12); }
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(14, 11, 12, 0.88) 0%,
+      rgba(14, 11, 12, 0.65) 50%,
+      rgba(14, 11, 12, 0.80) 100%
+    );
+  }
+
+  .hero-overlay-bottom {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to top, var(--charcoal) 0%, transparent 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 5%;
+    margin-top: 80px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.3s forwards;
+  }
+
+  .hero-badge-line {
+    width: 40px;
+    height: 1px;
+    background: var(--copper);
+  }
+
+  .hero-badge-text {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--copper);
+  }
+
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(52px, 7vw, 90px);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--cream);
+    margin-bottom: 28px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.5s forwards;
+  }
+
+  .hero-title em {
+    font-style: italic;
+    color: var(--copper);
+  }
+
+  .hero-subtitle {
+    font-size: clamp(16px, 2vw, 19px);
+    font-weight: 300;
+    line-height: 1.7;
+    color: rgba(245, 240, 234, 0.75);
+    max-width: 540px;
+    margin-bottom: 48px;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+  }
+
+  .hero-buttons {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.9s forwards;
+  }
+
+  .btn-primary {
+    padding: 17px 38px;
+    background: var(--copper);
+    color: var(--charcoal);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-primary:hover {
+    background: var(--copper-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(196, 139, 90, 0.35);
+  }
+
+  .btn-secondary {
+    padding: 17px 38px;
+    background: transparent;
+    color: var(--cream);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    border: 1px solid rgba(245, 240, 234, 0.35);
+    transition: border-color 0.3s, background 0.3s, transform 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .btn-secondary:hover {
+    border-color: var(--copper);
+    background: rgba(196, 139, 90, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .hero-scroll {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    opacity: 0;
+    animation: fadeUp 1s ease 1.3s forwards;
+  }
+
+  .hero-scroll-text {
+    font-size: 10px;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(245, 240, 234, 0.4);
+  }
+
+  .hero-scroll-line {
+    width: 1px;
+    height: 50px;
+    background: linear-gradient(to bottom, var(--copper), transparent);
+    animation: scrollPulse 2s ease-in-out infinite;
+  }
+
+  @keyframes scrollPulse {
+    0%, 100% { opacity: 0.4; transform: scaleY(1); }
+    50% { opacity: 1; transform: scaleY(1.2); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ─── SECTION COMMONS ─── */
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--copper);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .section-tag::before, .section-tag::after {
+    content: '';
+    height: 1px;
+    background: var(--copper);
+    opacity: 0.5;
+  }
+
+  .section-tag::before { width: 30px; }
+  .section-tag::after { width: 30px; }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4.5vw, 56px);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--cream);
+    margin-bottom: 20px;
+  }
+
+  .section-title em {
+    font-style: italic;
+    color: var(--copper);
+  }
+
+  .section-desc {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    max-width: 560px;
+  }
+
+  .gold-divider {
+    width: 60px;
+    height: 2px;
+    background: linear-gradient(to right, var(--copper), transparent);
+    margin: 24px 0;
+  }
+
+  /* ─── SERVICES ─── */
+  #diensten {
+    padding: 120px 5%;
+    background: var(--charcoal);
+  }
+
+  .services-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .services-header .section-tag {
+    justify-content: center;
+  }
+
+  .services-header .section-desc {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .services-header .gold-divider {
+    margin: 24px auto;
+    width: 60px;
+  }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2px;
+    max-width: 1100px;
+    margin: 0 auto;
+    border: 1px solid rgba(196, 139, 90, 0.15);
+  }
+
+  .service-card {
+    padding: 44px 36px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid transparent;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+    transition: background 0.4s, border-color 0.4s, transform 0.4s;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--copper), transparent);
+    transform: scaleX(0);
+    transition: transform 0.5s ease;
+  }
+
+  .service-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top left, rgba(196, 139, 90, 0.06) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .service-card:hover {
+    background: rgba(196, 139, 90, 0.05);
+    border-color: rgba(196, 139, 90, 0.2);
+    transform: translateY(-4px);
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card:hover::after { opacity: 1; }
+
+  .service-icon {
+    font-size: 28px;
+    margin-bottom: 18px;
+    display: block;
+    filter: grayscale(0.3);
+  }
+
+  .service-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 8px;
+  }
+
+  .service-desc {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.7;
+    color: var(--text-muted);
+    margin-bottom: 24px;
+  }
+
+  .service-price {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--copper);
+  }
+
+  .service-price span {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* ─── ABOUT ─── */
+  #over-ons {
+    padding: 120px 5%;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #110D0E 100%);
+    overflow: hidden;
+  }
+
+  .about-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-image-wrap {
+    position: relative;
+  }
+
+  .about-image-frame {
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    aspect-ratio: 4/5;
+  }
+
+  .about-image-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.8s ease;
+  }
+
+  .about-image-frame:hover img { transform: scale(1.04); }
+
+  .about-image-frame::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 60%, rgba(14, 11, 12, 0.7) 100%);
+  }
+
+  .about-image-accent {
+    position: absolute;
+    bottom: -24px;
+    right: -24px;
+    width: 160px;
+    height: 160px;
+    border: 2px solid var(--copper);
+    border-radius: 3px;
+    z-index: -1;
+    opacity: 0.4;
+  }
+
+  .about-image-badge {
+    position: absolute;
+    bottom: 30px;
+    left: -24px;
+    z-index: 2;
+    background: var(--copper);
+    color: var(--charcoal);
+    padding: 18px 24px;
+    border-radius: 3px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(196, 139, 90, 0.3);
+  }
+
+  .about-image-badge-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 900;
+    line-height: 1;
+    display: block;
+  }
+
+  .about-image-badge-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+
+  .about-content { }
+
+  .about-content .section-desc {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .about-story {
+    font-size: 15px;
+    font-weight: 300;
+    line-height: 1.85;
+    color: rgba(245, 240, 234, 0.6);
+    margin-bottom: 20px;
+  }
+
+  .about-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(196, 139, 90, 0.2);
+  }
+
+  .stat-item { }
+
+  .stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--copper);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-top: 6px;
+    display: block;
+    line-height: 1.4;
+  }
+
+  .about-signature {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .about-signature-line {
+    width: 40px;
+    height: 1px;
+    background: var(--copper);
+    opacity: 0.5;
+  }
+
+  .about-signature-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: rgba(245, 240, 234, 0.6);
+  }
+
+  /* ─── GALLERY ─── */
+  #galerij {
+    padding: 120px 5%;
+    background: var(--charcoal);
+  }
+
+  .gallery-header {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+
+  .gallery-header .section-tag { justify-content: center; }
+  .gallery-header .gold-divider { margin: 24px auto; }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+  }
+
+  .gallery-item:nth-child(1) { grid-column: span 2; aspect-ratio: 16/9; }
+  .gallery-item:nth-child(2) { aspect-ratio: 3/4; }
+  .gallery-item:nth-child(3) { aspect-ratio: 3/4; }
+  .gallery-item:nth-child(4) { aspect-ratio: 4/3; }
+  .gallery-item:nth-child(5) { grid-column: span 2; aspect-ratio: 16/9; }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94), filter 0.7s;
+    filter: brightness(0.85) saturate(0.9);
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.07);
+    filter: brightness(1) saturate(1.1);
+  }
+
+  .gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(14, 11, 12, 0.5) 100%);
+    opacity: 0;
+    transition: opacity 0.4s;
+  }
+
+  .gallery-item:hover::after { opacity: 1; }
+
+  .gallery-overlay {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s, transform 0.4s;
+  }
+
+  .gallery-item:hover .gallery-overlay {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .gallery-tag {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    background: rgba(14, 11, 12, 0.7);
+    padding: 6px 12px;
+    border-radius: 2px;
+    backdrop-filter: blur(8px);
+  }
+
+  /* ─── TESTIMONIALS ─── */
+  #reviews {
+    padding: 120px 5%;
+    background: linear-gradient(180deg, var(--charcoal) 0%, #0A0809 100%);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #reviews::before {
+    content: '"';
+    position: absolute;
+    top: 40px;
+    left: 5%;
+    font-family: 'Playfair Display', serif;
+    font-size: 300px;
+    color: rgba(196, 139, 90, 0.04);
+    line-height: 1;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .reviews-header {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+
+  .reviews-header .section-tag { justify-content: center; }
+  .reviews-header .gold-divider { margin: 24px auto; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .review-card {
+    padding: 40px 36px;
+    background: rgba(255, 255, 255, 0.025);
+    border: 1px solid rgba(196, 139, 90, 0.12);
+    border-radius: 4px;
+    position: relative;
+    transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
+  }
+
+  .review-card:hover {
+    border-color: rgba(196, 139, 90, 0.35);
+    transform: translateY(-6px);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(196, 139, 90, 0.08);
+  }
+
+  .review-stars {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 22px;
+  }
+
+  .star {
+    color: var(--copper);
+    font-size: 16px;
+  }
+
+  .review-text {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 17px;
+    line-height: 1.75;
+    color: rgba(245, 240, 234, 0.85);
+    margin-bottom: 28px;
+  }
+
+  .review-author {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(196, 139, 90, 0.15);
+  }
+
+  .review-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 2px solid var(--copper);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--copper);
+    background: rgba(196, 139, 90, 0.08);
+    flex-shrink: 0;
+  }
+
+  .review-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--cream);
+  }
+
+  .review-meta {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 2px;
+  }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    padding: 120px 5%;
+    background: var(--charcoal);
+  }
+
+  .contact-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .contact-info { }
+
+  .contact-info .section-desc { margin-bottom: 48px; }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 48px;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 20px;
+    padding: 22px 0;
+    border-bottom: 1px solid rgba(196, 139, 90, 0.12);
+    align-items: flex-start;
+  }
+
+  .contact-item:first-child { border-top: 1px solid rgba(196, 139, 90, 0.12); }
+
+  .contact-item-icon {
+    width: 42px;
+    height: 42px;
+    border: 1px solid rgba(196, 139, 90, 0.3);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    flex-shrink: 0;
+    color: var(--copper);
+    margin-top: 2px;
+  }
+
+  .contact-item-content { }
+
+  .contact-item-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 4px;
+  }
+
+  .contact-item-value {
+    font-size: 15px;
+    color: var(--cream);
+    font-weight: 400;
+    line-height: 1.6;
+  }
+
+  .contact-item-value a {
+    color: var(--cream);
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+
+  .contact-item-value a:hover { color: var(--copper); }
+
+  .hours-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 24px;
+  }
+
+  .hours-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 4px 0;
+  }
+
+  .hours-day { color: var(--text-muted); }
+
+  .hours-time { color: var(--cream); font-weight: 500; }
+
+  .hours-closed { color: rgba(138, 126, 116, 0.5); }
+
+  /* ─── CONTACT FORM ─── */
+  .contact-form-wrap { }
+
+  .contact-form-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 32px;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .form-group.full { grid-column: span 2; }
+
+  .form-label {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .form-control {
+    padding: 14px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(196, 139, 90, 0.2);
+    border-radius: 3px;
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: border-color 0.3s, background 0.3s, box-shadow 0.3s;
+    outline: none;
+  }
+
+  .form-control::placeholder { color: rgba(138, 126, 116, 0.5); }
+
+  .form-control:focus {
+    border-color: var(--copper);
+    background: rgba(196, 139, 90, 0.04);
+    box-shadow: 0 0 0 3px rgba(196, 139, 90, 0.1);
+  }
+
+  select.form-control option {
+    background: #1a1416;
+    color: var(--cream);
+  }
+
+  textarea.form-control { resize: vertical; min-height: 120px; }
+
+  .form-submit {
+    grid-column: span 2;
+    padding: 17px 40px;
+    background: var(--copper);
+    color: var(--charcoal);
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.25s, box-shadow 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .form-submit:hover {
+    background: var(--copper-light);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(196, 139, 90, 0.3);
+  }
+
+  .form-note {
+    grid-column: span 2;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.6;
+  }
+
+  /* ─── FOOTER ─── */
+  footer {
+    background: #0A0809;
+    padding: 60px 5% 30px;
+    border-top: 1px solid rgba(196, 139, 90, 0.15);
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 60px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(196, 139, 90, 0.1);
+    margin-bottom: 36px;
+  }
+
+  .footer-brand { }
+
+  .footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+    text-decoration: none;
+  }
+
+  .footer-logo-icon {
+    width: 44px;
+    height: 44px;
+    border: 2px solid var(--copper);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--copper);
+    font-size: 16px;
+    flex-shrink: 0;
+  }
+
+  .footer-logo-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--cream);
+  }
+
+  .footer-brand-desc {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: 28px;
+  }
+
+  .footer-social {
+    display: flex;
+    gap: 12px;
+  }
+
+  .social-link {
+    width: 38px;
+    height: 38px;
+    border: 1px solid rgba(196, 139, 90, 0.25);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    text-decoration: none;
+    transition: border-color 0.3s, color 0.3s, background 0.3s;
+  }
+
+  .social-link:hover {
+    border-color: var(--copper);
+    color: var(--copper);
+    background: rgba(196, 139, 90, 0.08);
+  }
+
+  .footer-col { }
+
+  .footer-col-title {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--copper);
+    margin-bottom: 22px;
+  }
+
+  .footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+    font-size: 14px;
+    color: var(--text-muted);
+    transition: color 0.3s;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .footer-links a:hover { color: var(--cream); }
+
+  .footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .footer-copy {
+    font-size: 13px;
+    color: rgba(138, 126, 116, 0.5);
+  }
+
+  .footer-copy a {
+    color: var(--copper);
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+  }
+
+  .footer-copy a:hover { opacity: 1; }
+
+  .footer-badge {
+    font-size: 12px;
+    color: rgba(138, 126, 116, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .footer-badge::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--copper);
+    opacity: 0.6;
+    animation: blink 2s infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 0.6; }
+    50% { opacity: 0.2; }
+  }
+
+  /* ─── MOBILE NAV MENU ─── */
+  .nav-mobile-menu {
+    display: none;
+    position: fixed;
+    top: 80px;
+    left: 0;
+    right: 0;
+    background: rgba(14, 11, 12, 0.98);
+    backdrop-filter: blur(20px);
+    padding: 24px 5%;
+    border-bottom: 1px solid rgba(196, 139, 90, 0.15);
+    z-index: 999;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .nav-mobile-menu.open { display: flex; }
+
+  .nav-mobile-menu a {
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    color: rgba(245, 240, 234, 0.7);
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(196, 139, 90, 0.08);
+    transition: color 0.3s;
+    letter-spacing: 0.05em;
+  }
+
+  .nav-mobile-menu a:last-child { border-bottom: none; }
+  .nav-mobile-menu a:hover { color: var(--copper); }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1024px) {
+    .about-inner { grid-template-columns: 1fr; gap: 60px; }
+    .about-image-wrap { max-width: 500px; }
+    .about-image-badge { left: 0; }
+    .contact-inner { grid-template-columns: 1fr; gap: 60px; }
+    .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
+    .footer-brand { grid-column: span 2; }
+  }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-hamburger { display: flex; }
+    .hero-title { font-size: clamp(40px, 10vw, 64px); }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: 1fr 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 2; }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .form-grid { grid-template-columns: 1fr; }
+    .form-group.full { grid-column: span 1; }
+    .form-submit { grid-column: span 1; }
+    .form-note { grid-column: span 1; }
+    .footer-top { grid-template-columns: 1fr; gap: 36px; }
+    .footer-brand { grid-column: span 1; }
+    .about-stats { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 480px) {
+    .hero-buttons { flex-direction: column; }
+    .btn-primary, .btn-secondary { text-align: center; justify-content: center; }
+    .gallery-grid { grid-template-columns: 1fr; }
+    .gallery-item:nth-child(1) { grid-column: span 1; }
+    .gallery-item:nth-child(5) { grid-column: span 1; }
+    .gallery-item { aspect-ratio: 4/3 !important; }
+    .about-stats { grid-template-columns: 1fr; }
+    .hours-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
-<nav id="nav">
-  <a href="#" class="logo">Kroon <span>Kapper</span></a>
-  <a href="#contact" class="nav-book">Afspraak maken</a>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon"></div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">Kroon Kapper</span>
+      <span class="nav-logo-sub">Rotterdam-Zuid · Since 1999</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#diensten">Diensten</a></li>
+    <li><a href="#over-ons">Over ons</a></li>
+    <li><a href="#galerij">Galerij</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Afspraak maken</a></li>
+  </ul>
+
+  <div class="nav-hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
 </nav>
 
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="#diensten" onclick="toggleMenu()">Diensten</a>
+  <a href="#over-ons" onclick="toggleMenu()">Over ons</a>
+  <a href="#galerij" onclick="toggleMenu()">Galerij</a>
+  <a href="#reviews" onclick="toggleMenu()">Reviews</a>
+  <a href="#contact" onclick="toggleMenu()">Afspraak maken</a>
+</div>
+
+<!-- HERO -->
 <section id="hero">
   <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-overlay-bottom"></div>
+
   <div class="hero-content">
-    <div class="tag">Rotterdam-Zuid · Sinds 1999</div>
-    <h1>Jouw haar,<br><em>jouw stijl</em></h1>
-    <p class="hero-p">Welkom bij Kroon Kapper — waar vakmanschap en persoonlijke aandacht centraal staan. Voor heren, dames en kinderen.</p>
-    <div class="hero-btns">
-      <a href="#contact" class="btn-p">Afspraak maken</a>
-      <a href="#diensten" class="btn-s">Onze diensten</a>
+    <div class="hero-badge">
+      <span class="hero-badge-line"></span>
+      <span class="hero-badge-text">Kapsalon Rotterdam-Zuid · Opgericht 1999</span>
+      <span class="hero-badge-line"></span>
     </div>
+
+    <h1 class="hero-title">
+      Meer dan een<br>
+      knipbeurt — een<br>
+      <em>ritueel.</em>
+    </h1>
+
+    <p class="hero-subtitle">
+      25 jaar vakmanschap, passie en precisie. Welkom bij Kroon Kapper,
+      waar elke stoel een ervaring is en elk resultaat een statement.
+    </p>
+
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary">
+        Afspraak maken
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#diensten" class="btn-secondary">
+        Bekijk diensten
+      </a>
+    </div>
+  </div>
+
+  <div class="hero-scroll">
+    <span class="hero-scroll-text">Scroll</span>
+    <div class="hero-scroll-line"></div>
   </div>
 </section>
 
+<!-- DIENSTEN -->
 <section id="diensten">
-  <div class="d-header">
-    <div class="tag" style="justify-content:center">Wat wij bieden</div>
-    <h2>Onze diensten</h2>
+  <div class="services-header">
+    <div class="section-tag reveal">Onze specialiteiten</div>
+    <h2 class="section-title reveal delay-1">Diensten & <em>Tarieven</em></h2>
+    <div class="gold-divider reveal delay-2"></div>
+    <p class="section-desc reveal delay-2">Van een klassieke herenknippen tot een volledige kleurbehandeling — wij zorgen voor het perfecte resultaat.</p>
   </div>
-  <div class="d-grid">
-    <div class="d-card">
-      <div class="d-price">€18</div>
-      <div class="d-name">Herenknippen</div>
-      <p class="d-desc">Inclusief wassen, knippen en stylen. Altijd strak en verzorgd.</p>
+
+  <div class="services-grid">
+    <div class="service-card reveal delay-1">
+      <span class="service-icon">✂️</span>
+      <div class="service-name">Herenknippen</div>
+      <p class="service-desc">Klassieke of moderne knipstijl op maat, inclusief wassen en föhnen voor een strak eindresultaat.</p>
+      <div class="service-price">€18 <span>/ per beurt</span></div>
     </div>
-    <div class="d-card">
-      <div class="d-price">€35</div>
-      <div class="d-name">Damesknippen</div>
-      <p class="d-desc">Volledig behandeld: wassen, knippen, föhnen en stylen op maat.</p>
+
+    <div class="service-card reveal delay-2">
+      <span class="service-icon">💇‍♀️</span>
+      <div class="service-name">Damesknippen</div>
+      <p class="service-desc">Knippen op maat met oog voor structuur en volume. Inclusief wassen, knippen en föhnen.</p>
+      <div class="service-price">€35 <span>/ per beurt</span></div>
     </div>
-    <div class="d-card">
-      <div class="d-price">€12</div>
-      <div class="d-name">Kinderknippen</div>
-      <p class="d-desc">Geduldig en kindvriendelijk. Voor kinderen tot 12 jaar.</p>
+
+    <div class="service-card reveal delay-3">
+      <span class="service-icon">👦</span>
+      <div class="service-name">Kinderknippen</div>
+      <p class="service-desc">Speels en snel — voor kids tot 12 jaar. In een ontspannen sfeer zodat het ook voor jou prettig is.</p>
+      <div class="service-price">€12 <span>/ per beurt</span></div>
+    </div>
+
+    <div class="service-card reveal delay-1">
+      <span class="service-icon">🪒</span>
+      <div class="service-name">Baard trimmen</div>
+      <p class="service-desc">Precisiework voor de perfecte baardlijn. Contouring, trimmen en verzorging met hoogwaardige producten.</p>
+      <div class="service-price">€12 <span>/ per beurt</span></div>
+    </div>
+
+    <div class="service-card reveal delay-2">
+      <span class="service-icon">🎨</span>
+      <div class="service-name">Kleurbehandeling</div>
+      <p class="service-desc">Volledige kleurbehandeling met professionele producten. Eenkleurig verven voor een fris en verzorgd uiterlijk.</p>
+      <div class="service-price">€45 <span>/ per beurt</span></div>
+    </div>
+
+    <div class="service-card reveal delay-3">
+      <span class="service-icon">✨</span>
+      <div class="service-name">Highlights</div>
+      <p class="service-desc">Handgeselecteerde highlights voor meer diepte en dimensie in uw haar. Volledig op maat gemaakt.</p>
+      <div class="service-price">€55 <span>/ per beurt</span></div>
     </div>
   </div>
 </section>
 
-<section id="over" style="padding:7rem 3rem">
-  <div class="over-img"></div>
-  <div class="over-text">
-    <div class="tag">Over ons</div>
-    <h2>Vakmanschap met een persoonlijk tintje</h2>
-    <p>Kroon Kapper is al meer dan 25 jaar het vertrouwde adres in Rotterdam-Zuid. Eigenaar Mehmet knipt al zijn hele leven met passie en geeft persoonlijk aandacht aan elke klant.</p>
-    <p style="margin-top:.8rem">Bij ons bent u geen nummer. We nemen de tijd voor u en zorgen dat u tevreden de deur uitloopt.</p>
+<!-- OVER ONS -->
+<section id="over-ons">
+  <div class="about-inner">
+    <div class="about-image-wrap reveal-left">
+      <div class="about-image-frame">
+        <img src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=700&q=80" alt="Mehmet — eigenaar Kroon Kapper" loading="lazy">
+      </div>
+      <div class="about-image-accent"></div>
+      <div class="about-image-badge">
+        <span class="about-image-badge-num">25</span>
+        <span class="about-image-badge-label">Jaar ervaring</span>
+      </div>
+    </div>
+
+    <div class="about-content reveal-right">
+      <div class="section-tag">Ons verhaal</div>
+      <h2 class="section-title">Mehmet & zijn <em>passie</em> voor vakmanschap</h2>
+      <div class="gold-divider"></div>
+
+      <p class="about-story">
+        In 1999 opende Mehmet de deuren van Kroon Kapper in het hart van Rotterdam-Zuid.
+        Wat begon als een droom, groeide uit tot één van de meest geliefde kapsalons van de wijk.
+      </p>
+      <p class="about-story">
+        Met 25 jaar ervaring in het vak heeft Mehmet duizenden klanten mogen verwelkomen —
+        van generatie op generatie. Zijn filosofie is eenvoudig: iedereen verdient een coupe
+        waarbij hij of zij met een glimlach de deur uitloopt.
+      </p>
+      <p class="about-story">
+        Bij Kroon Kapper is het niet alleen een knipbeurt — het is een moment voor uzelf.
+        Koffie, een goed gesprek en haarscherpe precisie. Dat is onze belofte.
+      </p>
+
+      <div class="about-stats">
+        <div class="stat-item">
+          <span class="stat-num">25</span>
+          <span class="stat-label">Jaar ervaring</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">1000+</span>
+          <span class="stat-label">Tevreden klanten</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">5 ★</span>
+          <span class="stat-label">Google Reviews</span>
+        </div>
+      </div>
+
+      <div class="about-signature">
+        <span class="about-signature-line"></span>
+        <span class="about-signature-text">— Mehmet, eigenaar & kapper</span>
+      </div>
+    </div>
   </div>
 </section>
 
+<!-- GALERIJ -->
+<section id="galerij">
+  <div class="gallery-header">
+    <div class="section-tag reveal">Ons werk</div>
+    <h2 class="section-title reveal delay-1">De <em>sfeer</em> van Kroon Kapper</h2>
+    <div class="gold-divider reveal delay-2"></div>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item reveal delay-1">
+      <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80" alt="Kapper aan het werk" loading="lazy">
+      <div class="gallery-overlay"><span class="gallery-tag">Vakmanschap</span></div>
+    </div>
+    <div class="gallery-item reveal delay-2">
+      <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?w=500&q=80" alt="Baard trimmen" loading="lazy">
+      <div class="gallery-overlay"><span class="gallery-tag">Baard</span></div>
+    </div>
+    <div class="gallery-item reveal delay-3">
+      <img src="https://images.unsplash.com/photo-1596728325488-58c87691e9af?w=500&q=80" alt="Kapper interieur" loading="lazy">
+      <div class="gallery-overlay"><span class="gallery-tag">Sfeer</span></div>
+    </div>
+    <div class="gallery-item reveal delay-1">
+      <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?w=600&q=80" alt="Kappersstoel" loading="lazy">
+      <div class="gallery-overlay"><span class="gallery-tag">Interieur</span></div>
+    </div>
+    <div class="gallery-item reveal delay-2">
+      <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?w=900&q=80" alt="Haarknip resultaat" loading="lazy">
+      <div class="gallery-overlay"><span class="gallery-tag">Resultaat</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="reviews-header">
+    <div class="section-tag reveal">Wat klanten zeggen</div>
+    <h2 class="section-title reveal delay-1">Gewaardeerd door <em>Rotterdam</em></h2>
+    <div class="gold-divider reveal delay-2"></div>
+  </div>
+
+  <div class="reviews-grid">
+    <div class="review-card reveal delay-1">
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="review-text">
+        "Al meer dan tien jaar mijn vaste kapper. Mehmet weet precies wat ik wil zonder dat ik het hoef uit te leggen. Echt een vakman van het hoogste niveau. Rotterdam-Zuid mag trots zijn op deze zaak."
+      </p>
+      <div class="review-author">
+        <div class="review-avatar">R</div>
+        <div>
+          <div class="review-name">Rachid B.</div>
+          <div class="review-meta">Vaste klant · Rotterdam-Zuid</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal delay-2">
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="review-text">
+        "Mijn kinderen gaan al jaren bij Kroon Kapper — altijd blij, nooit een drama. Mehmet heeft een bijzonder talent om ook met de kleinsten geduldig en vriendelijk te werken. Een aanrader voor het hele gezin!"
+      </p>
+      <div class="review-author">
+        <div class="review-avatar">F</div>
+        <div>
+          <div class="review-name">Fatima K.</div>
+          <div class="review-meta">Moeder van drie · Rotterdam</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="review-card reveal delay-3">
+      <div class="review-stars">
+        <span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span><span class="star">★</span>
+      </div>
+      <p class="review-text">
+        "Zocht een goede kapper in Zuid en toevallig binnengekomen bij Kroon Kapper. Nooit meer weggegaan. De sfeer is top, de prijs is eerlijk en het resultaat is elke keer weer perfect. Absolute aanrader!"
+      </p>
+      <div class="review-author">
+        <div class="review-avatar">S</div>
+        <div>
+          <div class="review-name">Sander V.</div>
+          <div class="review-meta">Klant · Charlois</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
 <section id="contact">
-  <div class="tag" style="justify-content:center">Contact</div>
-  <h2>Kom langs of bel ons</h2>
-  <p>Inlopen kan altijd, maar een afspraak voorkomt wachten.</p>
-  <div class="contact-info">
-    <div class="ci"><span>Adres</span><span>Beijerlandselaan 88, Rotterdam</span></div>
-    <div class="ci"><span>Telefoon</span><span>010 – 412 38 77</span></div>
-    <div class="ci"><span>Openingstijden</span><span>Di–Za: 9:00 – 18:00</span></div>
+  <div class="contact-inner">
+    <div class="contact-info reveal-left">
+      <div class="section-tag">Kom langs of bel ons</div>
+      <h2 class="section-title">Maak een <em>afspraak</em></h2>
+      <div class="gold-divider"></div>
+      <p class="section-desc">Bel ons direct of vul het formulier in. We bevestigen uw afspraak zo snel mogelijk.</p>
+
+      <div class="contact-details">
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-content">
+            <div class="contact-item-label">Adres</div>
+            <div class="contact-item-value">Groene Hilledijk 47<br>3071 PN Rotterdam-Zuid</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-content">
+            <div class="contact-item-label">Telefoon</div>
+            <div class="contact-item-value"><a href="tel:+31102345678">010 - 234 56 78</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-content">
+            <div class="contact-item-label">E-mail</div>
+            <div class="contact-item-value"><a href="mailto:info@kroonkapper.nl">info@kroonkapper.nl</a></div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-content">
+            <div class="contact-item-label">Openingstijden</div>
+            <div class="contact-item-value">
+              <div class="hours-grid">
+                <div class="hours-row"><span class="hours-day">Maandag</span><span class="hours-time">9:00 – 18:00</span></div>
+                <div class="hours-row"><span class="hours-day">Dinsdag</span><span class="hours-time">9:00 – 18:00</span></div>
+                <div class="hours-row"><span class="hours-day">Woensdag</span><span class="hours-time">9:00 – 18:00</span></div>
+                <div class="hours-row"><span class="hours-day">Donderdag</span><span class="hours-time">9:00 – 20:00</span></div>
+                <div class="hours-row"><span class="hours-day">Vrijdag</span><span class="hours-time">9:00 – 20:00</span></div>
+                <div class="hours-row"><span class="hours-day">Zaterdag</span><span class="hours-time">8:30 – 17:00</span></div>
+                <div class="hours-row"><span class="hours-day">Zondag</span><span class="hours-closed">Gesloten</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form-wrap reveal-right">
+      <div class="contact-form-title">Stuur ons een bericht</div>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Voornaam</label>
+            <input type="text" class="form-control" placeholder="Jouw voornaam" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Achternaam</label>
+            <input type="text" class="form-control" placeholder="Jouw achternaam">
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Telefoonnummer</label>
+            <input type="tel" class="form-control" placeholder="06 12 34 56 78">
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Gewenste dienst</label>
+            <select class="form-control">
+              <option value="" disabled selected>Selecteer een dienst</option>
+              <option>Herenknippen — €18</option>
+              <option>Damesknippen — €35</option>
+              <option>Kinderknippen — €12</option>
+              <option>Baard trimmen — €12</option>
+              <option>Kleurbehandeling — €45</option>
+              <option>Highlights — €55</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Gewenste datum & tijd</label>
+            <input type="datetime-local" class="form-control">
+          </div>
+          <div class="form-group full">
+            <label class="form-label">Opmerking (optioneel)</label>
+            <textarea class="form-control" placeholder="Bijzonderheden, wensen of vragen..."></textarea>
+          </div>
+          <button type="submit" class="form-submit">
+            Afspraak aanvragen
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7H13M7 1l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+          <p class="form-note">Wij nemen binnen 24 uur contact met u op ter bevestiging. Of bel direct: <strong style="color: var(--copper);">010 - 234 56 78</strong></p>
+        </div>
+      </form>
+    </div>
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
-  <div class="fl">Kroon <span>Kapper</span></div>
-  <p>© 2025 Kroon Kapper · Rotterdam-Zuid</p>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#" class="footer-logo">
+          <div class="footer-logo-icon">✦</div>
+          <span class="footer-logo-name">Kroon Kapper</span>
+        </a>
+        <p class="footer-brand-desc">
+          Meer dan een kapsalon — een instituut in Rotterdam-Zuid. Mehmet en zijn team staan voor u klaar met 25 jaar vakmanschap, warmte en precisie. Elke dag opnieuw.
+        </p>
+        <div class="footer-social">
+          <a href="#" class="social-link" aria-label="Instagram">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="Facebook">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" class="social-link" aria-label="WhatsApp">
+            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Navigatie</div>
+        <ul class="footer-links">
+          <li><a href="#diensten">Diensten & Tarieven</a></li>
+          <li><a href="#over-ons">Over Mehmet</a></li>
+          <li><a href="#galerij">Galerij</a></li>
+          <li><a href="#reviews">Klantreviews</a></li>
+          <li><a href="#contact">Contact & Afspraak</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Diensten</div>
+        <ul class="footer-links">
+          <li><a href="#diensten">Herenknippen €18</a></li>
+          <li><a href="#diensten">Damesknippen €35</a></li>
+          <li><a href="#diensten">Kinderknippen €12</a></li>
+          <li><a href="#diensten">Baard trimmen €12</a></li>
+          <li><a href="#diensten">Kleurbehandeling €45</a></li>
+          <li><a href="#diensten">Highlights €55</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <div class="footer-col-title">Contact</div>
+        <ul class="footer-links">
+          <li><a href="#">Groene Hilledijk 47, Rotterdam</a></li>
+          <li><a href="tel:+31102345678">010 - 234 56 78</a></li>
+          <li><a href="mailto:info@kroonkapper.nl">info@kroonkapper.nl</a></li>
+          <li><a href="#">Ma–Vr: 9:00–20:00</a></li>
+          <li><a href="#">Zat: 8:30–17:00</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copy">
+        &copy; 2024 Kroon Kapper. Alle rechten voorbehouden.
+        Kapsalon Rotterdam-Zuid · KvK 12345678 ·
+        <a href="#">Privacy</a> · <a href="#">Algemene voorwaarden</a>
+      </p>
+      <div class="footer-badge">Opgericht 1999 · 25 jaar vakmanschap</div>
+    </div>
+  </div>
 </footer>
-<script>window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('s',scrollY>50))</script>
+
+<script>
+  // ─── NAV SCROLL ───
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+
+  // ─── HAMBURGER ───
+  function toggleMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('open');
+    const bars = document.querySelectorAll('.nav-hamburger span');
+    if (menu.classList.contains('open')) {
+      bars[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+      bars[1].style.opacity = '0';
+      bars[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+    } else {
+      bars[0].style.transform = '';
+      bars[1].style.opacity = '';
+      bars[2].style.transform = '';
+    }
+  }
+
+  // Close menu on outside click
+  document.addEventListener('click', (e) => {
+    const menu = document.getElementById('mobileMenu');
+    const hamburger = document.getElementById('hamburger');
+    if (menu.classList.contains('open') && !menu.contains(e.target) && !hamburger.contains(e.target)) {
+      toggleMenu();
+    }
+  });
+
+  // ─── INTERSECTION OBSERVER ───
+  const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+  const observerOptions = {
+    threshold: 0.12,
+    rootMargin: '0px 0px -40px 0px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  reveals.forEach(el => observer.observe(el));
+
+  // ─── SMOOTH NAV LINKS ───
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+      e.preventDefault();
+      const target = document.querySelector(href);
+      if (target) {
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.scrollY - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // ─── FORM SUBMIT ───
+  function handleSubmit(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    const original = btn.innerHTML;
+
+    btn.innerHTML = 'Afspraak aangevraagd ✓';
+    btn.style.background = '#4CAF50';
+    btn.disabled = true;
+
+    setTimeout(() => {
+      btn.innerHTML = original;
+      btn.style.background = '';
+      btn.disabled = false;
+      e.target.reset();
+    }, 4000);
+  }
+
+  // ─── COUNTER ANIMATION ───
+  function animateCounter(el, target, suffix = '') {
+    const duration = 2000;
+    const start = performance.now();
+    const isPlus = suffix.includes('+');
+    const numTarget = parseInt(target.replace(/\D/g, ''));
+
+    const update = (timestamp) => {
+      const elapsed = timestamp - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      const current = Math.floor(eased * numTarget);
+
+      if (target.includes('★')) {
+        el.textContent = '5 ★';
+      } else if (target.includes('+')) {
+        el.textContent = current + '+';
+      } else {
+        el.textContent = current;
+      }
+
+      if (progress < 1) requestAnimationFrame(update);
+    };
+
+    requestAnimationFrame(update);
+  }
+
+  // Trigger counters when about section is in view
+  const statsSection = document.querySelector('.about-stats');
+  let countersAnimated = false;
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !countersAnimated) {
+        countersAnimated = true;
+        const statNums = document.querySelectorAll('.stat-num');
+        const targets = ['25', '1000+', '5 ★'];
+        statNums.forEach((el, i) => animateCounter(el, targets[i]));
+      }
+    });
+  }, { threshold: 0.5 });
+
+  if (statsSection) statsObserver.observe(statsSection);
+</script>
+
 </body>
 </html>
