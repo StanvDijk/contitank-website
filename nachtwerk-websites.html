@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nachtwerk Websites — Professionele website voor €99,99</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --black:   #080B10;
+  --dark:    #0D1117;
+  --dark-2:  #131920;
+  --dark-3:  #1A2332;
+  --accent:  #7C3AED;
+  --accent-2:#9B5CFF;
+  --gold:    #F59E0B;
+  --green:   #10B981;
+  --white:   #F0EEE9;
+  --muted:   rgba(240,238,233,0.5);
+  --line:    rgba(240,238,233,0.08);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Outfit', sans-serif; background: var(--black); color: var(--white); overflow-x: hidden; }
+
+/* ── NAV ────────────────────────────────────── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  transition: background 0.4s, border-color 0.4s;
+}
+nav.scrolled {
+  background: rgba(8,11,16,0.95);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--line);
+}
+.nav-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.7rem; letter-spacing: 0.1em;
+  color: var(--white); text-decoration: none;
+}
+.nav-logo span { color: var(--accent-2); }
+.nav-cta-sm {
+  padding: 0.6rem 1.6rem;
+  background: var(--accent); color: #fff;
+  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; text-decoration: none; border-radius: 4px;
+  transition: background 0.2s, transform 0.2s;
+}
+.nav-cta-sm:hover { background: var(--accent-2); transform: translateY(-1px); }
+
+/* ── HERO ────────────────────────────────────── */
+#hero {
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  text-align: center; padding: 8rem 2rem 6rem;
+  position: relative; overflow: hidden;
+}
+.hero-glow-1 {
+  position: absolute; width: 700px; height: 700px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 65%);
+  top: -100px; left: 50%; transform: translateX(-50%);
+  pointer-events: none;
+}
+.hero-glow-2 {
+  position: absolute; width: 400px; height: 400px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(245,158,11,0.1) 0%, transparent 65%);
+  bottom: 0; right: 10%;
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(124,58,237,0.15);
+  border: 1px solid rgba(124,58,237,0.35);
+  border-radius: 100px;
+  font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent-2);
+  margin-bottom: 2rem;
+  opacity: 0; animation: up 0.7s 0.2s forwards;
+}
+.badge-dot { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+
+.hero-h1 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(3.5rem, 8vw, 7.5rem);
+  line-height: 0.93; letter-spacing: 0.02em; color: var(--white);
+  opacity: 0; animation: up 0.8s 0.35s forwards;
+}
+.hero-h1 .highlight {
+  background: linear-gradient(135deg, var(--accent-2), var(--gold));
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  max-width: 560px; margin: 1.8rem auto 0;
+  font-size: 1.1rem; font-weight: 300; line-height: 1.75; color: var(--muted);
+  opacity: 0; animation: up 0.8s 0.5s forwards;
+}
+
+.hero-price-callout {
+  display: inline-flex; align-items: center; gap: 1.5rem;
+  margin: 2.5rem auto 0;
+  padding: 1.2rem 2.5rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 8px;
+  opacity: 0; animation: up 0.8s 0.65s forwards;
+}
+.price-main { text-align: left; }
+.price-big {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 3rem; line-height: 1; color: var(--white);
+}
+.price-big sup { font-size: 1.4rem; vertical-align: super; }
+.price-label { font-size: 0.75rem; color: var(--muted); font-weight: 400; margin-top: 0.1rem; }
+.price-divider { width: 1px; height: 50px; background: var(--line); }
+.price-monthly { text-align: left; }
+.price-monthly-num {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2rem; line-height: 1; color: var(--muted);
+}
+.price-monthly-label { font-size: 0.72rem; color: rgba(240,238,233,0.35); margin-top: 0.1rem; }
+
+.hero-actions {
+  display: flex; align-items: center; justify-content: center; gap: 1rem;
+  margin-top: 2.5rem; flex-wrap: wrap;
+  opacity: 0; animation: up 0.8s 0.8s forwards;
+}
+.btn-main {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  padding: 1rem 2.4rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.08em;
+  text-transform: uppercase; text-decoration: none; border-radius: 6px;
+  transition: all 0.25s; box-shadow: 0 8px 30px rgba(124,58,237,0.35);
+}
+.btn-main:hover { transform: translateY(-3px); box-shadow: 0 14px 40px rgba(124,58,237,0.45); }
+.btn-ghost {
+  padding: 1rem 2rem;
+  border: 1px solid var(--line);
+  color: var(--muted); font-size: 0.9rem; font-weight: 500;
+  text-decoration: none; border-radius: 6px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { border-color: rgba(255,255,255,0.25); color: var(--white); }
+
+.hero-trust {
+  display: flex; align-items: center; justify-content: center; gap: 1.5rem;
+  margin-top: 3rem; flex-wrap: wrap;
+  opacity: 0; animation: up 0.8s 1s forwards;
+}
+.trust-item {
+  display: flex; align-items: center; gap: 0.5rem;
+  font-size: 0.8rem; color: var(--muted);
+}
+.trust-item svg { width: 16px; height: 16px; stroke: var(--green); fill: none; stroke-width: 2.5; }
+
+@keyframes up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── PROBLEEM SECTION ───────────────────────── */
+#probleem {
+  padding: 7rem 4rem;
+  background: var(--dark);
+  text-align: center;
+}
+.section-kicker {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--accent-2);
+  margin-bottom: 1rem; display: block;
+}
+.section-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 0.95; letter-spacing: 0.02em; color: var(--white);
+  margin-bottom: 1.2rem;
+}
+.section-sub {
+  max-width: 560px; margin: 0 auto;
+  font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted);
+}
+
+.pain-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  max-width: 900px; margin: 4rem auto 0;
+}
+.pain-card {
+  padding: 2rem 1.8rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--line);
+  border-radius: 8px; text-align: left;
+  position: relative; overflow: hidden;
+}
+.pain-card::before {
+  content: '✗';
+  position: absolute; top: 1rem; right: 1.2rem;
+  font-size: 1.2rem; color: rgba(239,68,68,0.4);
+}
+.pain-card h4 { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+.pain-card p  { font-size: 0.85rem; font-weight: 300; line-height: 1.7; color: var(--muted); }
+
+/* ── WAT JE KRIJGT ──────────────────────────── */
+#features {
+  padding: 7rem 4rem;
+  position: relative; overflow: hidden;
+}
+.features-inner {
+  max-width: 1100px; margin: 0 auto;
+}
+.feat-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+  background: var(--line); border: 1px solid var(--line);
+  margin-top: 4rem; border-radius: 8px; overflow: hidden;
+}
+.feat-item {
+  background: var(--dark);
+  padding: 2.5rem 2rem;
+  transition: background 0.3s;
+}
+.feat-item:hover { background: rgba(124,58,237,0.08); }
+.feat-icon {
+  width: 44px; height: 44px;
+  background: rgba(124,58,237,0.12);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1.2rem;
+}
+.feat-icon svg { width: 22px; height: 22px; stroke: var(--accent-2); fill: none; stroke-width: 1.8; }
+.feat-title { font-size: 1rem; font-weight: 700; color: var(--white); margin-bottom: 0.4rem; }
+.feat-text  { font-size: 0.84rem; font-weight: 300; line-height: 1.7; color: var(--muted); }
+
+/* ── PRIJS ──────────────────────────────────── */
+#prijs {
+  padding: 7rem 4rem;
+  background: var(--dark);
+  text-align: center;
+}
+.pricing-cards {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  max-width: 700px; margin: 4rem auto 0;
+}
+.price-card {
+  padding: 2.5rem 2.2rem;
+  border: 1px solid var(--line);
+  border-radius: 12px; text-align: left;
+  background: rgba(255,255,255,0.03);
+  transition: border-color 0.3s, transform 0.3s;
+  position: relative;
+}
+.price-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
+.price-card.featured {
+  border-color: rgba(124,58,237,0.5);
+  background: rgba(124,58,237,0.07);
+}
+.featured-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; font-size: 0.65rem; font-weight: 800;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding: 0.3rem 1rem; border-radius: 100px;
+  white-space: nowrap;
+}
+.pc-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; }
+.pc-price {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 4rem; line-height: 1; color: var(--white);
+  display: flex; align-items: flex-start; gap: 0.1em;
+}
+.pc-price sup { font-size: 1.6rem; margin-top: 0.4rem; }
+.pc-period { font-size: 0.85rem; font-weight: 300; color: var(--muted); margin-top: 0.4rem; }
+.pc-desc { font-size: 0.88rem; font-weight: 300; line-height: 1.7; color: var(--muted); margin-top: 1rem; }
+.pc-items { list-style: none; margin-top: 1.5rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.pc-items li {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: 0.85rem; font-weight: 400; color: var(--white);
+}
+.pc-items li svg { width: 15px; height: 15px; stroke: var(--green); fill: none; stroke-width: 2.5; flex-shrink: 0; }
+
+.pricing-note {
+  max-width: 560px; margin: 2.5rem auto 0;
+  font-size: 0.85rem; font-weight: 300; color: var(--muted);
+  line-height: 1.7;
+}
+.pricing-note strong { color: var(--white); }
+
+/* ── WERKWIJZE ──────────────────────────────── */
+#werkwijze {
+  padding: 7rem 4rem;
+  position: relative;
+}
+.steps-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+  max-width: 1000px; margin: 4rem auto 0;
+  position: relative;
+}
+.steps-grid::before {
+  content: ''; position: absolute;
+  top: 2rem; left: 2.5rem; right: 2.5rem; height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), var(--gold), transparent);
+  z-index: 0;
+}
+.step {
+  padding: 0 1.5rem; text-align: center; position: relative; z-index: 1;
+}
+.step-num {
+  width: 56px; height: 56px; border-radius: 50%;
+  background: var(--dark-3);
+  border: 2px solid var(--accent);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 1.4rem; color: var(--accent-2);
+  margin: 0 auto 1.5rem;
+  position: relative; z-index: 1;
+}
+.step h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.5rem; }
+.step p  { font-size: 0.82rem; font-weight: 300; line-height: 1.65; color: var(--muted); }
+
+/* ── VOORBEELDEN ─────────────────────────────── */
+#voorbeelden {
+  padding: 7rem 4rem;
+  background: var(--dark);
+}
+.examples-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;
+  max-width: 900px; margin: 4rem auto 0;
+}
+.example-card {
+  border: 1px solid var(--line); border-radius: 10px; overflow: hidden;
+  transition: border-color 0.3s, transform 0.3s;
+}
+.example-card:hover { border-color: rgba(124,58,237,0.4); transform: translateY(-4px); }
+.example-preview {
+  height: 200px;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Bebas Neue', sans-serif; font-size: 3rem; letter-spacing: 0.05em;
+  position: relative; overflow: hidden;
+}
+.preview-contitank {
+  background: linear-gradient(135deg, #060F1E, #0D2244);
+  color: #C8A94A;
+}
+.preview-placeholder {
+  background: linear-gradient(135deg, #0D1117, #1A2332);
+  color: rgba(240,238,233,0.15);
+}
+.preview-placeholder::after {
+  content: 'UW BEDRIJF';
+  position: absolute; font-size: 2rem;
+}
+.example-info { padding: 1.5rem 1.8rem; }
+.example-info h4 { font-size: 0.95rem; font-weight: 700; color: var(--white); margin-bottom: 0.3rem; }
+.example-info p  { font-size: 0.82rem; font-weight: 300; color: var(--muted); }
+.example-link {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  font-size: 0.78rem; font-weight: 600; color: var(--accent-2);
+  text-decoration: none; margin-top: 0.8rem;
+  transition: gap 0.2s;
+}
+.example-link:hover { gap: 0.7rem; }
+
+/* ── CTA SECTIE ─────────────────────────────── */
+#cta {
+  padding: 8rem 4rem;
+  text-align: center;
+  position: relative; overflow: hidden;
+}
+.cta-glow {
+  position: absolute; width: 600px; height: 600px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 65%);
+  top: 50%; left: 50%; transform: translate(-50%,-50%);
+  pointer-events: none;
+}
+.cta-box {
+  max-width: 680px; margin: 0 auto; position: relative; z-index: 1;
+  padding: 4rem 3rem;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(124,58,237,0.25);
+  border-radius: 16px;
+}
+.cta-h2 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.95; color: var(--white); margin-bottom: 1.2rem;
+}
+.cta-sub { font-size: 1rem; font-weight: 300; line-height: 1.8; color: var(--muted); margin-bottom: 2.5rem; }
+
+/* contact form */
+.cf-group { margin-bottom: 1rem; text-align: left; }
+.cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.cf-group input, .cf-group textarea, .cf-group select {
+  width: 100%;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 0.9rem 1.1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem; font-weight: 300; color: var(--white);
+  outline: none; transition: border-color 0.25s;
+}
+.cf-group input::placeholder, .cf-group textarea::placeholder { color: rgba(240,238,233,0.3); }
+.cf-group input:focus, .cf-group textarea:focus, .cf-group select:focus {
+  border-color: rgba(124,58,237,0.6);
+}
+.cf-group textarea { height: 110px; resize: vertical; }
+.cf-group select option { background: var(--dark-3); }
+.cf-submit {
+  width: 100%; padding: 1.1rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #fff; border: none; border-radius: 6px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; cursor: pointer;
+  transition: all 0.25s; margin-top: 0.5rem;
+  box-shadow: 0 8px 24px rgba(124,58,237,0.3);
+}
+.cf-submit:hover { transform: translateY(-2px); box-shadow: 0 14px 32px rgba(124,58,237,0.45); }
+
+/* ── FOOTER ─────────────────────────────────── */
+footer {
+  background: #04060A;
+  padding: 2rem 4rem;
+  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--line); flex-wrap: wrap; gap: 1rem;
+}
+.footer-logo {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.4rem; letter-spacing: 0.1em; color: var(--white);
+}
+.footer-logo span { color: var(--accent-2); }
+.footer-copy { font-size: 0.75rem; color: rgba(240,238,233,0.25); }
+
+/* ── REVEAL ─────────────────────────────────── */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ─────────────────────────────── */
+@media (max-width: 900px) {
+  nav, #hero, #probleem, #features, #prijs, #werkwijze, #voorbeelden, #cta { padding-left: 1.5rem; padding-right: 1.5rem; }
+  .pain-grid, .feat-grid { grid-template-columns: 1fr; }
+  .pricing-cards { grid-template-columns: 1fr; max-width: 400px; }
+  .steps-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid::before { display: none; }
+  .examples-grid { grid-template-columns: 1fr; }
+  .cf-row { grid-template-columns: 1fr; }
+  footer { flex-direction: column; padding: 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">NACHT<span>WERK</span></a>
+  <a href="#cta" class="nav-cta-sm">Gratis offerte →</a>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-glow-1"></div>
+  <div class="hero-glow-2"></div>
+
+  <div style="position:relative;z-index:1">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Beschikbaar voor nieuwe klanten
+    </div>
+    <h1 class="hero-h1">
+      Een professionele<br>
+      website voor<br>
+      <span class="highlight">€99,99</span>
+    </h1>
+    <p class="hero-sub">Wij bouwen een snelle, moderne website voor uw bedrijf. Geen gedoe, geen verborgen kosten. Gewoon een mooie site die klanten overtuigt.</p>
+
+    <div class="hero-price-callout">
+      <div class="price-main">
+        <div class="price-big"><sup>€</sup>99,99</div>
+        <div class="price-label">Eenmalig — website bouwen</div>
+      </div>
+      <div class="price-divider"></div>
+      <div class="price-monthly">
+        <div class="price-monthly-num">+€10/mnd</div>
+        <div class="price-monthly-label">Onderhoud & beheer</div>
+      </div>
+    </div>
+
+    <div class="hero-actions">
+      <a href="#cta" class="btn-main">
+        Ja, ik wil een website
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#voorbeelden" class="btn-ghost">Voorbeelden bekijken</a>
+    </div>
+
+    <div class="hero-trust">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Binnen 7 dagen live
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Mobiel-vriendelijk
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Geen abonnement verplicht
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+        Altijd bereikbaar
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEEM -->
+<section id="probleem">
+  <div class="reveal">
+    <span class="section-kicker">Herkenbaar?</span>
+    <h2 class="section-h2">Geen website kost u klanten</h2>
+    <p class="section-sub">In 2025 zoekt 9 van de 10 mensen online naar een bedrijf voordat ze contact opnemen. Zonder website bestaat u niet.</p>
+  </div>
+
+  <div class="pain-grid reveal" style="transition-delay:0.1s">
+    <div class="pain-card">
+      <h4>Verouderde of geen website</h4>
+      <p>Een slechte of ontbrekende website wekt wantrouwen. Klanten kiezen liever een concurrent die er professioneel uitziet.</p>
+    </div>
+    <div class="pain-card">
+      <h4>Te duur bij grote bureaus</h4>
+      <p>Webdesignbureaus vragen al snel €2.000 tot €10.000 voor een simpele site. Dat is voor veel MKB'ers niet te betalen.</p>
+    </div>
+    <div class="pain-card">
+      <h4>Zelf bouwen kost te veel tijd</h4>
+      <p>Wix en WordPress klinken makkelijk, maar kosten weken aan tijd — terwijl u uw bedrijf moet runnen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="features-inner">
+    <div class="reveal" style="text-align:center">
+      <span class="section-kicker">Wat u krijgt</span>
+      <h2 class="section-h2">Alles inbegrepen</h2>
+      <p class="section-sub">Voor €99,99 levert u een complete, professionele website op. Geen verborgen kosten.</p>
+    </div>
+
+    <div class="feat-grid reveal" style="transition-delay:0.1s">
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+        <div class="feat-title">Professioneel design</div>
+        <p class="feat-text">Op maat gemaakt, passend bij uw branche en huisstijl. Geen standaard templates.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div>
+        <div class="feat-title">Mobiel-vriendelijk</div>
+        <p class="feat-text">Uw site werkt perfect op telefoon, tablet en computer. 60% van het verkeer is mobiel.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></div>
+        <div class="feat-title">SEO-klaar</div>
+        <p class="feat-text">Gevonden worden in Google. We optimaliseren uw site zodat klanten u kunnen vinden.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <div class="feat-title">Razendsnel</div>
+        <p class="feat-text">Snelle laadtijden zorgen voor minder afhakers en hogere Google-ranking.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="feat-title">Veilig & betrouwbaar</div>
+        <p class="feat-text">SSL-certificaat (https), dagelijkse backups en veilige hosting inbegrepen.</p>
+      </div>
+      <div class="feat-item">
+        <div class="feat-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+        <div class="feat-title">Contactformulier</div>
+        <p class="feat-text">Leads komen direct in uw mailbox. Nooit meer een klantvraag missen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRIJS -->
+<section id="prijs">
+  <div class="reveal">
+    <span class="section-kicker">Transparante prijzen</span>
+    <h2 class="section-h2">Eerlijk & duidelijk</h2>
+    <p class="section-sub">Geen verrassingen. Geen kleine lettertjes. Gewoon een eerlijke prijs voor goed werk.</p>
+  </div>
+
+  <div class="pricing-cards reveal" style="transition-delay:0.1s">
+    <div class="price-card featured">
+      <div class="featured-badge">Meest gekozen</div>
+      <div class="pc-label">Website bouwen</div>
+      <div class="pc-price"><sup>€</sup>99<span style="font-size:2rem">,99</span></div>
+      <div class="pc-period">Eenmalig</div>
+      <p class="pc-desc">Wij bouwen uw volledige website. U betaalt één keer en heeft een website voor het leven.</p>
+      <ul class="pc-items">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Op maat ontworpen</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Tot 5 pagina's</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Mobiel-vriendelijk</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Contactformulier</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SEO-basisoptimalisatie</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Binnen 7 dagen live</li>
+      </ul>
+    </div>
+
+    <div class="price-card">
+      <div class="pc-label">Onderhoud & beheer</div>
+      <div class="pc-price"><sup>€</sup>10</div>
+      <div class="pc-period">Per maand — optioneel</div>
+      <p class="pc-desc">Wij houden uw website up-to-date, veilig en draaiend. Helemaal zorgeloos.</p>
+      <ul class="pc-items">
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Veilige hosting</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>SSL-certificaat</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Maandelijkse updates</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Dagelijkse backups</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Kleine aanpassingen</li>
+        <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Opzegbaar per maand</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="pricing-note reveal" style="transition-delay:0.2s">
+    <strong>Geen verborgen kosten.</strong> Het onderhoudspakket is volledig optioneel — u kunt ook zelf uw domein en hosting regelen. We leggen alles eerlijk uit voordat u akkoord gaat.
+  </p>
+</section>
+
+<!-- WERKWIJZE -->
+<section id="werkwijze">
+  <div class="reveal" style="text-align:center">
+    <span class="section-kicker">Hoe het werkt</span>
+    <h2 class="section-h2">Van aanvraag tot live in 7 dagen</h2>
+    <p class="section-sub">Simpel en snel. Geen eindeloze vergaderingen of weken wachten.</p>
+  </div>
+
+  <div class="steps-grid reveal" style="transition-delay:0.1s">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Aanvragen</h4>
+      <p>Vul het formulier in. We nemen binnen 24 uur contact op voor een kort gesprekje.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Ontwerp</h4>
+      <p>We bouwen uw website op maat. U krijgt een preview en mag feedback geven.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Goedkeuring</h4>
+      <p>Blij met het resultaat? Dan betaalt u pas — achteraf, na goedkeuring.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>Live!</h4>
+      <p>Uw website gaat online. Klanten kunnen u vanaf nu vinden.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VOORBEELDEN -->
+<section id="voorbeelden">
+  <div class="reveal" style="text-align:center">
+    <span class="section-kicker">Portfolio</span>
+    <h2 class="section-h2">Zo kan uw website eruitzien</h2>
+    <p class="section-sub">Elke website bouwen we volledig op maat — passend bij uw bedrijf en branche.</p>
+  </div>
+
+  <div class="examples-grid reveal" style="transition-delay:0.1s">
+    <div class="example-card">
+      <div class="example-preview preview-contitank">CONTITANK</div>
+      <div class="example-info">
+        <h4>Contitank — Tankterminal</h4>
+        <p>Full-service logistieke dienstverlener, Haven Delfzijl</p>
+        <a href="https://github.com/StanvDijk/contitank-website/blob/main/contitank-website.html" target="_blank" class="example-link">Bekijk voorbeeld →</a>
+      </div>
+    </div>
+    <div class="example-card">
+      <div class="example-preview preview-placeholder"></div>
+      <div class="example-info">
+        <h4>Uw bedrijf hier</h4>
+        <p>Volledig op maat gemaakt voor uw branche en doelgroep</p>
+        <a href="#cta" class="example-link">Aanvragen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="cta">
+  <div class="cta-glow"></div>
+  <div class="cta-box reveal">
+    <span class="section-kicker">Gratis offerte</span>
+    <h2 class="cta-h2">Klaar voor een professionele website?</h2>
+    <p class="cta-sub">Laat uw gegevens achter en we nemen binnen 24 uur contact op. Geheel vrijblijvend.</p>
+
+    <form id="contactForm">
+      <div class="cf-row">
+        <div class="cf-group">
+          <input type="text" placeholder="Uw naam" required>
+        </div>
+        <div class="cf-group">
+          <input type="text" placeholder="Bedrijfsnaam" required>
+        </div>
+      </div>
+      <div class="cf-row">
+        <div class="cf-group">
+          <input type="email" placeholder="E-mailadres" required>
+        </div>
+        <div class="cf-group">
+          <input type="tel" placeholder="Telefoonnummer">
+        </div>
+      </div>
+      <div class="cf-group">
+        <select>
+          <option value="">Wat voor bedrijf heeft u?</option>
+          <option>Horeca / Restaurant</option>
+          <option>Bouw / Installatie</option>
+          <option>Zorg / Welzijn</option>
+          <option>Retail / Winkel</option>
+          <option>Dienstverlening</option>
+          <option>Transport / Logistiek</option>
+          <option>Anders</option>
+        </select>
+      </div>
+      <div class="cf-group">
+        <textarea placeholder="Vertel iets over uw bedrijf en wat u zoekt (optioneel)"></textarea>
+      </div>
+      <button type="submit" class="cf-submit">Stuur mijn aanvraag — gratis & vrijblijvend →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">NACHT<span>WERK</span></div>
+  <span class="footer-copy">© 2025 Nachtwerk Websites — Professionele websites voor MKB</span>
+</footer>
+
+<script>
+  /* Sticky nav */
+  window.addEventListener('scroll', () => {
+    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  /* Reveal */
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  /* Form */
+  document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = this.querySelector('.cf-submit');
+    btn.textContent = 'Verstuurd! We nemen snel contact op ✓';
+    btn.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+    setTimeout(() => {
+      btn.textContent = 'Stuur mijn aanvraag — gratis & vrijblijvend →';
+      btn.style.background = '';
+      this.reset();
+    }, 4000);
+  });
+</script>
+</body>
+</html>
