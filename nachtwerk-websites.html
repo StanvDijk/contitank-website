@@ -4,228 +4,212 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nachtwerk — Websites voor €99,99</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --ink:   #0F0F0F;
-  --mid:   #555;
-  --soft:  #999;
-  --line:  #E5E3DE;
-  --bg:    #F7F5F0;
-  --bg2:   #EFEDE7;
-  --white: #FFFFFF;
-  --blue:  #1740C4;
+  --cream:  #FAF8F3;
+  --cream2: #F2EFE8;
+  --cream3: #E9E5DC;
+  --ink:    #161614;
+  --mid:    #58574F;
+  --soft:   #A09D95;
+  --line:   #E4E1D8;
+  --blue:   #2B5CE6;
+  --blue-l: #EEF2FD;
+  --amber:  #C87600;
+  --amber-l:#FDF4E3;
+  --green:  #1A6B4A;
+  --green-l:#E8F5EE;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 /* ── NAV ─────────────────────────────── */
-nav{position:sticky;top:0;z-index:200;height:58px;background:rgba(247,245,240,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 4.5rem}
-.logo{font-size:.95rem;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.01em}
+nav{position:sticky;top:0;z-index:200;height:60px;background:rgba(250,248,243,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 5rem}
+.logo{font-size:.97rem;font-weight:700;color:var(--ink);text-decoration:none}
 .logo em{font-style:normal;color:var(--blue)}
 .nav-r{display:flex;align-items:center;gap:2.5rem}
 .nav-link{font-size:.8rem;font-weight:500;color:var(--soft);text-decoration:none;transition:color .2s}
 .nav-link:hover{color:var(--ink)}
-.nav-cta{padding:.5rem 1.2rem;background:var(--ink);color:#fff;font-size:.76rem;font-weight:600;text-decoration:none;border-radius:2px;letter-spacing:.02em;transition:opacity .2s}
-.nav-cta:hover{opacity:.7}
+.nav-cta{padding:.52rem 1.25rem;background:var(--blue);color:#fff;font-size:.76rem;font-weight:600;text-decoration:none;border-radius:4px;transition:opacity .2s}
+.nav-cta:hover{opacity:.82}
 
 /* ── HERO ────────────────────────────── */
 #hero{position:relative;overflow:hidden;height:100vh;min-height:640px;display:flex;align-items:flex-end}
 .h-photo{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1800&q=85') center 30%/cover no-repeat}
-.h-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(15deg,rgba(8,8,8,.92) 0%,rgba(8,8,8,.6) 50%,rgba(8,8,8,.25) 100%)}
-.h-inner{position:relative;z-index:1;padding:0 4.5rem 5rem;width:100%;display:grid;grid-template-columns:1fr 260px;align-items:flex-end;gap:3rem;max-width:1400px}
-.h-kicker{font-size:.65rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem}
-h1{font-size:clamp(3.5rem,7.5vw,7rem);font-weight:700;line-height:.97;letter-spacing:-.035em;color:#fff}
-h1 .dim{color:rgba(255,255,255,.25);display:block}
-.h-body{margin-top:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:3rem;flex-wrap:wrap}
-.h-sub{font-size:1rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.5);max-width:420px}
-.h-btns{display:flex;gap:.8rem;flex-shrink:0;flex-wrap:wrap}
-.btn-w{padding:.8rem 1.8rem;background:#fff;color:var(--ink);font-size:.82rem;font-weight:700;text-decoration:none;border-radius:2px;transition:opacity .2s;white-space:nowrap}
-.btn-w:hover{opacity:.85}
-.btn-ghost{padding:.8rem 1.8rem;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;text-decoration:none;border-radius:2px;transition:all .2s;white-space:nowrap}
+.h-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(15deg,rgba(8,8,8,.94) 0%,rgba(8,8,8,.65) 50%,rgba(8,8,8,.2) 100%)}
+.h-inner{position:relative;z-index:1;padding:0 5rem 5rem;width:100%;display:grid;grid-template-columns:1fr 260px;align-items:flex-end;gap:3rem}
+.h-kicker{font-size:.64rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);margin-bottom:2rem}
+h1{font-size:clamp(3.5rem,7.5vw,7rem);font-weight:700;line-height:.96;letter-spacing:-.035em;color:#fff}
+h1 .dim{color:rgba(255,255,255,.22);display:block}
+.h-row{margin-top:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.h-sub{font-size:.98rem;font-weight:300;line-height:1.78;color:rgba(255,255,255,.48);max-width:400px}
+.h-btns{display:flex;gap:.7rem;flex-wrap:wrap;flex-shrink:0}
+.btn-w{padding:.8rem 1.7rem;background:#fff;color:var(--ink);font-size:.82rem;font-weight:700;text-decoration:none;border-radius:4px;transition:opacity .2s;white-space:nowrap}
+.btn-w:hover{opacity:.86}
+.btn-ghost{padding:.8rem 1.7rem;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.65);font-size:.82rem;font-weight:500;text-decoration:none;border-radius:4px;transition:all .2s;white-space:nowrap}
 .btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
-.h-price{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:3px;padding:1.8rem 2rem;backdrop-filter:blur(20px);align-self:flex-end;flex-shrink:0}
-.hp-l{font-size:.6rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.7rem}
+.h-price{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:6px;padding:1.8rem 2rem;backdrop-filter:blur(20px)}
+.hp-l{font-size:.59rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.7rem}
 .hp-n{font-size:2.8rem;font-weight:700;color:#fff;line-height:1;letter-spacing:-.03em}
-.hp-s{font-size:.75rem;color:rgba(255,255,255,.3);margin-top:.3rem}
-.hp-sep{height:1px;background:rgba(255,255,255,.08);margin:1rem 0}
-.hp-e{font-size:.8rem;color:rgba(255,255,255,.35)}
-.hp-e strong{color:rgba(255,255,255,.6);font-weight:500}
+.hp-s{font-size:.74rem;color:rgba(255,255,255,.28);margin-top:.3rem}
+.hp-sep{height:1px;background:rgba(255,255,255,.09);margin:.9rem 0}
+.hp-e{font-size:.78rem;color:rgba(255,255,255,.32)}
+.hp-e strong{color:rgba(255,255,255,.55);font-weight:500}
 
 /* ── MARQUEE ─────────────────────────── */
-.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.85rem 0;background:var(--white)}
+.mq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:.85rem 0;background:#fff}
 .mq-t{display:inline-flex;animation:mq 28s linear infinite;white-space:nowrap}
-.mq-t span{font-size:.68rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:0 2.2rem;border-right:1px solid var(--line)}
+.mq-t span{font-size:.67rem;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--soft);padding:0 2rem;border-right:1px solid var(--line)}
 @keyframes mq{to{transform:translateX(-50%)}}
 
-/* ── DARK STATS BAND ─────────────────── */
-#stats{background:var(--ink);padding:0 4.5rem;display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;border-bottom:1px solid #222}
-.stat-col{padding:4rem 0 4rem 3rem;border-left:1px solid #222;position:relative;overflow:hidden}
-.stat-col:first-child{padding-left:0;border-left:none;padding-right:3rem}
-.stat-col:first-child p{font-size:1rem;font-weight:300;line-height:1.75;color:rgba(255,255,255,.4);max-width:280px}
-.stat-col:first-child h2{font-size:clamp(1.6rem,2.5vw,2.2rem);font-weight:700;color:#fff;letter-spacing:-.025em;line-height:1.15;margin-bottom:1rem}
-.stat-n{font-size:clamp(4rem,7vw,6rem);font-weight:700;color:#fff;line-height:1;letter-spacing:-.04em;display:block}
-.stat-unit{font-size:1.2rem;opacity:.35}
-.stat-label{font-size:.78rem;font-weight:300;color:rgba(255,255,255,.35);margin-top:.7rem;line-height:1.5}
+/* ── INTRO ───────────────────────────── */
+#intro{padding:7rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:8rem;align-items:start;border-bottom:1px solid var(--line)}
+.intro-l h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
+.intro-l p{font-size:.97rem;font-weight:300;line-height:1.85;color:var(--mid);margin-top:1.2rem;max-width:420px}
+.stats-r{display:flex;flex-direction:column;gap:0;padding-top:.5rem}
+.stat-item{display:flex;align-items:baseline;justify-content:space-between;padding:1.5rem 0;border-bottom:1px solid var(--line);gap:2rem}
+.stat-item:first-child{border-top:1px solid var(--line)}
+.si-num{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;line-height:1;flex-shrink:0}
+.si-num.blue{color:var(--blue)}
+.si-num.amber{color:var(--amber)}
+.si-num.green{color:var(--green)}
+.si-desc{font-size:.84rem;font-weight:300;line-height:1.6;color:var(--mid);text-align:right;max-width:220px}
 
-/* ── BENTO FEATURES ──────────────────── */
-#features{padding:5rem 4.5rem}
-.feat-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:2.5rem}
-.bento{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:180px;gap:1px;background:var(--line)}
-.b{background:var(--bg);padding:2rem;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;position:relative;transition:background .25s}
-.b:hover{background:var(--white)}
-.b-title{font-size:1.1rem;font-weight:700;color:var(--ink);letter-spacing:-.015em;line-height:1.2}
-.b-desc{font-size:.82rem;font-weight:300;line-height:1.65;color:var(--mid)}
-.b-tag{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);align-self:flex-start}
-.b-num{position:absolute;right:1.5rem;bottom:1rem;font-size:5rem;font-weight:800;color:rgba(0,0,0,.04);line-height:1;letter-spacing:-.04em;pointer-events:none}
+/* ── FEATURES ────────────────────────── */
+#features{padding:7rem 5rem;border-bottom:1px solid var(--line);background:var(--cream2)}
+.feat-head{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-bottom:4rem;align-items:end}
+.feat-head-r{font-size:.97rem;font-weight:300;line-height:1.8;color:var(--mid)}
+.feat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.fc{background:#fff;border-radius:10px;padding:2rem;border:1px solid var(--line);transition:transform .25s,box-shadow .25s}
+.fc:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.07)}
+.fc-dot{width:10px;height:10px;border-radius:50%;margin-bottom:1.4rem;flex-shrink:0}
+.fc-dot.blue{background:var(--blue)}
+.fc-dot.amber{background:var(--amber)}
+.fc-dot.green{background:var(--green)}
+.fc-dot.indigo{background:#6B48E8}
+.fc-dot.teal{background:#0E8A7A}
+.fc-dot.rose{background:#C8404A}
+.fc-title{font-size:1rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:.5rem}
+.fc-text{font-size:.83rem;font-weight:300;line-height:1.7;color:var(--mid)}
+.fc-tag{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:1.2rem;padding:.25rem .7rem;background:var(--cream2);border-radius:3px}
 
-/* bento grid spans */
-.b1{grid-column:span 5;grid-row:span 2;background:var(--ink);justify-content:flex-end}
-.b1 .b-title{font-size:1.8rem;color:#fff;line-height:1.15}
-.b1 .b-desc{color:rgba(255,255,255,.45);font-size:.9rem;margin-top:.6rem}
-.b1 .b-tag{color:rgba(255,255,255,.3)}
-.b1 .b-num{color:rgba(255,255,255,.04)}
-.b2{grid-column:span 4}
-.b3{grid-column:span 3}
-.b4{grid-column:span 3}
-.b5{grid-column:span 7;background:var(--blue);border:none}
-.b5 .b-title{color:#fff}
-.b5 .b-desc{color:rgba(255,255,255,.5)}
-.b5 .b-tag{color:rgba(255,255,255,.4)}
-.b5 .b-num{color:rgba(255,255,255,.06)}
-.b6{grid-column:span 3}
-.b7{grid-column:span 2}
+/* ── AMBER BAND ──────────────────────── */
+#band{background:var(--amber);padding:4rem 5rem;display:flex;align-items:center;justify-content:space-between;gap:3rem;flex-wrap:wrap}
+.band-text h3{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:700;color:#fff;letter-spacing:-.02em;line-height:1.15}
+.band-text p{font-size:.9rem;font-weight:300;color:rgba(255,255,255,.7);margin-top:.4rem}
+.band-details{display:flex;gap:3rem;flex-wrap:wrap}
+.bd-item{display:flex;align-items:flex-start;gap:.7rem}
+.bd-item svg{width:16px;height:16px;stroke:#fff;fill:none;stroke-width:2;margin-top:2px;flex-shrink:0}
+.bd-item span{font-size:.85rem;font-weight:500;color:#fff;line-height:1.5}
 
 /* ── PRIJS ───────────────────────────── */
-#prijs{padding:5rem 4.5rem;border-top:1px solid var(--line)}
-.prijs-wrap{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line);margin-top:3rem}
-.pc{background:var(--bg);padding:3rem;transition:background .2s}
-.pc:hover{background:var(--white)}
-.pc.dark{background:var(--ink)}
-.pc.dark:hover{background:#1a1a1a}
-.pc-eyebrow{font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:1.5rem}
-.pc.dark .pc-eyebrow{color:rgba(255,255,255,.3)}
-.pc-price{font-size:3.2rem;font-weight:700;letter-spacing:-.04em;color:var(--ink);line-height:1}
-.pc.dark .pc-price{color:#fff}
-.pc-period{font-size:.8rem;color:var(--soft);margin-top:.4rem}
-.pc.dark .pc-period{color:rgba(255,255,255,.3)}
+#prijs{padding:7rem 5rem;border-bottom:1px solid var(--line)}
+.prijs-h{margin-bottom:3.5rem}
+.prijs-h h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)}
+.prijs-h p{font-size:.97rem;font-weight:300;color:var(--mid);margin-top:.6rem}
+.prijs-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.pc{padding:3rem;border-radius:10px;border:1px solid var(--line);background:#fff;position:relative}
+.pc.main{background:var(--blue);border-color:var(--blue)}
+.pc-badge{position:absolute;top:-12px;left:2.5rem;background:var(--amber);color:#fff;font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.3rem .9rem;border-radius:100px}
+.pc-label{font-size:.63rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-bottom:1.2rem}
+.pc.main .pc-label{color:rgba(255,255,255,.5)}
+.pc-price{font-size:3.5rem;font-weight:800;letter-spacing:-.04em;color:var(--ink);line-height:1}
+.pc.main .pc-price{color:#fff}
+.pc-sub{font-size:.82rem;color:var(--soft);margin-top:.35rem}
+.pc.main .pc-sub{color:rgba(255,255,255,.45)}
 .pc-sep{height:1px;background:var(--line);margin:2rem 0}
-.pc.dark .pc-sep{background:rgba(255,255,255,.08)}
+.pc.main .pc-sep{background:rgba(255,255,255,.15)}
 .pc-list{list-style:none;display:flex;flex-direction:column;gap:.65rem}
-.pc-list li{font-size:.85rem;font-weight:300;color:var(--mid);display:flex;align-items:flex-start;gap:.6rem;line-height:1.5}
-.pc.dark .pc-list li{color:rgba(255,255,255,.45)}
-.pc-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--soft);flex-shrink:0;margin-top:.45rem}
-.pc.dark .pc-list li::before{background:rgba(255,255,255,.3)}
-.pc-cta{display:inline-block;margin-top:2.5rem;padding:.8rem 1.8rem;background:var(--ink);color:#fff;font-size:.78rem;font-weight:600;text-decoration:none;border-radius:2px;transition:opacity .2s}
-.pc-cta:hover{opacity:.7}
-.pc.dark .pc-cta{background:#fff;color:var(--ink)}
-.pc-note{font-size:.75rem;font-weight:300;color:var(--soft);line-height:1.6;margin-top:1rem}
-.pc-middle{background:var(--bg2)}
+.pc-list li{font-size:.86rem;font-weight:300;color:var(--mid);display:flex;align-items:center;gap:.65rem}
+.pc.main .pc-list li{color:rgba(255,255,255,.7)}
+.pc-list li::before{content:'✓';color:var(--green);font-weight:700;font-size:.8rem;flex-shrink:0}
+.pc.main .pc-list li::before{color:rgba(255,255,255,.8)}
+.pc-note{font-size:.78rem;font-weight:300;color:var(--soft);margin-top:1.5rem;line-height:1.6}
+.pc.main .pc-note{color:rgba(255,255,255,.4)}
 
-/* ── WERKWIJZE ───────────────────────── */
-#hoe{padding:5rem 4.5rem;border-top:1px solid var(--line);background:var(--ink)}
-#hoe .ey{color:rgba(255,255,255,.3)}
-#hoe .sh{color:#fff}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.07);margin-top:3.5rem;border:1px solid rgba(255,255,255,.07)}
-.step{background:var(--ink);padding:2.5rem;transition:background .25s}
-.step:hover{background:#1a1a1a}
-.sn{font-size:3.5rem;font-weight:800;color:rgba(255,255,255,.07);line-height:1;letter-spacing:-.04em;margin-bottom:1.5rem}
-.st{font-size:1rem;font-weight:600;color:#fff;margin-bottom:.6rem;letter-spacing:-.01em}
-.sd{font-size:.84rem;font-weight:300;line-height:1.7;color:rgba(255,255,255,.35)}
-
-/* ── DARK STATEMENT ──────────────────── */
-#statement{padding:7rem 4.5rem;background:var(--ink);border-top:1px solid #222;text-align:center}
-.st-txt{font-size:clamp(1.8rem,4vw,3.5rem);font-weight:700;color:#fff;letter-spacing:-.03em;line-height:1.15;max-width:800px;margin:0 auto}
-.st-txt em{font-style:italic;font-weight:300;color:rgba(255,255,255,.35)}
-.st-btn{display:inline-flex;align-items:center;gap:.6rem;margin-top:3rem;padding:.9rem 2.2rem;background:#fff;color:var(--ink);font-size:.82rem;font-weight:700;text-decoration:none;border-radius:2px;transition:opacity .2s}
-.st-btn:hover{opacity:.8}
+/* ── HOE ─────────────────────────────── */
+#hoe{padding:7rem 5rem;border-bottom:1px solid var(--line);background:var(--cream2)}
+.hoe-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3.5rem}
+.hoe-card{background:#fff;border-radius:10px;padding:2.5rem;border:1px solid var(--line)}
+.hoe-n{font-size:3rem;font-weight:800;color:var(--line);line-height:1;letter-spacing:-.04em;margin-bottom:1.2rem}
+.hoe-t{font-size:1.05rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;margin-bottom:.5rem}
+.hoe-d{font-size:.85rem;font-weight:300;line-height:1.75;color:var(--mid)}
 
 /* ── PORTFOLIO ───────────────────────── */
-#portfolio{padding:5rem 0;border-top:1px solid var(--line)}
-.port-head{padding:0 4.5rem;display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;flex-wrap:wrap;gap:1.5rem}
+#portfolio{padding:7rem 5rem;border-bottom:1px solid var(--line)}
+.port-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
 .port-head h2{font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)}
-.port-grid{display:grid;grid-template-columns:7fr 5fr;gap:1px;background:var(--line)}
-.port-row-2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:var(--line)}
-.port-card{background:var(--bg);overflow:hidden;display:flex;flex-direction:column;cursor:pointer}
-.port-card:hover .port-img{transform:scale(1.04);filter:brightness(1.05) saturate(1.1)}
-.port-img{height:320px;background-size:cover;background-position:center;transition:transform .6s cubic-bezier(.16,1,.3,1),filter .6s;filter:brightness(.95) saturate(.9)}
-.port-card.small .port-img{height:240px}
-.port-body{padding:1.6rem 2rem;border-top:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:1rem}
-.port-name{font-size:.95rem;font-weight:600;color:var(--ink);letter-spacing:-.01em}
-.port-sub{font-size:.75rem;font-weight:300;color:var(--soft);margin-top:.15rem}
-.port-arrow{font-size:.85rem;color:var(--soft);text-decoration:none;transition:color .2s,transform .2s;display:inline-block;flex-shrink:0}
-.port-card:hover .port-arrow{color:var(--blue);transform:translateX(3px)}
-.port-next{background:var(--ink);padding:3rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.port-next h3{font-size:1.3rem;font-weight:700;color:#fff;letter-spacing:-.02em}
-.port-next p{font-size:.82rem;font-weight:300;color:rgba(255,255,255,.35);margin-top:.2rem}
-.btn-sm-w{padding:.75rem 1.6rem;background:#fff;color:var(--ink);font-size:.78rem;font-weight:700;text-decoration:none;border-radius:2px;white-space:nowrap;transition:opacity .2s}
-.btn-sm-w:hover{opacity:.8}
+.port-head p{font-size:.9rem;font-weight:300;color:var(--mid);margin-top:.3rem}
+.port-main{display:grid;grid-template-columns:7fr 5fr;gap:1.5rem;margin-bottom:1.5rem}
+.port-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1.5rem}
+.pcard{border-radius:10px;overflow:hidden;background:#fff;border:1px solid var(--line);text-decoration:none;display:flex;flex-direction:column;transition:box-shadow .3s,transform .3s}
+.pcard:hover{box-shadow:0 12px 40px rgba(0,0,0,.1);transform:translateY(-4px)}
+.pcard-img{background-size:cover;background-position:center;transition:transform .5s}
+.pcard:hover .pcard-img{transform:scale(1.04)}
+.pcard.large .pcard-img{height:340px}
+.pcard.medium .pcard-img{height:280px}
+.pcard.small .pcard-img{height:220px}
+.pcard-body{padding:1.4rem 1.6rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex:1}
+.pcard-name{font-size:.92rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+.pcard-sub{font-size:.75rem;font-weight:300;color:var(--soft);margin-top:.15rem}
+.pcard-arr{font-size:.85rem;color:var(--soft);flex-shrink:0;transition:color .2s,transform .2s}
+.pcard:hover .pcard-arr{color:var(--blue);transform:translateX(3px)}
+
+.port-cta{margin-top:1.5rem;background:var(--blue);border-radius:10px;padding:2.5rem 3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.port-cta h3{font-size:1.4rem;font-weight:700;color:#fff;letter-spacing:-.02em}
+.port-cta p{font-size:.85rem;font-weight:300;color:rgba(255,255,255,.6);margin-top:.2rem}
+.btn-wh{padding:.8rem 1.8rem;background:#fff;color:var(--blue);font-size:.82rem;font-weight:700;text-decoration:none;border-radius:4px;white-space:nowrap;transition:opacity .2s}
+.btn-wh:hover{opacity:.88}
 
 /* ── CONTACT ─────────────────────────── */
-#contact{padding:5rem 4.5rem;border-top:1px solid var(--line)}
+#contact{padding:7rem 5rem}
 .contact-grid{display:grid;grid-template-columns:5fr 7fr;gap:8rem;align-items:start}
-.cl-eyebrow{font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1.2rem}
-.cl-h{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1;margin-bottom:1rem}
-.cl-p{font-size:.92rem;font-weight:300;line-height:1.8;color:var(--mid);margin-top:.8rem}
-.cl-detail{margin-top:3rem;border-top:1px solid var(--line)}
-.cl-row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 0;border-bottom:1px solid var(--line);font-size:.84rem}
-.cl-row span:first-child{color:var(--soft);font-weight:400}
-.cl-row span:last-child{font-weight:500;color:var(--ink)}
-
-.fr .frow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
+.cl h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
+.cl p{font-size:.95rem;font-weight:300;line-height:1.85;color:var(--mid);margin-top:1rem}
+.cl-meta{margin-top:2.5rem;display:flex;flex-direction:column;gap:0;border-top:1px solid var(--line)}
+.cm-row{display:flex;justify-content:space-between;align-items:center;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.cm-row span:first-child{font-size:.82rem;color:var(--soft)}
+.cm-row span:last-child{font-size:.82rem;font-weight:600;color:var(--ink)}
+.fr{display:flex;flex-direction:column}
+.frow{display:grid;grid-template-columns:1fr 1fr;gap:.8rem}
 .fg{margin-bottom:.8rem}
-.fg label{display:block;font-size:.63rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:.35rem}
-.fg input,.fg select,.fg textarea{width:100%;background:var(--white);border:1px solid var(--line);border-radius:0;padding:.8rem .95rem;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--ink);outline:none;transition:border-color .2s;-webkit-appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--ink)}
+.fg label{display:block;font-size:.62rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-bottom:.35rem}
+.fg input,.fg select,.fg textarea{width:100%;background:#fff;border:1px solid var(--line);border-radius:6px;padding:.8rem .95rem;font-family:'Inter',sans-serif;font-size:.88rem;color:var(--ink);outline:none;transition:border-color .2s;-webkit-appearance:none}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--blue)}
 .fg input::placeholder,.fg textarea::placeholder{color:#ccc}
 .fg textarea{height:110px;resize:vertical}
-.fsub{width:100%;padding:.9rem;background:var(--ink);color:#fff;border:none;font-family:'Inter',sans-serif;font-size:.84rem;font-weight:700;letter-spacing:.04em;cursor:pointer;transition:opacity .2s;border-radius:0;margin-top:.3rem}
-.fsub:hover{opacity:.7}
+.fsub{width:100%;padding:.9rem;background:var(--blue);color:#fff;border:none;font-family:'Inter',sans-serif;font-size:.85rem;font-weight:700;cursor:pointer;transition:opacity .2s;border-radius:6px;margin-top:.3rem}
+.fsub:hover{opacity:.82}
 
 /* ── FOOTER ──────────────────────────── */
-footer{border-top:1px solid var(--line);padding:1.8rem 4.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+footer{border-top:1px solid var(--line);padding:1.8rem 5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
 .flogo{font-size:.9rem;font-weight:700;color:var(--ink)}
 .flogo em{font-style:normal;color:var(--blue)}
 footer p{font-size:.72rem;color:var(--soft)}
 
-/* ── SHARED ──────────────────────────── */
-.ey{font-size:.68rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);margin-bottom:1rem;display:block}
-.sh{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1}
-.reveal{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s ease}
+.ey{font-size:.67rem;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:var(--soft);display:block;margin-bottom:1rem}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
 .reveal.v{opacity:1;transform:none}
 
-/* ── RESPONSIVE ──────────────────────── */
 @media(max-width:1100px){
-  nav,#stats,#features,#prijs,#hoe,#statement,#contact,footer,.port-head{padding-left:2.5rem;padding-right:2.5rem}
+  nav,#intro,#features,#band,#prijs,#hoe,#portfolio,#contact,footer{padding-left:2.5rem;padding-right:2.5rem}
   .h-inner{padding:0 2.5rem 4rem;grid-template-columns:1fr}
   .h-price{display:none}
-  #stats{grid-template-columns:1fr 1fr;padding-top:1px}
-  .stat-col:nth-child(2){border-left:none}
-  .bento{grid-auto-rows:160px}
-  .b1{grid-column:span 12;grid-row:span 1}
-  .b2,.b3,.b4{grid-column:span 4}
-  .b5{grid-column:span 8}
-  .b6{grid-column:span 4}
-  .b7{grid-column:span 4}
-  .port-grid,.port-row-2{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .contact-grid{grid-template-columns:1fr;gap:4rem}
-  .prijs-wrap{grid-template-columns:1fr 1fr}
-  .prijs-wrap .pc:last-child{grid-column:span 2}
+  #intro,.contact-grid{grid-template-columns:1fr;gap:4rem}
+  .feat-head{grid-template-columns:1fr;gap:1.5rem}
+  .prijs-grid{grid-template-columns:1fr}
+  .hoe-grid{grid-template-columns:1fr 1fr}
+  .port-main{grid-template-columns:1fr}
+  .port-row{grid-template-columns:1fr 1fr}
 }
-@media(max-width:660px){
+@media(max-width:640px){
   nav{padding:0 1.5rem}
   .h-inner{padding:0 1.5rem 3.5rem}
-  #stats{grid-template-columns:1fr;border:none}
-  .stat-col{border-left:none;padding-left:0;border-top:1px solid #222}
-  .bento{grid-auto-rows:auto}
-  .b,.b1,.b2,.b3,.b4,.b5,.b6,.b7{grid-column:span 12;min-height:160px}
-  .port-grid,.port-row-2{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr}
-  .prijs-wrap{grid-template-columns:1fr}
-  .prijs-wrap .pc:last-child{grid-column:span 1}
-  .fr .frow{grid-template-columns:1fr}
+  .feat-cards{grid-template-columns:1fr 1fr}
+  .hoe-grid,.port-row{grid-template-columns:1fr}
+  .frow{grid-template-columns:1fr}
   footer{flex-direction:column;padding:1.5rem}
 }
 </style>
@@ -249,10 +233,10 @@ footer p{font-size:.72rem;color:var(--soft)}
     <div>
       <div class="h-kicker">Webdesign voor het Nederlandse MKB</div>
       <h1>Een website<br>die werkt.<br><span class="dim">€99,99.</span></h1>
-      <div class="h-body">
+      <div class="h-row">
         <p class="h-sub">Snelle, professionele websites voor ondernemers die online serieus genomen willen worden. Binnen 7 dagen live.</p>
         <div class="h-btns">
-          <a href="#contact" class="btn-w">Vraag een offerte aan</a>
+          <a href="#contact" class="btn-w">Offerte aanvragen</a>
           <a href="#portfolio" class="btn-ghost">Bekijk het werk</a>
         </div>
       </div>
@@ -275,95 +259,113 @@ footer p{font-size:.72rem;color:var(--soft)}
   </div>
 </div>
 
-<!-- DARK STATS -->
-<section id="stats" class="reveal">
-  <div class="stat-col">
-    <h2>Professioneel online voor een eerlijke prijs</h2>
-    <p>Grote bureaus rekenen €2.000–€10.000 voor een simpele site. Wij doen hetzelfde werk voor €99,99 — zonder concessies.</p>
+<!-- INTRO + STATS -->
+<section id="intro">
+  <div class="reveal">
+    <span class="ey">Waarom Nachtwerk</span>
+    <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.03em;color:var(--ink);line-height:1.1">Professioneel online voor een eerlijke prijs</h2>
+    <p style="font-size:.97rem;font-weight:300;line-height:1.85;color:var(--mid);margin-top:1.2rem;max-width:420px">Grote bureaus rekenen €2.000–€10.000 voor iets simpels. Wij doen hetzelfde werk voor €99,99 — zonder concessies op kwaliteit.</p>
   </div>
-  <div class="stat-col">
-    <span class="stat-n">7<span class="stat-unit"> dagen</span></span>
-    <div class="stat-label">Van uw aanvraag tot een live website op uw domeinnaam.</div>
-  </div>
-  <div class="stat-col">
-    <span class="stat-n">€99<span class="stat-unit">,99</span></span>
-    <div class="stat-label">Betaalt u eenmalig — achteraf, nadat u de site heeft goedgekeurd.</div>
-  </div>
-  <div class="stat-col">
-    <span class="stat-n">€10<span class="stat-unit">/mnd</span></span>
-    <div class="stat-label">Volledig optioneel onderhoud: hosting, backups en updates.</div>
+  <div class="stats-r reveal" style="transition-delay:.1s">
+    <div class="stat-item">
+      <span class="si-num blue">7 <span style="font-size:1.5rem;font-weight:400">dagen</span></span>
+      <div class="si-desc">Van uw aanvraag tot een live website op uw domeinnaam</div>
+    </div>
+    <div class="stat-item">
+      <span class="si-num amber">€99<span style="font-size:1.5rem;font-weight:400">,99</span></span>
+      <div class="si-desc">Betaalt u eenmalig — achteraf, nadat u de site heeft goedgekeurd</div>
+    </div>
+    <div class="stat-item">
+      <span class="si-num green">€10<span style="font-size:1.5rem;font-weight:400">/mnd</span></span>
+      <div class="si-desc">Volledig optioneel onderhoud: hosting, backups en updates</div>
+    </div>
   </div>
 </section>
 
-<!-- BENTO FEATURES -->
+<!-- FEATURES -->
 <section id="features">
-  <div class="feat-eyebrow reveal">Wat u krijgt — alles inbegrepen voor €99,99</div>
-  <div class="bento reveal" style="transition-delay:.1s">
-
-    <div class="b b1">
-      <div class="b-tag">Design</div>
-      <div>
-        <div class="b-title">Op maat ontworpen<br>voor uw bedrijf</div>
-        <div class="b-desc">Geen templates. Uw website past bij uw branche, uw klanten en uw uitstraling.</div>
-      </div>
-      <div class="b-num">01</div>
+  <div class="feat-head reveal">
+    <div>
+      <span class="ey">Inbegrepen</span>
+      <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)">Alles voor €99,99</h2>
     </div>
-
-    <div class="b b2">
-      <div class="b-tag">Mobiel</div>
-      <div class="b-title">Mobiel-vriendelijk</div>
-      <div class="b-desc">60% van uw bezoekers komt via telefoon. Werkt perfect op elk scherm.</div>
-      <div class="b-num">02</div>
+    <p class="feat-head-r">Geen add-ons, geen verborgen kosten. Elke website bevat standaard alles wat u online nodig heeft.</p>
+  </div>
+  <div class="feat-cards reveal" style="transition-delay:.1s">
+    <div class="fc">
+      <div class="fc-dot blue"></div>
+      <div class="fc-title">Op maat design</div>
+      <div class="fc-text">Passend bij uw branche, uw klanten en uw uitstraling. Geen standaard templates, altijd origineel.</div>
+      <span class="fc-tag">Design</span>
     </div>
-
-    <div class="b b3">
-      <div class="b-tag">SEO</div>
-      <div class="b-title">Gevonden in Google</div>
-      <div class="b-desc">Lokale SEO-optimalisatie inbegrepen.</div>
-      <div class="b-num">03</div>
+    <div class="fc">
+      <div class="fc-dot amber"></div>
+      <div class="fc-title">Mobiel-vriendelijk</div>
+      <div class="fc-text">Meer dan 60% van uw bezoekers komt via telefoon. Uw site werkt perfect op elk scherm.</div>
+      <span class="fc-tag">Techniek</span>
     </div>
-
-    <div class="b b4">
-      <div class="b-tag">Performance</div>
-      <div class="b-title">Razendsnel</div>
-      <div class="b-desc">Geen trage plugins, snelle laadtijden.</div>
-      <div class="b-num">04</div>
+    <div class="fc">
+      <div class="fc-dot green"></div>
+      <div class="fc-title">Gevonden in Google</div>
+      <div class="fc-text">SEO-basisoptimalisatie zodat lokale klanten u kunnen vinden bij relevante zoekopdrachten.</div>
+      <span class="fc-tag">SEO</span>
     </div>
-
-    <div class="b b5">
-      <div class="b-tag">Leads</div>
-      <div class="b-title">Contactformulier — leads direct in uw mailbox</div>
-      <div class="b-desc">Nieuwe klanten kunnen u via de site bereiken. Nooit meer een aanvraag mislopen.</div>
-      <div class="b-num">05</div>
+    <div class="fc">
+      <div class="fc-dot indigo"></div>
+      <div class="fc-title">Contactformulier</div>
+      <div class="fc-text">Leads en vragen komen direct in uw mailbox. Nooit meer een klantvraag mislopen.</div>
+      <span class="fc-tag">Leads</span>
     </div>
-
-    <div class="b b6">
-      <div class="b-tag">Beveiliging</div>
-      <div class="b-title">SSL & veilige hosting</div>
-      <div class="b-desc">Https, dagelijkse backups, altijd online.</div>
-      <div class="b-num">06</div>
+    <div class="fc">
+      <div class="fc-dot teal"></div>
+      <div class="fc-title">SSL & veilige hosting</div>
+      <div class="fc-text">Https-certificaat, dagelijkse backups en betrouwbare hosting — standaard inbegrepen.</div>
+      <span class="fc-tag">Beveiliging</span>
     </div>
-
-    <div class="b b7">
-      <div class="b-tag">Support</div>
-      <div class="b-title">Persoonlijk contact</div>
-      <div class="b-desc">Altijd direct bereikbaar.</div>
+    <div class="fc">
+      <div class="fc-dot rose"></div>
+      <div class="fc-title">Razendsnel</div>
+      <div class="fc-text">Geen onnodige plugins. Snelle laadtijden voor betere Google-ranking en minder bezoekers die afhaken.</div>
+      <span class="fc-tag">Performance</span>
     </div>
-
   </div>
 </section>
+
+<!-- AMBER BAND -->
+<div id="band">
+  <div class="band-text">
+    <h3>Binnen 7 dagen online</h3>
+    <p>Van aanvraag tot live website — snel, eerlijk en zonder gedoe</p>
+  </div>
+  <div class="band-details">
+    <div class="bd-item">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      <span>Melasseweg 1, Farmsum</span>
+    </div>
+    <div class="bd-item">
+      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
+      <span>Reactie binnen 24 uur</span>
+    </div>
+    <div class="bd-item">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+      <span>Betalen na goedkeuring</span>
+    </div>
+  </div>
+</div>
 
 <!-- PRIJS -->
 <section id="prijs">
-  <div class="reveal">
+  <div class="prijs-h reveal">
     <span class="ey">Prijzen</span>
-    <h2 class="sh">Transparant. Geen verrassingen.</h2>
+    <h2>Transparant. Geen verrassingen.</h2>
+    <p>Geen verborgen kosten, geen kleine lettertjes. Gewoon een eerlijke prijs voor goed werk.</p>
   </div>
-  <div class="prijs-wrap reveal" style="transition-delay:.1s">
-    <div class="pc dark">
-      <div class="pc-eyebrow">Website bouwen</div>
+  <div class="prijs-grid reveal" style="transition-delay:.1s">
+    <div class="pc main">
+      <div class="pc-badge">Meest gekozen</div>
+      <div class="pc-label">Website bouwen</div>
       <div class="pc-price">€99,99</div>
-      <div class="pc-period">Eenmalig — betalen na goedkeuring</div>
+      <div class="pc-sub">Eenmalig — betalen na goedkeuring</div>
       <div class="pc-sep"></div>
       <ul class="pc-list">
         <li>Op maat design voor uw branche</li>
@@ -373,12 +375,12 @@ footer p{font-size:.72rem;color:var(--soft)}
         <li>SEO-basisoptimalisatie</li>
         <li>Binnen 7 dagen live</li>
       </ul>
-      <a href="#contact" class="pc-cta">Aanvragen →</a>
+      <p class="pc-note">U keurt de site goed voordat u betaalt. Altijd.</p>
     </div>
-    <div class="pc pc-middle">
-      <div class="pc-eyebrow">Maandelijks beheer</div>
+    <div class="pc">
+      <div class="pc-label">Maandelijks beheer</div>
       <div class="pc-price">€10</div>
-      <div class="pc-period">Per maand — volledig optioneel</div>
+      <div class="pc-sub">Per maand — volledig optioneel, opzegbaar</div>
       <div class="pc-sep"></div>
       <ul class="pc-list">
         <li>Veilige hosting & SSL-certificaat</li>
@@ -386,54 +388,40 @@ footer p{font-size:.72rem;color:var(--soft)}
         <li>Updates en beveiligingspatches</li>
         <li>Kleine aanpassingen in tekst of foto's</li>
         <li>E-mail support voor vragen</li>
-        <li>Opzegbaar per maand, geen contract</li>
+        <li>Geen contract, opzegbaar per maand</li>
       </ul>
-      <p class="pc-note">U kunt ook zelf hosting regelen. We helpen u daarmee, zonder bijkomende kosten.</p>
-    </div>
-    <div class="pc" style="display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:1rem;padding:3rem">
-      <div class="pc-eyebrow">Nog vragen?</div>
-      <p style="font-size:.95rem;font-weight:300;line-height:1.8;color:var(--mid)">Geen verborgen kosten. Geen jargon. Gewoon een eerlijke prijs voor goed werk.</p>
-      <p style="font-size:.95rem;font-weight:300;line-height:1.8;color:var(--mid)">Wij nemen altijd binnen 24 uur contact op na uw aanvraag.</p>
-      <a href="#contact" class="pc-cta" style="background:var(--ink);color:#fff">Stel een vraag →</a>
+      <p class="pc-note">U kunt ook zelf hosting regelen. Wij helpen u daarmee gratis.</p>
     </div>
   </div>
 </section>
 
-<!-- WERKWIJZE -->
+<!-- HOE HET WERKT -->
 <section id="hoe">
   <div class="reveal">
-    <span class="ey" style="color:rgba(255,255,255,.3)">Werkwijze</span>
-    <h2 class="sh" style="color:#fff">Van aanvraag tot live<br>in 7 dagen</h2>
+    <span class="ey">Werkwijze</span>
+    <h2 style="font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)">Van aanvraag tot live in 7 dagen</h2>
   </div>
-  <div class="steps reveal" style="transition-delay:.1s">
-    <div class="step">
-      <div class="sn">1</div>
-      <div class="st">U vraagt aan</div>
-      <div class="sd">Vul het formulier in. We nemen binnen 24 uur contact op voor een kort gesprekje.</div>
+  <div class="hoe-grid reveal" style="transition-delay:.1s">
+    <div class="hoe-card">
+      <div class="hoe-n" style="color:var(--blue-l)">1</div>
+      <div class="hoe-t">U vraagt aan</div>
+      <div class="hoe-d">Vul het formulier in. We nemen binnen 24 uur contact op voor een kort gesprekje over uw bedrijf en wensen.</div>
     </div>
-    <div class="step">
-      <div class="sn">2</div>
-      <div class="st">Wij bouwen</div>
-      <div class="sd">Wij ontwerpen en bouwen uw website. U krijgt een volledige preview en kunt feedback geven.</div>
+    <div class="hoe-card">
+      <div class="hoe-n" style="color:var(--amber-l)">2</div>
+      <div class="hoe-t">Wij bouwen</div>
+      <div class="hoe-d">Wij ontwerpen en bouwen uw website volledig op maat. U krijgt een preview en kunt feedback geven.</div>
     </div>
-    <div class="step">
-      <div class="sn">3</div>
-      <div class="st">U keurt goed</div>
-      <div class="sd">Tevreden? Dan facturen wij pas — nooit vooraf.</div>
+    <div class="hoe-card">
+      <div class="hoe-n" style="color:var(--green-l)">3</div>
+      <div class="hoe-t">U keurt goed</div>
+      <div class="hoe-d">Tevreden met het resultaat? Dan facturen wij — nooit vooraf, altijd achteraf.</div>
     </div>
-    <div class="step">
-      <div class="sn">4</div>
-      <div class="st">Live</div>
-      <div class="sd">Uw website staat online. Klanten kunnen u vinden en direct contact opnemen.</div>
+    <div class="hoe-card">
+      <div class="hoe-n" style="color:#EEE8FD">4</div>
+      <div class="hoe-t">Live!</div>
+      <div class="hoe-d">Uw website staat online. Klanten kunnen u vinden, contact opnemen en u een opdracht geven.</div>
     </div>
-  </div>
-</section>
-
-<!-- STATEMENT -->
-<section id="statement">
-  <div class="reveal">
-    <p class="st-txt">Uw bedrijf verdient een website <em>die klanten overtuigt</em> — niet een die ze wegjaagt.</p>
-    <a href="#contact" class="st-btn">Begin vandaag →</a>
   </div>
 </section>
 
@@ -442,66 +430,67 @@ footer p{font-size:.72rem;color:var(--soft)}
   <div class="port-head reveal">
     <div>
       <span class="ey">Portfolio</span>
-      <h2 style="font-size:clamp(2rem,3.5vw,3rem);font-weight:700;letter-spacing:-.03em;color:var(--ink)">Recent werk</h2>
+      <h2>Recent werk</h2>
+      <p>Elke site op maat, passend bij de branche en klant</p>
     </div>
-    <a href="#contact" class="nav-cta" style="font-size:.82rem;padding:.75rem 1.6rem">Ik wil ook een website →</a>
+    <a href="#contact" class="nav-cta" style="font-size:.82rem;padding:.7rem 1.5rem">Ik wil ook een website →</a>
   </div>
 
-  <div class="port-grid reveal" style="transition-delay:.08s">
-    <a href="voorbeeld-kroon-kapper.html" target="_blank" class="port-card">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Kroon Kapper</div><div class="port-sub">Kapsalon · Rotterdam-Zuid</div></div>
-        <span class="port-arrow">→</span>
+  <div class="port-main reveal" style="transition-delay:.08s">
+    <a href="voorbeeld-kroon-kapper.html" target="_blank" class="pcard large">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Kroon Kapper</div><div class="pcard-sub">Kapsalon · Rotterdam-Zuid</div></div>
+        <span class="pcard-arr">→</span>
       </div>
     </a>
-    <a href="voorbeeld-van-bergen-bouw.html" target="_blank" class="port-card">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Van Bergen Bouw</div><div class="port-sub">Bouwbedrijf · Utrecht</div></div>
-        <span class="port-arrow">→</span>
-      </div>
-    </a>
-  </div>
-
-  <div class="port-row-2 reveal" style="transition-delay:.14s">
-    <a href="voorbeeld-bakkerij-dewit.html" target="_blank" class="port-card small">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Bakkerij De Wit</div><div class="port-sub">Ambachtelijke bakkerij · Haarlem</div></div>
-        <span class="port-arrow">→</span>
-      </div>
-    </a>
-    <a href="voorbeeld-fysio-noord.html" target="_blank" class="port-card small">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Fysio Noord</div><div class="port-sub">Fysiotherapie · Groningen</div></div>
-        <span class="port-arrow">→</span>
-      </div>
-    </a>
-    <a href="voorbeeld-restaurant-zilt.html" target="_blank" class="port-card small">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Restaurant Zilt</div><div class="port-sub">Seafood restaurant · Scheveningen</div></div>
-        <span class="port-arrow">→</span>
+    <a href="voorbeeld-restaurant-zilt.html" target="_blank" class="pcard large">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=700&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Restaurant Zilt</div><div class="pcard-sub">Seafood restaurant · Scheveningen</div></div>
+        <span class="pcard-arr">→</span>
       </div>
     </a>
   </div>
 
-  <div class="port-row-2 reveal" style="transition-delay:.2s">
-    <a href="voorbeeld-rooijakkers-vvp.html" target="_blank" class="port-card small">
-      <div class="port-img" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80')"></div>
-      <div class="port-body">
-        <div><div class="port-name">Rooijakkers VVP</div><div class="port-sub">Installatiebedrijf · Tilburg</div></div>
-        <span class="port-arrow">→</span>
+  <div class="port-row reveal" style="transition-delay:.14s">
+    <a href="voorbeeld-van-bergen-bouw.html" target="_blank" class="pcard medium">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Van Bergen Bouw</div><div class="pcard-sub">Bouwbedrijf · Utrecht</div></div>
+        <span class="pcard-arr">→</span>
       </div>
     </a>
-    <div class="port-next" style="grid-column:span 2">
-      <div class="port-next-text">
+    <a href="voorbeeld-bakkerij-dewit.html" target="_blank" class="pcard medium">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1509440159596-0249088772ff?w=600&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Bakkerij De Wit</div><div class="pcard-sub">Ambachtelijke bakkerij · Haarlem</div></div>
+        <span class="pcard-arr">→</span>
+      </div>
+    </a>
+    <a href="voorbeeld-fysio-noord.html" target="_blank" class="pcard medium">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=600&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Fysio Noord</div><div class="pcard-sub">Fysiotherapie · Groningen</div></div>
+        <span class="pcard-arr">→</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="port-row reveal" style="transition-delay:.2s">
+    <a href="voorbeeld-rooijakkers-vvp.html" target="_blank" class="pcard small">
+      <div class="pcard-img" style="background-image:url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80')"></div>
+      <div class="pcard-body">
+        <div><div class="pcard-name">Rooijakkers VVP</div><div class="pcard-sub">Installatiebedrijf · Tilburg</div></div>
+        <span class="pcard-arr">→</span>
+      </div>
+    </a>
+    <div class="port-cta" style="grid-column:span 2">
+      <div>
         <h3>Is uw bedrijf de volgende?</h3>
-        <p>Stuur een aanvraag — binnen 7 dagen staat uw site online.</p>
+        <p>Stuur een aanvraag en uw website staat binnen 7 dagen online.</p>
       </div>
-      <a href="#contact" class="btn-sm-w">Aanvragen →</a>
+      <a href="#contact" class="btn-wh">Aanvragen →</a>
     </div>
   </div>
 </section>
@@ -509,15 +498,15 @@ footer p{font-size:.72rem;color:var(--soft)}
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-grid reveal">
-    <div>
-      <div class="cl-eyebrow">Contact</div>
-      <h2 class="cl-h">Klaar om<br>online te gaan?</h2>
-      <p class="cl-p">Laat uw gegevens achter. Wij nemen binnen 24 uur contact op — volledig vrijblijvend. U betaalt pas als u tevreden bent.</p>
-      <div class="cl-detail">
-        <div class="cl-row"><span>Reactietijd</span><span>Binnen 24 uur</span></div>
-        <div class="cl-row"><span>Prijs</span><span>€99,99 eenmalig</span></div>
-        <div class="cl-row"><span>Betaling</span><span>Na goedkeuring</span></div>
-        <div class="cl-row"><span>Live</span><span>Binnen 7 dagen</span></div>
+    <div class="cl">
+      <span class="ey">Contact</span>
+      <h2>Klaar om online te gaan?</h2>
+      <p>Laat uw gegevens achter en wij nemen binnen 24 uur contact op — volledig vrijblijvend.</p>
+      <div class="cl-meta">
+        <div class="cm-row"><span>Reactietijd</span><span>Binnen 24 uur</span></div>
+        <div class="cm-row"><span>Prijs</span><span>€99,99 eenmalig</span></div>
+        <div class="cm-row"><span>Betaling</span><span>Na goedkeuring</span></div>
+        <div class="cm-row"><span>Live</span><span>Binnen 7 dagen</span></div>
       </div>
     </div>
     <form class="fr" id="cf">
@@ -555,8 +544,8 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 document.getElementById('cf').addEventListener('submit',function(e){
   e.preventDefault();
   const b=this.querySelector('.fsub');
-  b.textContent='Verstuurd — we nemen snel contact op';
-  b.style.opacity='.5';
+  b.textContent='Verstuurd — we nemen snel contact op ✓';
+  b.style.opacity='.6';
   setTimeout(()=>{b.textContent='Verstuur aanvraag — gratis & vrijblijvend';b.style.opacity='';this.reset();},4000);
 });
 </script>
