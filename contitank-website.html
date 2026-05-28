@@ -5,1190 +5,372 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Contitank — Full-Service Tankterminal & Logistiek</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@200;300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Merriweather:ital,wght@0,400;0,700;1,300&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy:       #060F1E;
-  --navy-2:     #0A1A30;
-  --navy-3:     #0D2244;
-  --steel:      #1A5C8A;
-  --steel-2:    #2478AE;
-  --gold:       #C8A94A;
-  --gold-2:     #E2C878;
-  --gold-dim:   rgba(200,169,74,0.15);
-  --white:      #F4F1EB;
-  --white-2:    #FFFFFF;
-  --muted:      rgba(244,241,235,0.45);
-  --line:       rgba(200,169,74,0.18);
+  --blue:    #3B82C9;
+  --blue-2:  #5095D5;
+  --blue-dim:#EBF3FB;
+  --navy:    #1A2E52;
+  --navy-2:  #12203C;
+  --white:   #FFFFFF;
+  --off:     #F7F9FC;
+  --text:    #1A2E52;
+  --muted:   #5A6E8A;
+  --line:    #D8E4F0;
 }
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--white);border-bottom:1px solid var(--line);padding:0 5rem;display:flex;align-items:center;justify-content:space-between;height:70px}
+.logo{display:flex;align-items:center;gap:.9rem;text-decoration:none}
+.logo-icon{width:38px;height:38px}
+.logo-text{display:flex;flex-direction:column;line-height:1}
+.logo-name{font-size:1.15rem;font-weight:700;letter-spacing:.02em;color:var(--navy)}
+.logo-sub{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);font-weight:500}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{font-size:.8rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{padding:.55rem 1.4rem;background:var(--blue);color:#fff !important;border-radius:3px;transition:background .2s !important}
+.nav-cta:hover{background:var(--navy) !important}
 
-body {
-  font-family: 'Outfit', sans-serif;
-  background: var(--navy);
-  color: var(--white);
-  overflow-x: hidden;
-}
+/* HERO */
+#hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:0;padding-top:70px;overflow:hidden}
+.hero-left{padding:6rem 5rem;background:var(--navy);min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:center}
+.hero-tag{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue-2);margin-bottom:1.5rem;display:flex;align-items:center;gap:.7rem}
+.hero-tag::before{content:'';width:24px;height:1px;background:var(--blue-2)}
+h1{font-family:'Merriweather',serif;font-size:clamp(2.2rem,3.5vw,3.5rem);font-weight:700;line-height:1.18;color:#fff}
+h1 em{font-style:italic;color:var(--blue-2);font-weight:300}
+.hero-p{margin-top:1.5rem;font-size:.97rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.65);max-width:420px}
+.hero-btns{display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap}
+.btn-main{padding:.85rem 2rem;background:var(--blue);color:#fff;font-size:.78rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:3px;transition:all .2s}
+.btn-main:hover{background:var(--blue-2);transform:translateY(-2px)}
+.btn-out{padding:.85rem 2rem;border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.8);font-size:.78rem;font-weight:500;text-decoration:none;border-radius:3px;transition:all .2s}
+.btn-out:hover{border-color:rgba(255,255,255,.6);color:#fff}
+.hero-certs{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:3rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,.1)}
+.hc-pill{padding:.3rem .8rem;background:rgba(59,130,201,.2);border:1px solid rgba(59,130,201,.4);border-radius:2px;font-size:.65rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--blue-2)}
 
+.hero-right{background:var(--off);padding:5rem 4rem;min-height:calc(100vh - 70px);display:flex;flex-direction:column;justify-content:center;gap:2rem;border-left:1px solid var(--line)}
+.hero-stat-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:1.8rem 2rem;transition:box-shadow .3s}
+.hero-stat-card:hover{box-shadow:0 4px 20px rgba(26,46,82,.08)}
+.hsc-num{font-family:'Merriweather',serif;font-size:2.4rem;font-weight:700;color:var(--navy);line-height:1}
+.hsc-num span{color:var(--blue)}
+.hsc-label{font-size:.75rem;font-weight:500;color:var(--muted);margin-top:.3rem;letter-spacing:.04em}
+.hsc-desc{font-size:.82rem;font-weight:300;line-height:1.65;color:var(--muted);margin-top:.6rem}
 
-/* ── NOISE OVERLAY ────────────────────────────────── */
-body::before {
-  content: '';
-  position: fixed; inset: 0; z-index: 1000;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-  opacity: 0.35;
-}
+/* DIENSTEN */
+#diensten{padding:7rem 5rem;background:var(--white)}
+.sec-tag{font-size:.68rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);margin-bottom:.8rem;display:flex;align-items:center;gap:.6rem}
+.sec-tag::before{content:'';width:22px;height:1px;background:var(--blue)}
+.sec-h2{font-family:'Merriweather',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;line-height:1.15;color:var(--navy);margin-bottom:.8rem}
+.d-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3.5rem}
+.d-card{padding:2.2rem 1.8rem;border:1px solid var(--line);border-radius:6px;background:var(--white);transition:box-shadow .3s,border-color .3s,transform .3s}
+.d-card:hover{box-shadow:0 8px 28px rgba(26,46,82,.08);border-color:rgba(59,130,201,.3);transform:translateY(-3px)}
+.d-icon{width:48px;height:48px;background:var(--blue-dim);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:1.2rem}
+.d-icon svg{width:24px;height:24px;stroke:var(--blue);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.d-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.5rem}
+.d-text{font-size:.83rem;font-weight:300;line-height:1.7;color:var(--muted)}
+.d-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1.2rem}
+.d-tag{font-size:.62rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);padding:.2rem .6rem;background:var(--blue-dim);border-radius:2px}
 
-/* ── NAV ──────────────────────────────────────────── */
-nav {
-  position: fixed; top: 0; left: 0; right: 0; z-index: 500;
-  display: flex; align-items: center; justify-content: space-between;
-  padding: 1.6rem 5rem;
-  transition: all 0.5s cubic-bezier(0.16,1,0.3,1);
-}
-nav.scrolled {
-  padding: 1rem 5rem;
-  background: rgba(6,15,30,0.92);
-  backdrop-filter: blur(20px) saturate(1.5);
-  border-bottom: 1px solid var(--line);
-}
-.logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2rem; letter-spacing: 0.12em;
-  color: var(--white-2); text-decoration: none;
-  display: flex; align-items: center; gap: 0.3rem;
-}
-.logo-accent { color: var(--gold); }
-.logo-dot {
-  width: 5px; height: 5px; background: var(--gold);
-  border-radius: 50%; margin-bottom: 2px;
-}
-.nav-links { display: flex; align-items: center; gap: 2.8rem; list-style: none; }
-.nav-links a {
-  font-size: 0.75rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted);
-  text-decoration: none; position: relative;
-  transition: color 0.25s;
-}
-.nav-links a::after {
-  content: ''; position: absolute; left: 0; bottom: -4px;
-  width: 0; height: 1px; background: var(--gold);
-  transition: width 0.3s cubic-bezier(0.16,1,0.3,1);
-}
-.nav-links a:hover { color: var(--white); }
-.nav-links a:hover::after { width: 100%; }
-.nav-btn {
-  padding: 0.65rem 1.8rem;
-  border: 1px solid var(--gold);
-  border-radius: 1px;
-  color: var(--gold) !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.16em !important;
-  transition: background 0.25s, color 0.25s !important;
-}
-.nav-btn::after { display: none !important; }
-.nav-btn:hover { background: var(--gold); color: var(--navy) !important; }
+/* OVER ONS */
+#over{padding:7rem 5rem;background:var(--off);display:grid;grid-template-columns:1fr 1fr;gap:7rem;align-items:center}
+.over-text p{font-size:.95rem;font-weight:300;line-height:1.9;color:var(--muted);margin-top:1.2rem}
+.over-text p+p{margin-top:.8rem}
+.cert-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:2rem}
+.cert-chip{padding:.35rem .85rem;border:1px solid var(--line);border-radius:3px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--blue);background:var(--white);transition:background .2s,border-color .2s}
+.cert-chip:hover{background:var(--blue-dim);border-color:rgba(59,130,201,.4)}
+.over-visual{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.ov-block{border-radius:6px;overflow:hidden}
+.ov-img{height:220px;background:url('https://images.unsplash.com/photo-1562408590-e32931084e23?w=500&q=80') center/cover}
+.ov-img2{height:220px;background:url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80') center/cover}
+.ov-stat{background:var(--navy);padding:2rem;display:flex;flex-direction:column;justify-content:center}
+.ov-stat-n{font-family:'Merriweather',serif;font-size:2rem;font-weight:700;color:#fff;line-height:1}
+.ov-stat-n span{color:var(--blue-2)}
+.ov-stat-l{font-size:.7rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.5);margin-top:.3rem}
+.ov-stat-blue{background:var(--blue)}
+.ov-stat-blue .ov-stat-n{color:#fff}
+.ov-stat-blue .ov-stat-l{color:rgba(255,255,255,.65)}
 
-/* ── HERO ─────────────────────────────────────────── */
-#hero {
-  position: relative; min-height: 100vh;
-  display: flex; flex-direction: column;
-  justify-content: center; padding: 0 5rem;
-  overflow: hidden;
-}
+/* USPs */
+#usps{padding:7rem 5rem;background:var(--white)}
+.usps-grid{display:grid;grid-template-columns:1fr 2fr;gap:7rem;align-items:start}
+.usps-left p{font-size:.93rem;font-weight:300;line-height:1.85;color:var(--muted);margin-top:1.2rem}
+.usp-list{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+.usp-item{background:var(--white);padding:2.2rem 2rem;transition:background .3s}
+.usp-item:hover{background:var(--blue-dim)}
+.usp-n{font-size:.65rem;font-weight:700;letter-spacing:.18em;color:var(--blue);margin-bottom:.8rem}
+.usp-title{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:.4rem}
+.usp-text{font-size:.83rem;font-weight:300;line-height:1.7;color:var(--muted)}
 
-.hero-bg {
-  position: absolute; inset: 0;
-  background:
-    linear-gradient(105deg, rgba(6,15,30,0.97) 0%, rgba(6,15,30,0.8) 45%, rgba(6,15,30,0.96) 100%),
-    url('https://images.unsplash.com/photo-1581091012184-7e0cdfbb6797?w=2000&q=85') center/cover no-repeat;
-  transform-origin: center;
-  animation: heroZoom 20s ease-in-out infinite alternate;
-}
-@keyframes heroZoom {
-  from { transform: scale(1); }
-  to   { transform: scale(1.06); }
-}
+/* LOCATIE */
+#locatie{padding:3.5rem 5rem;background:var(--navy);display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.loc-title{font-family:'Merriweather',serif;font-size:1.6rem;font-weight:700;color:#fff}
+.loc-sub{font-size:.8rem;color:rgba(255,255,255,.5);margin-top:.2rem}
+.loc-items{display:flex;gap:3rem;flex-wrap:wrap}
+.loc-item{display:flex;align-items:flex-start;gap:.7rem}
+.loc-item svg{width:16px;height:16px;stroke:var(--blue-2);fill:none;stroke-width:2;margin-top:2px;flex-shrink:0}
+.loc-item span{font-size:.83rem;font-weight:400;color:rgba(255,255,255,.75);line-height:1.5}
 
-.hero-glow {
-  position: absolute;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(26,92,138,0.25) 0%, transparent 70%);
-  right: 10%; top: 50%; transform: translateY(-50%);
-  pointer-events: none;
-  animation: pulse 6s ease-in-out infinite;
-}
-@keyframes pulse { 0%,100%{opacity:0.6;transform:translateY(-50%) scale(1)} 50%{opacity:1;transform:translateY(-50%) scale(1.1)} }
+/* CERTS */
+#certificeringen{padding:7rem 5rem;background:var(--off)}
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3.5rem}
+.cert-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:2rem 1.8rem;display:flex;align-items:center;gap:1.2rem;transition:box-shadow .3s,border-color .3s}
+.cert-card:hover{box-shadow:0 6px 24px rgba(26,46,82,.08);border-color:rgba(59,130,201,.3)}
+.cert-emblem{width:52px;height:52px;flex-shrink:0;border-radius:50%;background:linear-gradient(135deg,var(--navy),var(--blue));display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;font-size:.72rem;font-weight:800;letter-spacing:.04em;color:#fff;text-align:center;line-height:1.2}
+.cert-info h4{font-size:.9rem;font-weight:700;color:var(--navy)}
+.cert-info p{font-size:.78rem;font-weight:300;color:var(--muted);margin-top:.2rem;line-height:1.5}
 
-.hero-lines {
-  position: absolute; inset: 0; pointer-events: none;
-  overflow: hidden;
-}
-.hero-lines::before, .hero-lines::after {
-  content: ''; position: absolute;
-  background: linear-gradient(90deg, transparent, rgba(200,169,74,0.08), transparent);
-  height: 1px; left: 0; right: 0;
-  animation: scanline 8s linear infinite;
-}
-.hero-lines::before { top: 30%; animation-delay: 0s; }
-.hero-lines::after  { top: 60%; animation-delay: 4s; }
-@keyframes scanline { 0%{opacity:0;transform:translateX(-100%)} 50%{opacity:1} 100%{opacity:0;transform:translateX(100%)} }
+/* CONTACT */
+#contact{padding:7rem 5rem;background:var(--white);display:grid;grid-template-columns:1.1fr 1fr;gap:7rem}
+.contact-h{font-family:'Merriweather',serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:700;color:var(--navy);margin-bottom:.8rem;line-height:1.15}
+.contact-p{font-size:.95rem;font-weight:300;line-height:1.85;color:var(--muted);max-width:420px;margin-top:1rem}
+.contact-methods{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem}
+.c-method{display:flex;align-items:center;gap:1rem;padding:1.1rem 1.3rem;border:1px solid var(--line);border-radius:5px;text-decoration:none;color:var(--text);transition:border-color .2s,background .2s}
+.c-method:hover{border-color:rgba(59,130,201,.4);background:var(--blue-dim)}
+.c-method-icon{width:38px;height:38px;border-radius:50%;background:var(--blue-dim);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.c-method-icon svg{width:16px;height:16px;stroke:var(--blue);fill:none;stroke-width:2}
+.c-method-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.c-method-val{font-size:.88rem;font-weight:500;color:var(--navy);margin-top:.1rem}
 
-.hero-inner { position: relative; z-index: 2; max-width: 900px; }
+.form-title{font-size:1rem;font-weight:700;color:var(--navy);margin-bottom:1.5rem}
+.fg{margin-bottom:.9rem}
+.fg label{display:block;font-size:.68rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
+.fg input,.fg textarea,.fg select{width:100%;background:var(--off);border:1px solid var(--line);border-radius:4px;padding:.85rem 1rem;font-family:'Inter',sans-serif;font-size:.88rem;font-weight:300;color:var(--text);outline:none;transition:border-color .2s,background .2s}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:var(--blue);background:var(--white)}
+.fg textarea{height:120px;resize:vertical}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;padding:.95rem;background:var(--blue);color:#fff;border:none;border-radius:4px;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s;margin-top:.3rem}
+.form-submit:hover{background:var(--navy);transform:translateY(-1px)}
 
-.hero-eyebrow {
-  display: inline-flex; align-items: center; gap: 0.8rem;
-  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 2rem;
-  opacity: 0; animation: rise 0.9s 0.4s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.eyebrow-line { width: 36px; height: 1px; background: currentColor; }
+footer{padding:2rem 5rem;background:var(--navy-2);display:flex;align-items:center;justify-content:space-between;border-top:1px solid rgba(255,255,255,.07);flex-wrap:wrap;gap:1rem}
+.fl{display:flex;align-items:center;gap:.7rem;font-size:1rem;font-weight:700;color:#fff;letter-spacing:.04em}
+.fl-icon{width:28px;height:28px}
+footer p{font-size:.72rem;color:rgba(255,255,255,.3)}
 
-.hero-h1 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(5rem, 10vw, 10.5rem);
-  line-height: 0.88; letter-spacing: 0.02em;
-  color: var(--white-2);
-  opacity: 0; animation: rise 1s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.hero-h1 .italic-line {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic; font-weight: 300;
-  font-size: 0.78em;
-  color: var(--gold);
-  display: block; padding-left: 0.15em;
-}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .75s cubic-bezier(.16,1,.3,1),transform .75s cubic-bezier(.16,1,.3,1)}
+.reveal.v{opacity:1;transform:none}
 
-.hero-desc {
-  max-width: 520px;
-  font-size: 1rem; font-weight: 300; line-height: 1.85;
-  color: var(--muted); margin-top: 2rem;
-  opacity: 0; animation: rise 0.9s 0.85s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-
-.hero-ctas {
-  display: flex; align-items: center; gap: 1.5rem;
-  margin-top: 3rem;
-  opacity: 0; animation: rise 0.9s 1.05s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.cta-main {
-  display: inline-flex; align-items: center; gap: 0.8rem;
-  padding: 1rem 2.4rem;
-  background: var(--gold); color: var(--navy);
-  font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em;
-  text-transform: uppercase; text-decoration: none; border-radius: 1px;
-  transition: all 0.3s cubic-bezier(0.16,1,0.3,1);
-  border: 1px solid var(--gold);
-}
-.cta-main:hover { background: var(--gold-2); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(200,169,74,0.25); }
-.cta-main svg { width: 16px; height: 16px; transition: transform 0.3s; }
-.cta-main:hover svg { transform: translateX(4px); }
-.cta-ghost {
-  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted);
-  text-decoration: none; display: flex; align-items: center; gap: 0.6rem;
-  transition: color 0.25s;
-}
-.cta-ghost:hover { color: var(--white); }
-
-/* hero stats bar */
-.hero-stats {
-  position: absolute; bottom: 0; left: 0; right: 0; z-index: 2;
-  display: grid; grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  opacity: 0; animation: rise 0.9s 1.3s cubic-bezier(0.16,1,0.3,1) forwards;
-}
-.h-stat {
-  padding: 2rem 5rem;
-  border-right: 1px solid var(--line);
-  background: rgba(6,15,30,0.6);
-  backdrop-filter: blur(10px);
-}
-.h-stat:last-child { border-right: none; }
-.h-stat-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 3rem; line-height: 1; color: var(--white-2);
-  display: flex; align-items: baseline; gap: 0.1em;
-}
-.h-stat-num sup { font-size: 1.2rem; color: var(--gold); }
-.h-stat-label {
-  font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--muted); margin-top: 0.4rem;
-}
-
-/* scroll hint */
-.hero-scroll {
-  position: absolute; bottom: 7rem; right: 5rem; z-index: 2;
-  display: flex; flex-direction: column; align-items: center; gap: 0.8rem;
-  opacity: 0; animation: fadeIn 1s 1.6s forwards;
-}
-.scroll-text {
-  font-size: 0.65rem; letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--muted); writing-mode: vertical-rl;
-}
-.scroll-track {
-  width: 1px; height: 60px; background: rgba(200,169,74,0.2); position: relative; overflow: hidden;
-}
-.scroll-track::after {
-  content: ''; position: absolute;
-  top: 0; left: 0; width: 100%; height: 40%;
-  background: var(--gold);
-  animation: scrollDown 2s ease-in-out 2s infinite;
-}
-@keyframes scrollDown { 0%{top:-40%} 100%{top:140%} }
-
-@keyframes rise {
-  from { opacity: 0; transform: translateY(28px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fadeIn {
-  from { opacity: 0; } to { opacity: 1; }
-}
-
-/* ── MARQUEE BAND ─────────────────────────────────── */
-.marquee-band {
-  background: var(--gold);
-  padding: 0.9rem 0;
-  overflow: hidden; white-space: nowrap;
-  position: relative;
-}
-.marquee-inner {
-  display: inline-flex; gap: 3rem;
-  animation: marquee 22s linear infinite;
-}
-.marquee-inner span {
-  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em;
-  text-transform: uppercase; color: var(--navy);
-  display: flex; align-items: center; gap: 1rem;
-}
-.marquee-inner span::after {
-  content: '◆'; font-size: 0.4rem; opacity: 0.5;
-}
-@keyframes marquee { to { transform: translateX(-50%); } }
-
-/* ── SECTION BASE ─────────────────────────────────── */
-.section-label {
-  display: flex; align-items: center; gap: 0.8rem;
-  font-size: 0.68rem; font-weight: 600; letter-spacing: 0.24em;
-  text-transform: uppercase; color: var(--gold);
-  margin-bottom: 1.4rem;
-}
-.section-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); flex-shrink: 0; }
-
-.reveal {
-  opacity: 0; transform: translateY(32px);
-  transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
-}
-.reveal.visible { opacity: 1; transform: translateY(0); }
-
-/* ── OVER ONS ─────────────────────────────────────── */
-#over-ons {
-  padding: 9rem 5rem;
-  display: grid; grid-template-columns: 1fr 1fr; gap: 8rem;
-  align-items: center;
-  background: var(--navy-2);
-  position: relative; overflow: hidden;
-}
-#over-ons::before {
-  content: '';
-  position: absolute; right: -200px; top: -200px;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, rgba(26,92,138,0.12) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.over-label { color: var(--steel-2); }
-.over-label::before { background: var(--steel-2); }
-
-.over-h2 {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 4.5vw, 4.8rem);
-  line-height: 0.95; letter-spacing: 0.02em; color: var(--white-2);
-}
-.over-h2 em {
-  font-family: 'Cormorant Garamond', serif;
-  font-style: italic; font-weight: 300;
-  color: var(--gold); display: block; font-size: 0.85em;
-}
-
-.over-text p {
-  font-size: 1rem; font-weight: 300; line-height: 1.9;
-  color: var(--muted); margin-top: 1.6rem;
-}
-
-.cert-row {
-  display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 2.5rem;
-}
-.cert-pill {
-  padding: 0.38rem 0.9rem;
-  border: 1px solid var(--line);
-  border-radius: 2px;
-  font-size: 0.68rem; font-weight: 700; letter-spacing: 0.12em;
-  text-transform: uppercase; color: var(--gold);
-  background: var(--gold-dim);
-  transition: background 0.25s, border-color 0.25s;
-}
-.cert-pill:hover { background: rgba(200,169,74,0.28); border-color: var(--gold); }
-
-/* Visual side */
-.over-visual {
-  position: relative; display: flex;
-  align-items: center; justify-content: center;
-  aspect-ratio: 1;
-}
-.orb-wrap { position: relative; width: 80%; aspect-ratio: 1; }
-.orb {
-  position: absolute; border-radius: 50%;
-  border: 1px solid;
-}
-.orb-1 {
-  inset: 0; border-color: rgba(26,92,138,0.2);
-  animation: spin 30s linear infinite;
-}
-.orb-2 {
-  inset: 12%; border-color: rgba(200,169,74,0.18);
-  animation: spin 20s linear infinite reverse;
-}
-.orb-3 {
-  inset: 24%; border-color: rgba(26,92,138,0.3);
-  animation: spin 14s linear infinite;
-}
-.orb-dots {
-  position: absolute; inset: 0;
-  animation: spin 30s linear infinite;
-}
-.orb-dots::before, .orb-dots::after {
-  content: ''; position: absolute;
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--gold);
-}
-.orb-dots::before { top: -3px; left: 50%; transform: translateX(-50%); }
-.orb-dots::after  { bottom: -3px; left: 50%; transform: translateX(-50%); }
-.orb-center {
-  position: absolute; inset: 34%;
-  background: linear-gradient(135deg, var(--navy-3), var(--steel));
-  border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 0 80px rgba(26,92,138,0.5), inset 0 0 30px rgba(200,169,74,0.1);
-}
-.orb-center svg { width: 40%; fill: var(--gold); }
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* data lines */
-.data-lines {
-  position: absolute; right: -2rem; top: 0; bottom: 0;
-  display: flex; flex-direction: column; justify-content: center; gap: 1.5rem;
-}
-.data-line {
-  display: flex; flex-direction: column; align-items: flex-end; gap: 0.2rem;
-}
-.data-bar-wrap {
-  height: 3px; background: rgba(255,255,255,0.06); border-radius: 2px;
-  overflow: hidden; position: relative;
-}
-.data-bar {
-  height: 100%; background: linear-gradient(90deg, var(--steel), var(--gold));
-  border-radius: 2px;
-  animation: barFill 2s cubic-bezier(0.16,1,0.3,1) forwards;
-  transform-origin: left;
-}
-.dl-label {
-  font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted); text-align: right;
-}
-.dl-val { font-size: 0.72rem; font-weight: 600; color: var(--gold); }
-@keyframes barFill { from{width:0} }
-
-/* ── DIENSTEN ─────────────────────────────────────── */
-#diensten {
-  padding: 9rem 5rem;
-  position: relative; overflow: hidden;
-  background:
-    radial-gradient(ellipse at 80% 20%, rgba(26,92,138,0.1) 0%, transparent 50%),
-    var(--navy);
-}
-.diensten-top {
-  display: flex; align-items: flex-end; justify-content: space-between;
-  margin-bottom: 5rem; gap: 2rem; flex-wrap: wrap;
-}
-.diensten-h {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 5vw, 5.5rem);
-  line-height: 0.92; letter-spacing: 0.02em;
-  color: var(--white-2);
-}
-.diensten-intro {
-  max-width: 340px; font-size: 0.9rem; font-weight: 300;
-  line-height: 1.8; color: var(--muted); align-self: flex-end;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.service-card {
-  background: var(--navy);
-  padding: 3rem 2.5rem;
-  position: relative; overflow: hidden;
-  transition: background 0.4s;
-}
-.service-card::before {
-  content: ''; position: absolute;
-  top: 0; left: 0; right: 0; height: 2px;
-  background: linear-gradient(90deg, var(--gold), transparent);
-  transform: scaleX(0); transform-origin: left;
-  transition: transform 0.5s cubic-bezier(0.16,1,0.3,1);
-}
-.service-card::after {
-  content: attr(data-n);
-  position: absolute; bottom: -1.5rem; right: -0.5rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 9rem; color: rgba(255,255,255,0.025);
-  line-height: 1; pointer-events: none;
-  transition: color 0.4s, bottom 0.4s;
-}
-.service-card:hover { background: rgba(26,92,138,0.12); }
-.service-card:hover::before { transform: scaleX(1); }
-.service-card:hover::after { color: rgba(200,169,74,0.06); bottom: -0.5rem; }
-
-.sc-icon {
-  width: 56px; height: 56px;
-  border: 1px solid rgba(200,169,74,0.25);
-  border-radius: 4px;
-  display: flex; align-items: center; justify-content: center;
-  margin-bottom: 2rem;
-  background: rgba(200,169,74,0.06);
-  transition: background 0.3s, border-color 0.3s;
-}
-.service-card:hover .sc-icon { background: rgba(200,169,74,0.14); border-color: var(--gold); }
-.sc-icon svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
-
-.sc-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.7rem; letter-spacing: 0.04em;
-  color: var(--white-2); margin-bottom: 0.8rem;
-}
-.sc-text {
-  font-size: 0.85rem; font-weight: 300; line-height: 1.75;
-  color: var(--muted);
-}
-.sc-tags {
-  display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.5rem;
-}
-.sc-tag {
-  font-size: 0.64rem; letter-spacing: 0.1em; text-transform: uppercase;
-  font-weight: 600; color: rgba(200,169,74,0.7);
-  padding: 0.2rem 0.6rem; border: 1px solid rgba(200,169,74,0.2);
-  border-radius: 2px;
-}
-
-/* ── WHY / USPs ───────────────────────────────────── */
-#usps {
-  padding: 9rem 5rem;
-  background: var(--navy-2);
-  position: relative; overflow: hidden;
-}
-.usps-bg-text {
-  position: absolute; left: -2rem; bottom: -4rem;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 22rem; line-height: 1;
-  color: rgba(255,255,255,0.018);
-  pointer-events: none; white-space: nowrap;
-  letter-spacing: 0.05em;
-}
-
-.usps-grid {
-  display: grid; grid-template-columns: 1fr 2fr; gap: 8rem;
-  align-items: start;
-}
-.usps-left {}
-.usps-h {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 4.5vw, 5rem);
-  line-height: 0.92; letter-spacing: 0.02em; color: var(--white-2);
-  margin-bottom: 1.5rem;
-}
-.usps-h span { color: var(--gold); }
-.usps-sub {
-  font-size: 0.95rem; font-weight: 300; line-height: 1.85; color: var(--muted);
-  margin-bottom: 3rem;
-}
-.usps-cta {
-  display: inline-flex; align-items: center; gap: 0.6rem;
-  font-size: 0.78rem; font-weight: 600; letter-spacing: 0.14em;
-  text-transform: uppercase; color: var(--gold);
-  text-decoration: none;
-  border-bottom: 1px solid rgba(200,169,74,0.3);
-  padding-bottom: 0.3rem;
-  transition: border-color 0.25s, gap 0.25s;
-}
-.usps-cta:hover { border-color: var(--gold); gap: 0.9rem; }
-
-.usp-list {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 1.5px;
-  background: var(--line);
-  border: 1px solid var(--line);
-}
-.usp-item {
-  background: var(--navy);
-  padding: 2.5rem 2rem;
-  position: relative;
-  transition: background 0.3s;
-}
-.usp-item:hover { background: rgba(26,92,138,0.1); }
-.usp-num {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.85rem; letter-spacing: 0.15em; color: var(--gold);
-  margin-bottom: 1rem;
-}
-.usp-title {
-  font-size: 1rem; font-weight: 600; color: var(--white-2); margin-bottom: 0.5rem;
-}
-.usp-text {
-  font-size: 0.83rem; font-weight: 300; line-height: 1.7; color: var(--muted);
-}
-.usp-icon-corner {
-  position: absolute; top: 1.5rem; right: 1.5rem;
-  width: 32px; height: 32px;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0.4;
-}
-.usp-icon-corner svg { width: 18px; height: 18px; stroke: var(--gold); fill: none; stroke-width: 2; }
-
-/* ── LOCATIE STRIP ────────────────────────────────── */
-#locatie {
-  padding: 4rem 5rem;
-  background: linear-gradient(90deg, var(--gold) 0%, var(--gold-2) 100%);
-  display: flex; align-items: center; justify-content: space-between;
-  gap: 2rem; flex-wrap: wrap;
-}
-.loc-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 2.4rem; letter-spacing: 0.06em; color: var(--navy);
-}
-.loc-sub { font-size: 0.85rem; font-weight: 300; color: rgba(6,15,30,0.65); margin-top: 0.2rem; }
-.loc-items { display: flex; gap: 3.5rem; flex-wrap: wrap; }
-.loc-item { display: flex; align-items: flex-start; gap: 0.8rem; }
-.loc-item svg { width: 18px; height: 18px; stroke: var(--navy-3); fill: none; stroke-width: 2; margin-top: 2px; flex-shrink: 0; }
-.loc-item-text { font-size: 0.88rem; font-weight: 500; color: var(--navy); line-height: 1.5; }
-
-/* ── CERTS ────────────────────────────────────────── */
-#certificeringen {
-  padding: 9rem 5rem;
-  background: var(--white);
-  color: var(--navy);
-}
-.cert-section-label { color: var(--steel); }
-.cert-section-label::before { background: var(--steel); }
-
-.cert-h {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.5rem, 4.5vw, 4.5rem);
-  line-height: 0.95; letter-spacing: 0.02em; color: var(--navy);
-  margin-bottom: 4rem;
-}
-
-.cert-grid {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
-}
-.cert-card {
-  border: 1px solid rgba(6,15,30,0.1);
-  border-radius: 3px;
-  padding: 2.2rem 1.8rem;
-  display: flex; align-items: center; gap: 1.4rem;
-  transition: box-shadow 0.35s, border-color 0.35s, transform 0.35s;
-  background: #fff;
-}
-.cert-card:hover {
-  box-shadow: 0 12px 40px rgba(6,15,30,0.08);
-  border-color: rgba(27,92,138,0.3);
-  transform: translateY(-3px);
-}
-.cert-emblem {
-  width: 56px; height: 56px; flex-shrink: 0; border-radius: 50%;
-  background: linear-gradient(135deg, var(--navy), var(--steel));
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 0.82rem; letter-spacing: 0.06em;
-  color: var(--gold); text-align: center; line-height: 1.25;
-  box-shadow: 0 4px 16px rgba(6,15,30,0.15);
-}
-.cert-info h4 { font-size: 0.95rem; font-weight: 700; color: var(--navy); }
-.cert-info p  { font-size: 0.8rem; font-weight: 300; color: #6A7A8A; margin-top: 0.25rem; line-height: 1.5; }
-
-/* ── CONTACT ──────────────────────────────────────── */
-#contact {
-  padding: 9rem 5rem;
-  background: var(--navy);
-  display: grid; grid-template-columns: 1.1fr 1fr; gap: 8rem;
-  position: relative; overflow: hidden;
-}
-#contact::before {
-  content: '';
-  position: absolute; left: -300px; bottom: -300px;
-  width: 800px; height: 800px;
-  background: radial-gradient(circle, rgba(26,92,138,0.12) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.contact-h {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: clamp(2.8rem, 4.5vw, 5rem);
-  line-height: 0.92; letter-spacing: 0.02em; color: var(--white-2);
-}
-.contact-p {
-  font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--muted);
-  margin-top: 1.5rem; max-width: 440px;
-}
-.contact-methods {
-  display: flex; flex-direction: column; gap: 1.2rem; margin-top: 3rem;
-}
-.c-method {
-  display: flex; align-items: center; gap: 1.2rem;
-  padding: 1.2rem 1.5rem;
-  border: 1px solid rgba(255,255,255,0.06);
-  border-radius: 3px;
-  text-decoration: none; color: var(--white);
-  transition: border-color 0.3s, background 0.3s, transform 0.3s;
-}
-.c-method:hover {
-  border-color: rgba(200,169,74,0.35);
-  background: rgba(200,169,74,0.05);
-  transform: translateX(4px);
-}
-.c-method-icon {
-  width: 42px; height: 42px; border-radius: 50%;
-  border: 1px solid rgba(200,169,74,0.2);
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0; transition: background 0.3s, border-color 0.3s;
-}
-.c-method:hover .c-method-icon { background: rgba(200,169,74,0.1); border-color: var(--gold); }
-.c-method-icon svg { width: 16px; height: 16px; stroke: var(--gold); fill: none; stroke-width: 2; }
-.c-method-text { display: flex; flex-direction: column; }
-.c-method-label { font-size: 0.68rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); font-weight: 500; }
-.c-method-val   { font-size: 0.92rem; font-weight: 500; margin-top: 0.15rem; }
-
-/* form */
-.form-title { font-size: 1.05rem; font-weight: 600; color: var(--white-2); margin-bottom: 1.8rem; }
-.form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-.fg { margin-bottom: 1rem; }
-.fg label {
-  display: block; font-size: 0.68rem; letter-spacing: 0.14em;
-  text-transform: uppercase; font-weight: 600; color: var(--muted);
-  margin-bottom: 0.5rem;
-}
-.fg input, .fg textarea, .fg select {
-  width: 100%;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.09);
-  border-radius: 2px;
-  padding: 0.9rem 1.1rem;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.9rem; font-weight: 300; color: var(--white);
-  outline: none; transition: border-color 0.25s, background 0.25s;
-}
-.fg input::placeholder, .fg textarea::placeholder { color: rgba(244,241,235,0.25); }
-.fg input:focus, .fg textarea:focus, .fg select:focus {
-  border-color: rgba(200,169,74,0.5);
-  background: rgba(200,169,74,0.04);
-}
-.fg textarea { height: 130px; resize: vertical; }
-.fg select { cursor: pointer; }
-.fg select option { background: var(--navy-3); }
-.form-submit {
-  width: 100%; padding: 1rem;
-  background: var(--gold); color: var(--navy);
-  border: none; border-radius: 2px;
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.8rem; font-weight: 700; letter-spacing: 0.16em;
-  text-transform: uppercase; cursor: pointer;
-  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
-  margin-top: 0.5rem;
-}
-.form-submit:hover {
-  background: var(--gold-2); transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(200,169,74,0.25);
-}
-
-/* ── FOOTER ───────────────────────────────────────── */
-footer {
-  background: #030A15;
-  padding: 2.5rem 5rem;
-  display: flex; align-items: center; justify-content: space-between;
-  border-top: 1px solid rgba(200,169,74,0.1);
-  gap: 2rem; flex-wrap: wrap;
-}
-.footer-logo {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.6rem; letter-spacing: 0.12em; color: var(--white-2);
-}
-.footer-logo span { color: var(--gold); }
-.footer-copy { font-size: 0.72rem; color: rgba(244,241,235,0.25); font-weight: 300; }
-
-/* ── RESPONSIVE ───────────────────────────────────── */
-@media (max-width: 1100px) {
-  nav, #hero, #over-ons, #diensten, #usps, #locatie, #certificeringen, #contact { padding-left: 2.5rem; padding-right: 2.5rem; }
-  nav.scrolled { padding-left: 2.5rem; padding-right: 2.5rem; }
-  #over-ons, #usps, #contact { grid-template-columns: 1fr; gap: 4rem; }
-  .usps-grid { grid-template-columns: 1fr; gap: 4rem; }
-  .service-grid { grid-template-columns: 1fr 1fr; }
-  .cert-grid { grid-template-columns: 1fr 1fr; }
-  .hero-stats .h-stat { padding: 1.5rem 2.5rem; }
-  .h-stat:last-child { display: none; }
-  .hero-stats { grid-template-columns: 1fr 1fr; }
-  footer { padding: 2rem 2.5rem; flex-direction: column; align-items: flex-start; gap: 1.2rem; }
-}
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  h1.hero-h1 { font-size: clamp(4rem, 14vw, 6rem); }
-  .hero-stats { display: none; }
-  .service-grid { grid-template-columns: 1fr; }
-  .cert-grid { grid-template-columns: 1fr; }
-  .usp-list { grid-template-columns: 1fr; }
-  .form-row2 { grid-template-columns: 1fr; }
-  .loc-items { flex-direction: column; gap: 1.2rem; }
-}
+@media(max-width:1100px){nav,#diensten,#over,#usps,#locatie,#certificeringen,#contact{padding-left:2.5rem;padding-right:2.5rem}#hero{grid-template-columns:1fr}.hero-right{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;padding:3rem 2.5rem;min-height:auto}#over,#contact{grid-template-columns:1fr;gap:4rem}.usps-grid{grid-template-columns:1fr;gap:4rem}.d-grid{grid-template-columns:1fr 1fr}.cert-grid{grid-template-columns:1fr 1fr}footer{padding:1.5rem 2.5rem}}
+@media(max-width:700px){.nav-links{display:none}.d-grid{grid-template-columns:1fr}.cert-grid{grid-template-columns:1fr}.usp-list{grid-template-columns:1fr}.hero-right{grid-template-columns:1fr}.fg-row{grid-template-columns:1fr}nav{padding:0 1.5rem}#diensten,#over,#usps,#locatie,#certificeringen,#contact{padding-left:1.5rem;padding-right:1.5rem}}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
-<nav id="nav">
-  <a href="#" class="logo">CONTI<span class="logo-accent">TANK</span><span class="logo-dot"></span></a>
+<nav>
+  <a href="#" class="logo">
+    <svg class="logo-icon" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="20" cy="20" r="18" stroke="#3B82C9" stroke-width="1.5"/>
+      <path d="M20 8 C20 8 28 14 28 20 C28 26 20 32 20 32 C20 32 12 26 12 20 C12 14 20 8 20 8Z" stroke="#3B82C9" stroke-width="1.5" fill="none"/>
+      <ellipse cx="20" cy="20" rx="8" ry="12" stroke="#1A2E52" stroke-width="1.5" fill="none"/>
+    </svg>
+    <div class="logo-text">
+      <span class="logo-name">Contitank</span>
+      <span class="logo-sub">Tankstorage</span>
+    </div>
+  </a>
   <ul class="nav-links">
-    <li><a href="#over-ons">Over Ons</a></li>
+    <li><a href="#over">Over Ons</a></li>
     <li><a href="#diensten">Diensten</a></li>
     <li><a href="#usps">Waarom Wij</a></li>
-    <li><a href="#certificeringen">Certificaten</a></li>
-    <li><a href="#contact" class="nav-btn">Contact</a></li>
+    <li><a href="#certificeringen">HSEQ</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
   </ul>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-lines"></div>
-
-  <div class="hero-inner">
-    <div class="hero-eyebrow">
-      <span class="eyebrow-line"></span>
-      Haven van Delfzijl — Bio-Economie Specialist
+  <div class="hero-left">
+    <div class="hero-tag">Haven van Delfzijl · Bio-Economie</div>
+    <h1>Full-Service<br><em>Tankterminal</em><br>& Logistiek</h1>
+    <p class="hero-p">Contitank is gespecialiseerd in de opslag en het transport van dierlijke en plantaardige oliën en vetten. Strategisch gelegen in de haven van Delfzijl.</p>
+    <div class="hero-btns">
+      <a href="#diensten" class="btn-main">Onze diensten</a>
+      <a href="#contact" class="btn-out">Neem contact op</a>
     </div>
-    <h1 class="hero-h1">
-      Full-Service
-      <span class="italic-line">Tankterminal</span>
-    </h1>
-    <p class="hero-desc">Contitank is dé logistieke dienstverlener voor opslag en transport van dierlijke en plantaardige oliën en vetten. Strategisch gesitueerd, internationaal verbonden.</p>
-    <div class="hero-ctas">
-      <a href="#diensten" class="cta-main">
-        Onze Diensten
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-      <a href="#contact" class="cta-ghost">Contact opnemen →</a>
+    <div class="hero-certs">
+      <span class="hc-pill">ISO 9001:2015</span>
+      <span class="hc-pill">GMP+</span>
+      <span class="hc-pill">ISCC</span>
+      <span class="hc-pill">NVWA</span>
+      <span class="hc-pill">QS</span>
+      <span class="hc-pill">Kosher</span>
     </div>
   </div>
-
-  <div class="hero-stats">
-    <div class="h-stat">
-      <div class="h-stat-num"><span class="counter" data-target="6">0</span><sup>+</sup></div>
-      <div class="h-stat-label">Certificeringen</div>
+  <div class="hero-right">
+    <div class="hero-stat-card">
+      <div class="hsc-num">6<span>+</span></div>
+      <div class="hsc-label">Certificeringen</div>
+      <p class="hsc-desc">Kosher, ISO 9001, GMP+, NVWA, QS en ISCC — volledig gecertificeerd voor de bio-economie.</p>
     </div>
-    <div class="h-stat">
-      <div class="h-stat-num"><span class="counter" data-target="4">0</span></div>
-      <div class="h-stat-label">Kernsdiensten</div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">4</div>
+      <div class="hsc-label">Kernsdiensten</div>
+      <p class="hsc-desc">Opslag, transport, verwerking en internationale logistiek — alles onder één dak.</p>
     </div>
-    <div class="h-stat">
-      <div class="h-stat-num"><span>100</span><sup>%</sup></div>
-      <div class="h-stat-label">Natuurlijke grondstoffen</div>
-    </div>
-  </div>
-
-  <div class="hero-scroll">
-    <div class="scroll-track"></div>
-    <span class="scroll-text">Scroll</span>
-  </div>
-</section>
-
-<!-- MARQUEE -->
-<div class="marquee-band">
-  <div class="marquee-inner">
-    <span>Opslag</span><span>Transport</span><span>Verwerking</span><span>Logistiek</span>
-    <span>ISO 9001:2015</span><span>GMP+</span><span>ISCC</span><span>Kosher</span>
-    <span>Haven Delfzijl</span><span>Bio-Economie</span><span>Internationaal</span>
-    <span>Opslag</span><span>Transport</span><span>Verwerking</span><span>Logistiek</span>
-    <span>ISO 9001:2015</span><span>GMP+</span><span>ISCC</span><span>Kosher</span>
-    <span>Haven Delfzijl</span><span>Bio-Economie</span><span>Internationaal</span>
-  </div>
-</div>
-
-<!-- OVER ONS -->
-<section id="over-ons">
-  <div class="reveal">
-    <p class="section-label over-label">Over Contitank</p>
-    <h2 class="over-h2">Bio-economie<br><em>als kern</em></h2>
-    <div class="over-text">
-      <p>Contitank is gespecialiseerd in de opslag en het transport van dierlijke en plantaardige oliën en vetten. Vanuit onze strategische locatie in de haven van Delfzijl bedienen we klanten over de hele wereld.</p>
-      <p>Wij leveren maatwerk — of het nu gaat om mixen, verwarmen of inpakken. De complete logistieke keten onder één dak, met focus op 100% natuurlijke grondstoffen en duurzame bio-economie.</p>
-    </div>
-    <div class="cert-row">
-      <span class="cert-pill">Kosher</span>
-      <span class="cert-pill">ISO 9001:2015</span>
-      <span class="cert-pill">GMP+</span>
-      <span class="cert-pill">NVWA</span>
-      <span class="cert-pill">QS</span>
-      <span class="cert-pill">ISCC</span>
-    </div>
-  </div>
-
-  <div class="over-visual reveal" style="transition-delay:0.2s">
-    <div class="orb-wrap">
-      <div class="orb orb-1"><div class="orb-dots"></div></div>
-      <div class="orb orb-2"></div>
-      <div class="orb orb-3"></div>
-      <div class="orb-center">
-        <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-          <ellipse cx="24" cy="13" rx="15" ry="5.5"/>
-          <rect x="9" y="13" width="30" height="22" rx="1"/>
-          <ellipse cx="24" cy="35" rx="15" ry="5.5"/>
-          <line x1="24" y1="35" x2="24" y2="43" stroke="#C8A94A" stroke-width="2.5" fill="none"/>
-          <circle cx="24" cy="45" r="2.5" fill="#C8A94A"/>
-        </svg>
-      </div>
-    </div>
-    <div class="data-lines">
-      <div class="data-line">
-        <div class="dl-label">Capaciteit</div>
-        <div class="data-bar-wrap" style="width:120px">
-          <div class="data-bar" style="width:88%;animation-delay:0.8s"></div>
-        </div>
-        <div class="dl-val">88%</div>
-      </div>
-      <div class="data-line">
-        <div class="dl-label">Duurzaamheid</div>
-        <div class="data-bar-wrap" style="width:120px">
-          <div class="data-bar" style="width:100%;animation-delay:1s"></div>
-        </div>
-        <div class="dl-val">100%</div>
-      </div>
-      <div class="data-line">
-        <div class="dl-label">Certificaten</div>
-        <div class="data-bar-wrap" style="width:120px">
-          <div class="data-bar" style="width:75%;animation-delay:1.2s"></div>
-        </div>
-        <div class="dl-val">6/6</div>
-      </div>
+    <div class="hero-stat-card">
+      <div class="hsc-num">100<span>%</span></div>
+      <div class="hsc-label">Natuurlijke grondstoffen</div>
+      <p class="hsc-desc">Volledig gericht op dierlijke en plantaardige oliën en vetten uit de bio-economie.</p>
     </div>
   </div>
 </section>
 
 <!-- DIENSTEN -->
 <section id="diensten">
-  <div class="diensten-top reveal">
-    <div>
-      <p class="section-label">Wat wij doen</p>
-      <h2 class="diensten-h">Onze<br>Diensten</h2>
-    </div>
-    <p class="diensten-intro">Van opslag tot transport, van verwerking tot internationale logistiek — wij bieden de volledige keten.</p>
+  <div class="reveal">
+    <div class="sec-tag">Wat wij doen</div>
+    <h2 class="sec-h2">Onze diensten</h2>
   </div>
-
-  <div class="service-grid reveal" style="transition-delay:0.15s">
-    <div class="service-card" data-n="01">
-      <div class="sc-icon">
-        <svg viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="9" ry="4"/><path d="M3 7v10c0 2.21 4.03 4 9 4s9-1.79 9-4V7"/><path d="M3 12c0 2.21 4.03 4 9 4s9-1.79 9-4"/></svg>
-      </div>
-      <h3 class="sc-title">Opslag</h3>
-      <p class="sc-text">Tanks van diverse soorten en maten. Veilig, gecertificeerd en schaalbaar naar uw volume — groot of klein.</p>
-      <div class="sc-tags">
-        <span class="sc-tag">Tankterminal</span>
-        <span class="sc-tag">Schaalbaar</span>
-        <span class="sc-tag">Gecertificeerd</span>
-      </div>
+  <div class="d-grid reveal" style="transition-delay:.1s">
+    <div class="d-card">
+      <div class="d-icon"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="7" rx="9" ry="4"/><path d="M3 7v10c0 2.21 4.03 4 9 4s9-1.79 9-4V7"/><path d="M3 12c0 2.21 4.03 4 9 4s9-1.79 9-4"/></svg></div>
+      <div class="d-title">Opslag</div>
+      <p class="d-text">Tanks van diverse soorten en maten voor veilige opslag van vloeibare oliën en vetten.</p>
+      <div class="d-tags"><span class="d-tag">Tankterminal</span><span class="d-tag">Schaalbaar</span></div>
     </div>
-
-    <div class="service-card" data-n="02">
-      <div class="sc-icon">
-        <svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
-      </div>
-      <h3 class="sc-title">Transport</h3>
-      <p class="sc-text">Zee-, water- en wegtransport inclusief railverbinding. Volledig multimodaal netwerk voor elk volume.</p>
-      <div class="sc-tags">
-        <span class="sc-tag">Zee & Water</span>
-        <span class="sc-tag">Wegtransport</span>
-        <span class="sc-tag">Rail</span>
-      </div>
+    <div class="d-card">
+      <div class="d-icon"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="1"/><path d="M16 8h4l3 3v5h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="d-title">Transport</div>
+      <p class="d-text">Zee-, water- en wegtransport inclusief railverbinding. Volledig multimodaal netwerk.</p>
+      <div class="d-tags"><span class="d-tag">Zee & Water</span><span class="d-tag">Rail</span></div>
     </div>
-
-    <div class="service-card" data-n="03">
-      <div class="sc-icon">
-        <svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg>
-      </div>
-      <h3 class="sc-title">Verwerking</h3>
-      <p class="sc-text">Maatwerk in mixen, verwarmen en inpakken van grondstoffen. Volledig aanpasbaar aan uw productspecificaties.</p>
-      <div class="sc-tags">
-        <span class="sc-tag">Mixen</span>
-        <span class="sc-tag">Verwarmen</span>
-        <span class="sc-tag">Inpakken</span>
-      </div>
+    <div class="d-card">
+      <div class="d-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/><circle cx="12" cy="12" r="4"/></svg></div>
+      <div class="d-title">Verwerking</div>
+      <p class="d-text">Maatwerk in mixen, verwarmen en inpakken van grondstoffen op uw specificaties.</p>
+      <div class="d-tags"><span class="d-tag">Mixen</span><span class="d-tag">Verwarmen</span></div>
     </div>
-
-    <div class="service-card" data-n="04">
-      <div class="sc-icon">
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      </div>
-      <h3 class="sc-title">Logistiek</h3>
-      <p class="sc-text">Internationaal netwerk voor buitenlandse markten. Efficiënte coördinatie van uw volledige supply chain.</p>
-      <div class="sc-tags">
-        <span class="sc-tag">Internationaal</span>
-        <span class="sc-tag">Supply Chain</span>
-        <span class="sc-tag">Netwerk</span>
-      </div>
+    <div class="d-card">
+      <div class="d-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
+      <div class="d-title">Logistiek</div>
+      <p class="d-text">Internationaal netwerk voor buitenlandse markten. Volledige supply chain coördinatie.</p>
+      <div class="d-tags"><span class="d-tag">Internationaal</span><span class="d-tag">Supply Chain</span></div>
     </div>
+  </div>
+</section>
+
+<!-- OVER ONS -->
+<section id="over">
+  <div class="reveal">
+    <div class="sec-tag">Over Contitank</div>
+    <h2 class="sec-h2">Bio-economie als kern van ons werk</h2>
+    <p>Contitank is gespecialiseerd in de opslag en het transport van dierlijke en plantaardige oliën en vetten. Vanuit onze strategische locatie in de haven van Delfzijl bedienen we klanten over de hele wereld.</p>
+    <p>Wij leveren maatwerk — of het nu gaat om mixen, verwarmen of inpakken. De complete logistieke keten onder één dak, met focus op 100% natuurlijke grondstoffen en duurzame bio-economie.</p>
+    <div class="cert-row">
+      <span class="cert-chip">Kosher</span>
+      <span class="cert-chip">ISO 9001:2015</span>
+      <span class="cert-chip">GMP+</span>
+      <span class="cert-chip">NVWA</span>
+      <span class="cert-chip">QS</span>
+      <span class="cert-chip">ISCC</span>
+    </div>
+  </div>
+  <div class="over-visual reveal" style="transition-delay:.15s">
+    <div class="ov-block ov-img"></div>
+    <div class="ov-block ov-stat">
+      <div class="ov-stat-n">Haven<br><span>Delfzijl</span></div>
+      <div class="ov-stat-l">Strategische locatie</div>
+    </div>
+    <div class="ov-block ov-stat ov-stat-blue">
+      <div class="ov-stat-n">100%</div>
+      <div class="ov-stat-l">Bio-economie</div>
+    </div>
+    <div class="ov-block ov-img2"></div>
   </div>
 </section>
 
 <!-- USPs -->
 <section id="usps">
-  <div class="usps-bg-text">WAAROM</div>
   <div class="usps-grid">
     <div class="reveal">
-      <p class="section-label">Waarom Contitank</p>
-      <h2 class="usps-h">De keuze<br>die <span>telt</span></h2>
-      <p class="usps-sub">Strategische ligging, groeiende capaciteit en toewijding aan duurzaamheid maken Contitank de logische partner voor uw supply chain.</p>
-      <a href="#contact" class="usps-cta">Neem contact op →</a>
+      <div class="sec-tag">Waarom Contitank</div>
+      <h2 class="sec-h2">De logische keuze voor uw supply chain</h2>
+      <p>Strategische ligging, groeiende capaciteit en toewijding aan duurzaamheid maken Contitank de betrouwbare partner voor de lange termijn.</p>
     </div>
-
-    <div class="usp-list reveal" style="transition-delay:0.15s">
-      <div class="usp-item">
-        <div class="usp-icon-corner"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-        <div class="usp-num">01</div>
-        <div class="usp-title">Strategische locatie</div>
-        <p class="usp-text">Haven van Delfzijl — directe toegang tot zee-, water en wegverbindingen voor binnen- en buitenland.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-icon-corner"><svg viewBox="0 0 24 24"><polygon points="12,2 22,8.5 22,15.5 12,22 2,15.5 2,8.5"/></svg></div>
-        <div class="usp-num">02</div>
-        <div class="usp-title">Maatwerk & schaalbaar</div>
-        <p class="usp-text">Volledig aanpasbare oplossingen voor elk volume, elke specificatie en elke logistieke behoefte.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-icon-corner"><svg viewBox="0 0 24 24"><path d="M7 17l9.2-9.2M17 17V7H7"/></svg></div>
-        <div class="usp-num">03</div>
-        <div class="usp-title">Groeiende capaciteit</div>
-        <p class="usp-text">Snelle expansie en toenemende opslagcapaciteit om mee te schalen met uw groeiende vraag.</p>
-      </div>
-      <div class="usp-item">
-        <div class="usp-icon-corner"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <div class="usp-num">04</div>
-        <div class="usp-title">Bio-economie focus</div>
-        <p class="usp-text">100% toewijding aan natuurlijke grondstoffen en een aantoonbaar duurzame keten van begin tot eind.</p>
-      </div>
-      <div class="usp-item" style="grid-column:span 2">
-        <div class="usp-icon-corner"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg></div>
-        <div class="usp-num">05</div>
-        <div class="usp-title">Internationaal netwerk</div>
-        <p class="usp-text">Een uitgebreid netwerk voor internationale markten — van Europa tot ver buiten de EU. Met ervaren transportpartners en kennis van internationale regelgeving brengen wij uw producten waar ze moeten zijn.</p>
-      </div>
+    <div class="usp-list reveal" style="transition-delay:.1s">
+      <div class="usp-item"><div class="usp-n">01</div><div class="usp-title">Strategische locatie</div><p class="usp-text">Haven van Delfzijl — directe toegang tot zee, water, weg en rail voor binnen- en buitenland.</p></div>
+      <div class="usp-item"><div class="usp-n">02</div><div class="usp-title">Maatwerk & schaalbaar</div><p class="usp-text">Volledig aanpasbare oplossingen voor elk volume en elke logistieke behoefte.</p></div>
+      <div class="usp-item"><div class="usp-n">03</div><div class="usp-title">Groeiende capaciteit</div><p class="usp-text">Snelle expansie en toenemende opslagcapaciteit om mee te schalen met uw vraag.</p></div>
+      <div class="usp-item"><div class="usp-n">04</div><div class="usp-title">Bio-economie focus</div><p class="usp-text">100% toewijding aan natuurlijke grondstoffen en een aantoonbaar duurzame keten.</p></div>
+      <div class="usp-item" style="grid-column:span 2"><div class="usp-n">05</div><div class="usp-title">Internationaal netwerk</div><p class="usp-text">Uitgebreid netwerk van Europa tot buiten de EU, met ervaren transportpartners en kennis van internationale regelgeving.</p></div>
     </div>
   </div>
 </section>
 
-<!-- LOCATIE STRIP -->
+<!-- LOCATIE -->
 <div id="locatie">
-  <div>
-    <div class="loc-title">Haven van Delfzijl</div>
-    <div class="loc-sub">Strategisch hart van onze operaties</div>
-  </div>
+  <div><div class="loc-title">Haven van Delfzijl</div><div class="loc-sub">Strategisch hart van onze operaties</div></div>
   <div class="loc-items">
-    <div class="loc-item">
-      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <span class="loc-item-text">Melasseweg 1<br>9936 CX Farmsum</span>
-    </div>
-    <div class="loc-item">
-      <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg>
-      <span class="loc-item-text">+31 (0) 59 66 325 99</span>
-    </div>
-    <div class="loc-item">
-      <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      <span class="loc-item-text">info@contitank.eu</span>
-    </div>
+    <div class="loc-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>Melasseweg 1<br>9936 CX Farmsum</span></div>
+    <div class="loc-item"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg><span>+31 (0) 59 66 325 99</span></div>
+    <div class="loc-item"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg><span>info@contitank.eu</span></div>
   </div>
 </div>
 
 <!-- CERTIFICERINGEN -->
 <section id="certificeringen">
-  <p class="section-label cert-section-label reveal">Kwaliteitsborging</p>
-  <h2 class="cert-h reveal">Onze Certificeringen</h2>
+  <div class="reveal">
+    <div class="sec-tag">Kwaliteitsborging</div>
+    <h2 class="sec-h2">Certificeringen & HSEQ</h2>
+  </div>
   <div class="cert-grid">
-    <div class="cert-card reveal">
-      <div class="cert-emblem">ISO<br>9001</div>
-      <div class="cert-info">
-        <h4>ISO 9001:2015</h4>
-        <p>Internationaal kwaliteitsmanagementsysteem voor consistente dienstverlening</p>
-      </div>
-    </div>
-    <div class="cert-card reveal" style="transition-delay:0.07s">
-      <div class="cert-emblem">GMP+</div>
-      <div class="cert-info">
-        <h4>GMP+ Gecertificeerd</h4>
-        <p>Borging van veiligheid in de diervoederketen van grondstof tot eindproduct</p>
-      </div>
-    </div>
-    <div class="cert-card reveal" style="transition-delay:0.14s">
-      <div class="cert-emblem">ISCC</div>
-      <div class="cert-info">
-        <h4>ISCC Duurzaamheid</h4>
-        <p>International Sustainability and Carbon Certification voor biobased ketens</p>
-      </div>
-    </div>
-    <div class="cert-card reveal" style="transition-delay:0.21s">
-      <div class="cert-emblem">NVWA</div>
-      <div class="cert-info">
-        <h4>NVWA Erkend</h4>
-        <p>Erkend door de Nederlandse Voedsel- en Warenautoriteit voor voedselveiligheid</p>
-      </div>
-    </div>
-    <div class="cert-card reveal" style="transition-delay:0.28s">
-      <div class="cert-emblem">QS</div>
-      <div class="cert-info">
-        <h4>QS Gecertificeerd</h4>
-        <p>Europese standaard voor kwaliteitsborging in de voedselproductieketen</p>
-      </div>
-    </div>
-    <div class="cert-card reveal" style="transition-delay:0.35s">
-      <div class="cert-emblem">KO<br>SHER</div>
-      <div class="cert-info">
-        <h4>Kosher Gecertificeerd</h4>
-        <p>Erkend voor verwerking en opslag van kosjere producten conform joodse wetgeving</p>
-      </div>
-    </div>
+    <div class="cert-card reveal"><div class="cert-emblem">ISO<br>9001</div><div class="cert-info"><h4>ISO 9001:2015</h4><p>Internationaal kwaliteitsmanagementsysteem voor consistente dienstverlening</p></div></div>
+    <div class="cert-card reveal" style="transition-delay:.06s"><div class="cert-emblem">GMP+</div><div class="cert-info"><h4>GMP+ Gecertificeerd</h4><p>Borging van veiligheid in de diervoederketen van grondstof tot eindproduct</p></div></div>
+    <div class="cert-card reveal" style="transition-delay:.12s"><div class="cert-emblem">ISCC</div><div class="cert-info"><h4>ISCC Duurzaamheid</h4><p>International Sustainability and Carbon Certification voor biobased ketens</p></div></div>
+    <div class="cert-card reveal" style="transition-delay:.18s"><div class="cert-emblem">NVWA</div><div class="cert-info"><h4>NVWA Erkend</h4><p>Erkend door de Nederlandse Voedsel- en Warenautoriteit voor voedselveiligheid</p></div></div>
+    <div class="cert-card reveal" style="transition-delay:.24s"><div class="cert-emblem">QS</div><div class="cert-info"><h4>QS Gecertificeerd</h4><p>Europese standaard voor kwaliteitsborging in de voedselproductieketen</p></div></div>
+    <div class="cert-card reveal" style="transition-delay:.3s"><div class="cert-emblem">KO<br>SHER</div><div class="cert-info"><h4>Kosher Gecertificeerd</h4><p>Erkend voor verwerking en opslag van kosjere producten conform joodse wetgeving</p></div></div>
   </div>
 </section>
 
 <!-- CONTACT -->
 <section id="contact">
   <div class="reveal">
-    <p class="section-label">Samenwerken</p>
-    <h2 class="contact-h">Neem<br>Contact Op</h2>
+    <div class="sec-tag">Samenwerken</div>
+    <h2 class="contact-h">Neem contact op</h2>
     <p class="contact-p">Bent u op zoek naar een betrouwbare partner voor de opslag, verwerking of transport van oliën en vetten? Wij staan klaar.</p>
     <div class="contact-methods">
-      <a href="tel:+31596632599" class="c-method">
-        <span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg></span>
-        <span class="c-method-text">
-          <span class="c-method-label">Telefoon</span>
-          <span class="c-method-val">+31 (0) 59 66 325 99</span>
-        </span>
-      </a>
-      <a href="mailto:info@contitank.eu" class="c-method">
-        <span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span>
-        <span class="c-method-text">
-          <span class="c-method-label">E-mail</span>
-          <span class="c-method-val">info@contitank.eu</span>
-        </span>
-      </a>
-      <a href="https://linkedin.com/company/contitank/" target="_blank" class="c-method">
-        <span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
-        <span class="c-method-text">
-          <span class="c-method-label">LinkedIn</span>
-          <span class="c-method-val">Contitank</span>
-        </span>
-      </a>
+      <a href="tel:+31596632599" class="c-method"><span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.41 2 2 0 0 1 3.55 1.25h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6 6l.88-.88a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.5 16.92z"/></svg></span><div><div class="c-method-label">Telefoon</div><div class="c-method-val">+31 (0) 59 66 325 99</div></div></a>
+      <a href="mailto:info@contitank.eu" class="c-method"><span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><div><div class="c-method-label">E-mail</div><div class="c-method-val">info@contitank.eu</div></div></a>
+      <a href="https://linkedin.com/company/contitank/" target="_blank" class="c-method"><span class="c-method-icon"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span><div><div class="c-method-label">LinkedIn</div><div class="c-method-val">Contitank</div></div></a>
     </div>
   </div>
-
-  <div class="reveal" style="transition-delay:0.2s">
+  <div class="reveal" style="transition-delay:.15s">
     <h3 class="form-title">Stuur ons een bericht</h3>
     <form id="contactForm">
-      <div class="form-row2">
-        <div class="fg">
-          <label>Naam</label>
-          <input type="text" placeholder="Uw naam" required>
-        </div>
-        <div class="fg">
-          <label>Bedrijf</label>
-          <input type="text" placeholder="Bedrijfsnaam">
-        </div>
+      <div class="fg-row">
+        <div class="fg"><label>Naam</label><input type="text" placeholder="Uw naam" required></div>
+        <div class="fg"><label>Bedrijf</label><input type="text" placeholder="Bedrijfsnaam"></div>
       </div>
-      <div class="fg">
-        <label>E-mail</label>
-        <input type="email" placeholder="uw@email.nl" required>
-      </div>
-      <div class="fg">
-        <label>Dienst</label>
-        <select>
-          <option value="">Kies een dienst...</option>
-          <option>Opslag</option>
-          <option>Transport</option>
-          <option>Verwerking</option>
-          <option>Logistiek</option>
-          <option>Overig</option>
-        </select>
-      </div>
-      <div class="fg">
-        <label>Bericht</label>
-        <textarea placeholder="Vertel ons over uw logistieke vraagstuk..."></textarea>
-      </div>
-      <button type="submit" class="form-submit">Verstuur Bericht →</button>
+      <div class="fg"><label>E-mail</label><input type="email" placeholder="uw@email.nl" required></div>
+      <div class="fg"><label>Dienst</label><select><option value="">Kies een dienst...</option><option>Opslag</option><option>Transport</option><option>Verwerking</option><option>Logistiek</option><option>Overig</option></select></div>
+      <div class="fg"><label>Bericht</label><textarea placeholder="Vertel ons over uw logistieke vraagstuk..."></textarea></div>
+      <button type="submit" class="form-submit">Verstuur bericht</button>
     </form>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-logo">CONTI<span>TANK</span></div>
-  <span class="footer-copy">© 2025 Contitank B.V. — Melasseweg 1, 9936 CX Farmsum</span>
+  <div class="fl">
+    <svg class="fl-icon" viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="#3B82C9" stroke-width="1.5"/><path d="M20 8 C20 8 28 14 28 20 C28 26 20 32 20 32 C20 32 12 26 12 20 C12 14 20 8 20 8Z" stroke="#3B82C9" stroke-width="1.5" fill="none"/><ellipse cx="20" cy="20" rx="8" ry="12" stroke="rgba(255,255,255,.4)" stroke-width="1.5" fill="none"/></svg>
+    Contitank
+  </div>
+  <p>© 2025 Contitank B.V. — Melasseweg 1, 9936 CX Farmsum</p>
 </footer>
 
 <script>
-  /* Sticky nav */
-  window.addEventListener('scroll', () => {
-    document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
-  });
-
-  /* Reveal on scroll */
-  const revealObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
-
-  /* Counter animation */
-  const counterObs = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (!e.isIntersecting) return;
-      const el = e.target;
-      const target = +el.dataset.target;
-      let count = 0;
-      const step = target / 40;
-      const t = setInterval(() => {
-        count = Math.min(count + step, target);
-        el.textContent = Math.floor(count);
-        if (count >= target) clearInterval(t);
-      }, 30);
-      counterObs.unobserve(el);
-    });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('.counter').forEach(el => counterObs.observe(el));
-
-  /* Form submit */
-  document.getElementById('contactForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const btn = this.querySelector('.form-submit');
-    btn.textContent = 'Verstuurd ✓';
-    btn.style.background = '#1A5C8A';
-    btn.style.transform = 'none';
-    setTimeout(() => {
-      btn.textContent = 'Verstuur Bericht →';
-      btn.style.background = '';
-      this.reset();
-    }, 3500);
-  });
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('v')}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  const b=this.querySelector('.form-submit');
+  b.textContent='Verstuurd ✓';b.style.background='#16A34A';
+  setTimeout(()=>{b.textContent='Verstuur bericht';b.style.background='';this.reset();},3500);
+});
 </script>
 </body>
 </html>
